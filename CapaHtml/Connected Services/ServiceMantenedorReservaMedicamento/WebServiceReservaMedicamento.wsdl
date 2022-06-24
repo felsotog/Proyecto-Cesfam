@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaReservaMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auxReservaMedicamento" type="tns:ReservaMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReservaMedicamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_reserva" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_reserva" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad_reserva" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Farmaceutico_id_farmaceuta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Medicamento_codigo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaReservaMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarReservaMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_reserva" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarReservaMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarReservaMedicamentoServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionReservaMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_reserva" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionReservaMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionReservaMedicamentoServiceResult" type="tns:ReservaMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarReservaMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_reserva" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarReservaMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarReservaMedicamentoServiceResult" type="tns:ReservaMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdReservaMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_reserva" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdReservaMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdReservaMedicamentoServiceResult" type="tns:ReservaMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarReservaMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_reserva" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarReservaMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarReservaMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reserva_medicamento" type="tns:ReservaMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarReservaMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaReservaMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaReservaMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="insertaReservaMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaReservaMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarReservaMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarReservaMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="retornarReservaMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarReservaMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionReservaMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionReservaMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionReservaMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionReservaMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarReservaMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarReservaMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarReservaMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarReservaMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdReservaMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdReservaMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdReservaMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdReservaMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarReservaMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarReservaMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarReservaMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarReservaMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarReservaMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarReservaMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarReservaMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarReservaMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceReservaMedicamentoSoap">
+    <wsdl:operation name="insertaReservaMedicamentoService">
+      <wsdl:input message="tns:insertaReservaMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:insertaReservaMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarReservaMedicamentoService">
+      <wsdl:input message="tns:retornarReservaMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:retornarReservaMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionReservaMedicamentoService">
+      <wsdl:input message="tns:retornaPosicionReservaMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionReservaMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarReservaMedicamentoService">
+      <wsdl:input message="tns:buscarReservaMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:buscarReservaMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdReservaMedicamentoService">
+      <wsdl:input message="tns:buscarIdReservaMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdReservaMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarReservaMedicamentoService">
+      <wsdl:input message="tns:eliminarReservaMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:eliminarReservaMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarReservaMedicamentoService">
+      <wsdl:input message="tns:actualizarReservaMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:actualizarReservaMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceReservaMedicamentoSoap" type="tns:WebServiceReservaMedicamentoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaReservaMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/insertaReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarReservaMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/retornarReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionReservaMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarReservaMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/buscarReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdReservaMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarReservaMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/eliminarReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarReservaMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/actualizarReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceReservaMedicamentoSoap12" type="tns:WebServiceReservaMedicamentoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaReservaMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/insertaReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarReservaMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/retornarReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionReservaMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarReservaMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdReservaMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarReservaMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarReservaMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarReservaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceReservaMedicamento">
+    <wsdl:port name="WebServiceReservaMedicamentoSoap" binding="tns:WebServiceReservaMedicamentoSoap">
+      <soap:address location="http://localhost:16853/WebServiceReservaMedicamento.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceReservaMedicamentoSoap12" binding="tns:WebServiceReservaMedicamentoSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceReservaMedicamento.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

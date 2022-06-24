@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaDetalleRecetaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalle_receta" type="tns:DetalleReceta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DetalleReceta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_detalle_receta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Paciente_rut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Formulario_medicamento_id_formulario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Medicamento_codigo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaDetalleRecetaServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarDetalleRecetaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_receta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarDetalleRecetaServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarDetalleRecetaServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionDetalleRecetaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_receta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionDetalleRecetaServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionDetalleRecetaServiceResult" type="tns:DetalleReceta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDetalleRecetaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_receta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDetalleRecetaServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarDetalleRecetaServiceResult" type="tns:DetalleReceta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdDetalleRecetaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_receta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdDetalleRecetaServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdDetalleRecetaServiceResult" type="tns:DetalleReceta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDetalleRecetaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_receta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDetalleRecetaServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarDetalleRecetaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalle_receta" type="tns:DetalleReceta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarDetalleRecetaServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaDetalleRecetaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaDetalleRecetaService" />
+  </wsdl:message>
+  <wsdl:message name="insertaDetalleRecetaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaDetalleRecetaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarDetalleRecetaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarDetalleRecetaService" />
+  </wsdl:message>
+  <wsdl:message name="retornarDetalleRecetaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarDetalleRecetaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionDetalleRecetaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionDetalleRecetaService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionDetalleRecetaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionDetalleRecetaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarDetalleRecetaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarDetalleRecetaService" />
+  </wsdl:message>
+  <wsdl:message name="buscarDetalleRecetaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarDetalleRecetaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdDetalleRecetaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdDetalleRecetaService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdDetalleRecetaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdDetalleRecetaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDetalleRecetaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarDetalleRecetaService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDetalleRecetaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarDetalleRecetaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarDetalleRecetaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarDetalleRecetaService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarDetalleRecetaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarDetalleRecetaServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceDetalleRecetaSoap">
+    <wsdl:operation name="insertaDetalleRecetaService">
+      <wsdl:input message="tns:insertaDetalleRecetaServiceSoapIn" />
+      <wsdl:output message="tns:insertaDetalleRecetaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleRecetaService">
+      <wsdl:input message="tns:retornarDetalleRecetaServiceSoapIn" />
+      <wsdl:output message="tns:retornarDetalleRecetaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleRecetaService">
+      <wsdl:input message="tns:retornaPosicionDetalleRecetaServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionDetalleRecetaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleRecetaService">
+      <wsdl:input message="tns:buscarDetalleRecetaServiceSoapIn" />
+      <wsdl:output message="tns:buscarDetalleRecetaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleRecetaService">
+      <wsdl:input message="tns:buscarIdDetalleRecetaServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdDetalleRecetaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleRecetaService">
+      <wsdl:input message="tns:eliminarDetalleRecetaServiceSoapIn" />
+      <wsdl:output message="tns:eliminarDetalleRecetaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleRecetaService">
+      <wsdl:input message="tns:actualizarDetalleRecetaServiceSoapIn" />
+      <wsdl:output message="tns:actualizarDetalleRecetaServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceDetalleRecetaSoap" type="tns:WebServiceDetalleRecetaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaDetalleRecetaService">
+      <soap:operation soapAction="http://tempuri.org/insertaDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleRecetaService">
+      <soap:operation soapAction="http://tempuri.org/retornarDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleRecetaService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleRecetaService">
+      <soap:operation soapAction="http://tempuri.org/buscarDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleRecetaService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleRecetaService">
+      <soap:operation soapAction="http://tempuri.org/eliminarDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleRecetaService">
+      <soap:operation soapAction="http://tempuri.org/actualizarDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceDetalleRecetaSoap12" type="tns:WebServiceDetalleRecetaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaDetalleRecetaService">
+      <soap12:operation soapAction="http://tempuri.org/insertaDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleRecetaService">
+      <soap12:operation soapAction="http://tempuri.org/retornarDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleRecetaService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleRecetaService">
+      <soap12:operation soapAction="http://tempuri.org/buscarDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleRecetaService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleRecetaService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleRecetaService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarDetalleRecetaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceDetalleReceta">
+    <wsdl:port name="WebServiceDetalleRecetaSoap" binding="tns:WebServiceDetalleRecetaSoap">
+      <soap:address location="http://localhost:16853/WebServiceDetalleReceta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceDetalleRecetaSoap12" binding="tns:WebServiceDetalleRecetaSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceDetalleReceta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

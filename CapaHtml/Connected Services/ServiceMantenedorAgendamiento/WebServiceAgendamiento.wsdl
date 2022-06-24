@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaAgendamientoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agendamiento" type="tns:Agendamiento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Agendamiento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_agendamiento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Horario" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Paciente_rut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Medico_rut_medico" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaAgendamientoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarAgendamientoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_agendamiento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarAgendamientoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarAgendamientoServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionAgendamientoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_agendamiento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionAgendamientoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionAgendamientoServiceResult" type="tns:Agendamiento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarAgendamientoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_agendamiento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarAgendamientoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarAgendamientoServiceResult" type="tns:Agendamiento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdAgendamientoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_agendamiento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdAgendamientoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdAgendamientoServiceResult" type="tns:Agendamiento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarAgendamientoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_agendamiento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarAgendamientoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarAgendamientoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agendamiento" type="tns:Agendamiento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarAgendamientoServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaAgendamientoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaAgendamientoService" />
+  </wsdl:message>
+  <wsdl:message name="insertaAgendamientoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaAgendamientoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarAgendamientoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarAgendamientoService" />
+  </wsdl:message>
+  <wsdl:message name="retornarAgendamientoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarAgendamientoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionAgendamientoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionAgendamientoService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionAgendamientoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionAgendamientoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarAgendamientoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarAgendamientoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarAgendamientoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarAgendamientoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdAgendamientoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdAgendamientoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdAgendamientoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdAgendamientoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarAgendamientoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarAgendamientoService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarAgendamientoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarAgendamientoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarAgendamientoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarAgendamientoService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarAgendamientoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarAgendamientoServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceAgendamientoSoap">
+    <wsdl:operation name="insertaAgendamientoService">
+      <wsdl:input message="tns:insertaAgendamientoServiceSoapIn" />
+      <wsdl:output message="tns:insertaAgendamientoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarAgendamientoService">
+      <wsdl:input message="tns:retornarAgendamientoServiceSoapIn" />
+      <wsdl:output message="tns:retornarAgendamientoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionAgendamientoService">
+      <wsdl:input message="tns:retornaPosicionAgendamientoServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionAgendamientoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarAgendamientoService">
+      <wsdl:input message="tns:buscarAgendamientoServiceSoapIn" />
+      <wsdl:output message="tns:buscarAgendamientoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdAgendamientoService">
+      <wsdl:input message="tns:buscarIdAgendamientoServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdAgendamientoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAgendamientoService">
+      <wsdl:input message="tns:eliminarAgendamientoServiceSoapIn" />
+      <wsdl:output message="tns:eliminarAgendamientoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarAgendamientoService">
+      <wsdl:input message="tns:actualizarAgendamientoServiceSoapIn" />
+      <wsdl:output message="tns:actualizarAgendamientoServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceAgendamientoSoap" type="tns:WebServiceAgendamientoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaAgendamientoService">
+      <soap:operation soapAction="http://tempuri.org/insertaAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarAgendamientoService">
+      <soap:operation soapAction="http://tempuri.org/retornarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionAgendamientoService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarAgendamientoService">
+      <soap:operation soapAction="http://tempuri.org/buscarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdAgendamientoService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAgendamientoService">
+      <soap:operation soapAction="http://tempuri.org/eliminarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarAgendamientoService">
+      <soap:operation soapAction="http://tempuri.org/actualizarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceAgendamientoSoap12" type="tns:WebServiceAgendamientoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaAgendamientoService">
+      <soap12:operation soapAction="http://tempuri.org/insertaAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarAgendamientoService">
+      <soap12:operation soapAction="http://tempuri.org/retornarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionAgendamientoService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarAgendamientoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdAgendamientoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarAgendamientoService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarAgendamientoService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceAgendamiento">
+    <wsdl:port name="WebServiceAgendamientoSoap" binding="tns:WebServiceAgendamientoSoap">
+      <soap:address location="http://localhost:16853/WebServiceAgendamiento.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceAgendamientoSoap12" binding="tns:WebServiceAgendamientoSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceAgendamiento.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

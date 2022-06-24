@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaFarmaceuticoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auxFarmaceutico" type="tns:Farmaceutico" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Farmaceutico">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_farmaceuta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_farmaceuta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Farmacia_id_farmacia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaFarmaceuticoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarFarmaceuticoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarFarmaceuticoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarFarmaceuticoServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionFarmaceuticoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionFarmaceuticoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionFarmaceuticoServiceResult" type="tns:Farmaceutico" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFarmaceuticoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFarmaceuticoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarFarmaceuticoServiceResult" type="tns:Farmaceutico" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdFarmaceuticoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdFarmaceuticoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdFarmaceuticoServiceResult" type="tns:Farmaceutico" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFarmaciaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_farmacia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFarmaciaServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarCiudadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="farmacia" type="tns:Farmacia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Farmacia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_farmacia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_farmacia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="actualizarCiudadServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaFarmaceuticoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaFarmaceuticoService" />
+  </wsdl:message>
+  <wsdl:message name="insertaFarmaceuticoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaFarmaceuticoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarFarmaceuticoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarFarmaceuticoService" />
+  </wsdl:message>
+  <wsdl:message name="retornarFarmaceuticoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarFarmaceuticoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionFarmaceuticoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionFarmaceuticoService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionFarmaceuticoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionFarmaceuticoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarFarmaceuticoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarFarmaceuticoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarFarmaceuticoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarFarmaceuticoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdFarmaceuticoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdFarmaceuticoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdFarmaceuticoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdFarmaceuticoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFarmaciaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarFarmaciaService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFarmaciaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarFarmaciaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarCiudadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarCiudadService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarCiudadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarCiudadServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceFarmaceuticoSoap">
+    <wsdl:operation name="insertaFarmaceuticoService">
+      <wsdl:input message="tns:insertaFarmaceuticoServiceSoapIn" />
+      <wsdl:output message="tns:insertaFarmaceuticoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarFarmaceuticoService">
+      <wsdl:input message="tns:retornarFarmaceuticoServiceSoapIn" />
+      <wsdl:output message="tns:retornarFarmaceuticoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFarmaceuticoService">
+      <wsdl:input message="tns:retornaPosicionFarmaceuticoServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionFarmaceuticoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarFarmaceuticoService">
+      <wsdl:input message="tns:buscarFarmaceuticoServiceSoapIn" />
+      <wsdl:output message="tns:buscarFarmaceuticoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFarmaceuticoService">
+      <wsdl:input message="tns:buscarIdFarmaceuticoServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdFarmaceuticoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFarmaciaService">
+      <wsdl:input message="tns:eliminarFarmaciaServiceSoapIn" />
+      <wsdl:output message="tns:eliminarFarmaciaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCiudadService">
+      <wsdl:input message="tns:actualizarCiudadServiceSoapIn" />
+      <wsdl:output message="tns:actualizarCiudadServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceFarmaceuticoSoap" type="tns:WebServiceFarmaceuticoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaFarmaceuticoService">
+      <soap:operation soapAction="http://tempuri.org/insertaFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarFarmaceuticoService">
+      <soap:operation soapAction="http://tempuri.org/retornarFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFarmaceuticoService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFarmaceuticoService">
+      <soap:operation soapAction="http://tempuri.org/buscarFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFarmaceuticoService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFarmaciaService">
+      <soap:operation soapAction="http://tempuri.org/eliminarFarmaciaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCiudadService">
+      <soap:operation soapAction="http://tempuri.org/actualizarCiudadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceFarmaceuticoSoap12" type="tns:WebServiceFarmaceuticoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaFarmaceuticoService">
+      <soap12:operation soapAction="http://tempuri.org/insertaFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarFarmaceuticoService">
+      <soap12:operation soapAction="http://tempuri.org/retornarFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFarmaceuticoService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFarmaceuticoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFarmaceuticoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdFarmaceuticoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFarmaciaService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarFarmaciaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCiudadService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarCiudadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceFarmaceutico">
+    <wsdl:port name="WebServiceFarmaceuticoSoap" binding="tns:WebServiceFarmaceuticoSoap">
+      <soap:address location="http://localhost:16853/WebServiceFarmaceutico.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceFarmaceuticoSoap12" binding="tns:WebServiceFarmaceuticoSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceFarmaceutico.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

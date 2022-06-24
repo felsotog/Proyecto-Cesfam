@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaFichaPacienteService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ficha_paciente" type="tns:FichaPaciente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FichaPaciente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_ficha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_ficha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Medico_rut_medico" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaFichaPacienteServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarFichaPacienteService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarFichaPacienteServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarFichaPacienteServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionFichaPacienteService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionFichaPacienteServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionFichaPacienteServiceResult" type="tns:FichaPaciente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFichaPacienteService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFichaPacienteServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarFichaPacienteServiceResult" type="tns:FichaPaciente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdFichaPacienteService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdFichaPacienteServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdFichaPacienteServiceResult" type="tns:FichaPaciente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFichaPacienteService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFichaPacienteServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarFichaPacienteService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ficha_paciente" type="tns:FichaPaciente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarFichaPacienteServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaFichaPacienteServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaFichaPacienteService" />
+  </wsdl:message>
+  <wsdl:message name="insertaFichaPacienteServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaFichaPacienteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarFichaPacienteServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarFichaPacienteService" />
+  </wsdl:message>
+  <wsdl:message name="retornarFichaPacienteServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarFichaPacienteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionFichaPacienteServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionFichaPacienteService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionFichaPacienteServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionFichaPacienteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarFichaPacienteServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarFichaPacienteService" />
+  </wsdl:message>
+  <wsdl:message name="buscarFichaPacienteServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarFichaPacienteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdFichaPacienteServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdFichaPacienteService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdFichaPacienteServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdFichaPacienteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFichaPacienteServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarFichaPacienteService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFichaPacienteServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarFichaPacienteServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarFichaPacienteServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarFichaPacienteService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarFichaPacienteServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarFichaPacienteServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceFichaPacienteSoap">
+    <wsdl:operation name="insertaFichaPacienteService">
+      <wsdl:input message="tns:insertaFichaPacienteServiceSoapIn" />
+      <wsdl:output message="tns:insertaFichaPacienteServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarFichaPacienteService">
+      <wsdl:input message="tns:retornarFichaPacienteServiceSoapIn" />
+      <wsdl:output message="tns:retornarFichaPacienteServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFichaPacienteService">
+      <wsdl:input message="tns:retornaPosicionFichaPacienteServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionFichaPacienteServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarFichaPacienteService">
+      <wsdl:input message="tns:buscarFichaPacienteServiceSoapIn" />
+      <wsdl:output message="tns:buscarFichaPacienteServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFichaPacienteService">
+      <wsdl:input message="tns:buscarIdFichaPacienteServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdFichaPacienteServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFichaPacienteService">
+      <wsdl:input message="tns:eliminarFichaPacienteServiceSoapIn" />
+      <wsdl:output message="tns:eliminarFichaPacienteServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarFichaPacienteService">
+      <wsdl:input message="tns:actualizarFichaPacienteServiceSoapIn" />
+      <wsdl:output message="tns:actualizarFichaPacienteServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceFichaPacienteSoap" type="tns:WebServiceFichaPacienteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaFichaPacienteService">
+      <soap:operation soapAction="http://tempuri.org/insertaFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarFichaPacienteService">
+      <soap:operation soapAction="http://tempuri.org/retornarFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFichaPacienteService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFichaPacienteService">
+      <soap:operation soapAction="http://tempuri.org/buscarFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFichaPacienteService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFichaPacienteService">
+      <soap:operation soapAction="http://tempuri.org/eliminarFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarFichaPacienteService">
+      <soap:operation soapAction="http://tempuri.org/actualizarFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceFichaPacienteSoap12" type="tns:WebServiceFichaPacienteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaFichaPacienteService">
+      <soap12:operation soapAction="http://tempuri.org/insertaFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarFichaPacienteService">
+      <soap12:operation soapAction="http://tempuri.org/retornarFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFichaPacienteService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFichaPacienteService">
+      <soap12:operation soapAction="http://tempuri.org/buscarFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFichaPacienteService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFichaPacienteService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarFichaPacienteService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarFichaPacienteService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceFichaPaciente">
+    <wsdl:port name="WebServiceFichaPacienteSoap" binding="tns:WebServiceFichaPacienteSoap">
+      <soap:address location="http://localhost:16853/WebServiceFichaPaciente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceFichaPacienteSoap12" binding="tns:WebServiceFichaPacienteSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceFichaPaciente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

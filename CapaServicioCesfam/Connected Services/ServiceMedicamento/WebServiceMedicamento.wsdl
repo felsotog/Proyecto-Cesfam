@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auxMedicamento" type="tns:Medicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Medicamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_medicamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_medicamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo_medicamento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_fabricacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_vencimiento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_medicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarMedicamentoServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_medicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionMedicamentoServiceResult" type="tns:Medicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_medicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarMedicamentoServiceResult" type="tns:Medicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_medicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdMedicamentoServiceResult" type="tns:Medicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_medicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="medicamento" type="tns:Medicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="insertaMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="retornarMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceMedicamentoSoap">
+    <wsdl:operation name="insertaMedicamentoService">
+      <wsdl:input message="tns:insertaMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:insertaMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarMedicamentoService">
+      <wsdl:input message="tns:retornarMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:retornarMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionMedicamentoService">
+      <wsdl:input message="tns:retornaPosicionMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarMedicamentoService">
+      <wsdl:input message="tns:buscarMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:buscarMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdMedicamentoService">
+      <wsdl:input message="tns:buscarIdMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarMedicamentoService">
+      <wsdl:input message="tns:eliminarMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:eliminarMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarMedicamentoService">
+      <wsdl:input message="tns:actualizarMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:actualizarMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceMedicamentoSoap" type="tns:WebServiceMedicamentoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/insertaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/retornarMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/buscarMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/eliminarMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/actualizarMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceMedicamentoSoap12" type="tns:WebServiceMedicamentoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/insertaMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/retornarMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceMedicamento">
+    <wsdl:port name="WebServiceMedicamentoSoap" binding="tns:WebServiceMedicamentoSoap">
+      <soap:address location="http://localhost:16853/WebServiceMedicamento.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceMedicamentoSoap12" binding="tns:WebServiceMedicamentoSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceMedicamento.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

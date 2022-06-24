@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FFA4402-DE95-47F6-9E4D-056D82986DE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaNegocioCesfam</RootNamespace>
+    <AssemblyName>CapaNegocioCesfam</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NegocioAgendamiento.cs" />
+    <Compile Include="NegocioCaducarMedicamento.cs" />
+    <Compile Include="NegocioDetalleCaducidad.cs" />
+    <Compile Include="NegocioDetalleFicha.cs" />
+    <Compile Include="NegocioDetalleIngreso.cs" />
+    <Compile Include="NegocioDetalleReceta.cs" />
+    <Compile Include="NegocioDetalleSalida.cs" />
+    <Compile Include="NegocioFarmaceutico.cs" />
+    <Compile Include="NegocioFarmacia.cs" />
+    <Compile Include="NegocioFichaPaciente.cs" />
+    <Compile Include="NegocioFormularioMedicamento.cs" />
+    <Compile Include="NegocioIngresoMedicamento.cs" />
+    <Compile Include="NegocioMedicamento.cs" />
+    <Compile Include="NegocioMedico.cs" />
+    <Compile Include="NegocioPaciente.cs" />
+    <Compile Include="NegocioReservaMedicamento.cs" />
+    <Compile Include="NegocioSalidMedicamento.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaConexionCesfam\CapaConexionCesfam.csproj">
+      <Project>{d0b75d83-88a9-4f1d-9aca-a327e4e8be9f}</Project>
+      <Name>CapaConexionCesfam</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaDTOCesfam\CapaDTOCesfam.csproj">
+      <Project>{e91dbf86-d3c0-46bf-ba2e-806c9c2eede7}</Project>
+      <Name>CapaDTOCesfam</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

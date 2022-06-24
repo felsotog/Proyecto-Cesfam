@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertarPersonalService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="personal" type="tns:PersonalCesfam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonalCesfam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_personal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_completo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cargo1" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Telefono" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertarPersonalServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarPersonalService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_personal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarPersonalServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarPersonalServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionPersonalService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_personal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionPersonalServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionPersonalServiceResult" type="tns:PersonalCesfam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPersonalService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_personal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPersonalServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPersonalServiceResult" type="tns:PersonalCesfam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdPersonalService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_personal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdPersonalServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdPersonalServiceResult" type="tns:PersonalCesfam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarPersonalService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_personal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarPersonalServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarPersonalService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="personal" type="tns:PersonalCesfam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarPersonalServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertarPersonalServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertarPersonalService" />
+  </wsdl:message>
+  <wsdl:message name="insertarPersonalServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertarPersonalServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarPersonalServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarPersonalService" />
+  </wsdl:message>
+  <wsdl:message name="retornarPersonalServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarPersonalServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionPersonalServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionPersonalService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionPersonalServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionPersonalServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPersonalServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPersonalService" />
+  </wsdl:message>
+  <wsdl:message name="buscarPersonalServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPersonalServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdPersonalServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdPersonalService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdPersonalServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdPersonalServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarPersonalServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarPersonalService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarPersonalServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarPersonalServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarPersonalServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarPersonalService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarPersonalServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarPersonalServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServicePersonalCesfamSoap">
+    <wsdl:operation name="insertarPersonalService">
+      <wsdl:input message="tns:insertarPersonalServiceSoapIn" />
+      <wsdl:output message="tns:insertarPersonalServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarPersonalService">
+      <wsdl:input message="tns:retornarPersonalServiceSoapIn" />
+      <wsdl:output message="tns:retornarPersonalServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionPersonalService">
+      <wsdl:input message="tns:retornaPosicionPersonalServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionPersonalServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPersonalService">
+      <wsdl:input message="tns:buscarPersonalServiceSoapIn" />
+      <wsdl:output message="tns:buscarPersonalServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdPersonalService">
+      <wsdl:input message="tns:buscarIdPersonalServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdPersonalServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPersonalService">
+      <wsdl:input message="tns:eliminarPersonalServiceSoapIn" />
+      <wsdl:output message="tns:eliminarPersonalServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarPersonalService">
+      <wsdl:input message="tns:actualizarPersonalServiceSoapIn" />
+      <wsdl:output message="tns:actualizarPersonalServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServicePersonalCesfamSoap" type="tns:WebServicePersonalCesfamSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertarPersonalService">
+      <soap:operation soapAction="http://tempuri.org/insertarPersonalService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarPersonalService">
+      <soap:operation soapAction="http://tempuri.org/retornarPersonalService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionPersonalService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionPersonalService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPersonalService">
+      <soap:operation soapAction="http://tempuri.org/buscarPersonalService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdPersonalService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdPersonalService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPersonalService">
+      <soap:operation soapAction="http://tempuri.org/eliminarPersonalService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarPersonalService">
+      <soap:operation soapAction="http://tempuri.org/actualizarPersonalService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServicePersonalCesfamSoap12" type="tns:WebServicePersonalCesfamSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertarPersonalService">
+      <soap12:operation soapAction="http://tempuri.org/insertarPersonalService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarPersonalService">
+      <soap12:operation soapAction="http://tempuri.org/retornarPersonalService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionPersonalService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionPersonalService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPersonalService">
+      <soap12:operation soapAction="http://tempuri.org/buscarPersonalService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdPersonalService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdPersonalService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPersonalService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarPersonalService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarPersonalService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarPersonalService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServicePersonalCesfam">
+    <wsdl:port name="WebServicePersonalCesfamSoap" binding="tns:WebServicePersonalCesfamSoap">
+      <soap:address location="http://localhost:16853/WebServicePersonalCesfam.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServicePersonalCesfamSoap12" binding="tns:WebServicePersonalCesfamSoap12">
+      <soap12:address location="http://localhost:16853/WebServicePersonalCesfam.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

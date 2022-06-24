@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertarCiudadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="auxCiudad" type="tns:Ciudad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Ciudad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_ciudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_ciudad" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertarCiudadServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarCiudadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarCiudadServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarCiudadServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionCiudadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionCiudadServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionCiudadServiceResult" type="tns:Ciudad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarCiudadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarCiudadServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarCiudadServiceResult" type="tns:Ciudad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdCiudadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdCiudadServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdCiudadServiceResult" type="tns:Ciudad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarCiudadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarCiudadServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarCiudadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="tns:Ciudad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarCiudadServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertarCiudadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertarCiudadService" />
+  </wsdl:message>
+  <wsdl:message name="insertarCiudadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertarCiudadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarCiudadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarCiudadService" />
+  </wsdl:message>
+  <wsdl:message name="retornarCiudadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarCiudadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionCiudadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionCiudadService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionCiudadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionCiudadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarCiudadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarCiudadService" />
+  </wsdl:message>
+  <wsdl:message name="buscarCiudadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarCiudadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdCiudadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdCiudadService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdCiudadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdCiudadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarCiudadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarCiudadService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarCiudadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarCiudadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarCiudadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarCiudadService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarCiudadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarCiudadServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceCiudadSoap">
+    <wsdl:operation name="insertarCiudadService">
+      <wsdl:input message="tns:insertarCiudadServiceSoapIn" />
+      <wsdl:output message="tns:insertarCiudadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarCiudadService">
+      <wsdl:input message="tns:retornarCiudadServiceSoapIn" />
+      <wsdl:output message="tns:retornarCiudadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionCiudadService">
+      <wsdl:input message="tns:retornaPosicionCiudadServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionCiudadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarCiudadService">
+      <wsdl:input message="tns:buscarCiudadServiceSoapIn" />
+      <wsdl:output message="tns:buscarCiudadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdCiudadService">
+      <wsdl:input message="tns:buscarIdCiudadServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdCiudadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCiudadService">
+      <wsdl:input message="tns:eliminarCiudadServiceSoapIn" />
+      <wsdl:output message="tns:eliminarCiudadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCiudadService">
+      <wsdl:input message="tns:actualizarCiudadServiceSoapIn" />
+      <wsdl:output message="tns:actualizarCiudadServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceCiudadSoap" type="tns:WebServiceCiudadSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertarCiudadService">
+      <soap:operation soapAction="http://tempuri.org/insertarCiudadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarCiudadService">
+      <soap:operation soapAction="http://tempuri.org/retornarCiudadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionCiudadService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionCiudadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCiudadService">
+      <soap:operation soapAction="http://tempuri.org/buscarCiudadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdCiudadService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdCiudadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCiudadService">
+      <soap:operation soapAction="http://tempuri.org/eliminarCiudadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCiudadService">
+      <soap:operation soapAction="http://tempuri.org/actualizarCiudadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceCiudadSoap12" type="tns:WebServiceCiudadSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertarCiudadService">
+      <soap12:operation soapAction="http://tempuri.org/insertarCiudadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarCiudadService">
+      <soap12:operation soapAction="http://tempuri.org/retornarCiudadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionCiudadService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionCiudadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCiudadService">
+      <soap12:operation soapAction="http://tempuri.org/buscarCiudadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdCiudadService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdCiudadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCiudadService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarCiudadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarCiudadService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarCiudadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceCiudad">
+    <wsdl:port name="WebServiceCiudadSoap" binding="tns:WebServiceCiudadSoap">
+      <soap:address location="http://localhost:16853/WebServiceCiudad.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceCiudadSoap12" binding="tns:WebServiceCiudadSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceCiudad.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

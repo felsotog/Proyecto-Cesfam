@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaFormularioMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formulariomedicamento" type="tns:FormularioMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FormularioMedicamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_formulario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_receta" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Medico_rut_medico" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaFormularioMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarFormularioMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_formulario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarFormularioMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarFormularioMedicamentoServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionFormularioMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_formulario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionFormularioMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionFormularioMedicamentoServiceResult" type="tns:FormularioMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFormularioMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_formulario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFormularioMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarFormularioMedicamentoServiceResult" type="tns:FormularioMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdFormularioMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_formulario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdFormularioMedicamentoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdFormularioMedicamentoServiceResult" type="tns:FormularioMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFormularioMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_formulario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFormularioMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarFormularioMedicamentoService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formulariomedicamento" type="tns:FormularioMedicamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarFormularioMedicamentoServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaFormularioMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaFormularioMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="insertaFormularioMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaFormularioMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarFormularioMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarFormularioMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="retornarFormularioMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarFormularioMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionFormularioMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionFormularioMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionFormularioMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionFormularioMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarFormularioMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarFormularioMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarFormularioMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarFormularioMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdFormularioMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdFormularioMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdFormularioMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdFormularioMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFormularioMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarFormularioMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFormularioMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarFormularioMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarFormularioMedicamentoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarFormularioMedicamentoService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarFormularioMedicamentoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarFormularioMedicamentoServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceFormularioMedicamentoSoap">
+    <wsdl:operation name="insertaFormularioMedicamentoService">
+      <wsdl:input message="tns:insertaFormularioMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:insertaFormularioMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarFormularioMedicamentoService">
+      <wsdl:input message="tns:retornarFormularioMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:retornarFormularioMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFormularioMedicamentoService">
+      <wsdl:input message="tns:retornaPosicionFormularioMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionFormularioMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarFormularioMedicamentoService">
+      <wsdl:input message="tns:buscarFormularioMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:buscarFormularioMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFormularioMedicamentoService">
+      <wsdl:input message="tns:buscarIdFormularioMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdFormularioMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFormularioMedicamentoService">
+      <wsdl:input message="tns:eliminarFormularioMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:eliminarFormularioMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarFormularioMedicamentoService">
+      <wsdl:input message="tns:actualizarFormularioMedicamentoServiceSoapIn" />
+      <wsdl:output message="tns:actualizarFormularioMedicamentoServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceFormularioMedicamentoSoap" type="tns:WebServiceFormularioMedicamentoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaFormularioMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/insertaFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarFormularioMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/retornarFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFormularioMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFormularioMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/buscarFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFormularioMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFormularioMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/eliminarFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarFormularioMedicamentoService">
+      <soap:operation soapAction="http://tempuri.org/actualizarFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceFormularioMedicamentoSoap12" type="tns:WebServiceFormularioMedicamentoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaFormularioMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/insertaFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarFormularioMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/retornarFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionFormularioMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFormularioMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdFormularioMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFormularioMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarFormularioMedicamentoService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarFormularioMedicamentoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceFormularioMedicamento">
+    <wsdl:port name="WebServiceFormularioMedicamentoSoap" binding="tns:WebServiceFormularioMedicamentoSoap">
+      <soap:address location="http://localhost:16853/WebServiceFormularioMedicamento.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceFormularioMedicamentoSoap12" binding="tns:WebServiceFormularioMedicamentoSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceFormularioMedicamento.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

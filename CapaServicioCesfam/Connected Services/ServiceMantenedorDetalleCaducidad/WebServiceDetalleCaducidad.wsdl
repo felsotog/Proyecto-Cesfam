@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaDetalleCaducidadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detallecaducidad" type="tns:DetalleCaducidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DetalleCaducidad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_detalle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad_caducada" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Motivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Medicamento_codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caducar_medicamento_id_caducidad" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaDetalleCaducidadServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarDetalleCaducidadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarDetalleCaducidadServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarDetalleCaducidadServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionDetalleCaducidadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionDetalleCaducidadServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionDetalleCaducidadServiceResult" type="tns:DetalleCaducidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDetalleCaducidadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDetalleCaducidadServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarDetalleCaducidadServiceResult" type="tns:DetalleCaducidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdDetalleCaducidadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdDetalleCaducidadServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdDetalleCaducidadServiceResult" type="tns:DetalleCaducidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDetalleCaducidadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDetalleCaducidadServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarDetalleCaducidadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detallecaducidad" type="tns:DetalleCaducidad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarDetalleCaducidadServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaDetalleCaducidadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaDetalleCaducidadService" />
+  </wsdl:message>
+  <wsdl:message name="insertaDetalleCaducidadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaDetalleCaducidadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarDetalleCaducidadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarDetalleCaducidadService" />
+  </wsdl:message>
+  <wsdl:message name="retornarDetalleCaducidadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarDetalleCaducidadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionDetalleCaducidadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionDetalleCaducidadService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionDetalleCaducidadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionDetalleCaducidadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarDetalleCaducidadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarDetalleCaducidadService" />
+  </wsdl:message>
+  <wsdl:message name="buscarDetalleCaducidadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarDetalleCaducidadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdDetalleCaducidadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdDetalleCaducidadService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdDetalleCaducidadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdDetalleCaducidadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDetalleCaducidadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarDetalleCaducidadService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDetalleCaducidadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarDetalleCaducidadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarDetalleCaducidadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarDetalleCaducidadService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarDetalleCaducidadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarDetalleCaducidadServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1DetalleCaducidadSoap">
+    <wsdl:operation name="insertaDetalleCaducidadService">
+      <wsdl:input message="tns:insertaDetalleCaducidadServiceSoapIn" />
+      <wsdl:output message="tns:insertaDetalleCaducidadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleCaducidadService">
+      <wsdl:input message="tns:retornarDetalleCaducidadServiceSoapIn" />
+      <wsdl:output message="tns:retornarDetalleCaducidadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleCaducidadService">
+      <wsdl:input message="tns:retornaPosicionDetalleCaducidadServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionDetalleCaducidadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleCaducidadService">
+      <wsdl:input message="tns:buscarDetalleCaducidadServiceSoapIn" />
+      <wsdl:output message="tns:buscarDetalleCaducidadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleCaducidadService">
+      <wsdl:input message="tns:buscarIdDetalleCaducidadServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdDetalleCaducidadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleCaducidadService">
+      <wsdl:input message="tns:eliminarDetalleCaducidadServiceSoapIn" />
+      <wsdl:output message="tns:eliminarDetalleCaducidadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleCaducidadService">
+      <wsdl:input message="tns:actualizarDetalleCaducidadServiceSoapIn" />
+      <wsdl:output message="tns:actualizarDetalleCaducidadServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1DetalleCaducidadSoap" type="tns:WebService1DetalleCaducidadSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaDetalleCaducidadService">
+      <soap:operation soapAction="http://tempuri.org/insertaDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleCaducidadService">
+      <soap:operation soapAction="http://tempuri.org/retornarDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleCaducidadService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleCaducidadService">
+      <soap:operation soapAction="http://tempuri.org/buscarDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleCaducidadService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleCaducidadService">
+      <soap:operation soapAction="http://tempuri.org/eliminarDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleCaducidadService">
+      <soap:operation soapAction="http://tempuri.org/actualizarDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1DetalleCaducidadSoap12" type="tns:WebService1DetalleCaducidadSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaDetalleCaducidadService">
+      <soap12:operation soapAction="http://tempuri.org/insertaDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleCaducidadService">
+      <soap12:operation soapAction="http://tempuri.org/retornarDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleCaducidadService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleCaducidadService">
+      <soap12:operation soapAction="http://tempuri.org/buscarDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleCaducidadService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleCaducidadService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleCaducidadService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarDetalleCaducidadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1DetalleCaducidad">
+    <wsdl:port name="WebService1DetalleCaducidadSoap" binding="tns:WebService1DetalleCaducidadSoap">
+      <soap:address location="http://localhost:16853/WebServiceDetalleCaducidad.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1DetalleCaducidadSoap12" binding="tns:WebService1DetalleCaducidadSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceDetalleCaducidad.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

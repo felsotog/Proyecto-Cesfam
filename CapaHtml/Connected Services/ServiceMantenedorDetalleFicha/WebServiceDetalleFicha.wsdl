@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertaDetalleFichadService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalleficha" type="tns:DetalleFicha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DetalleFicha">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id_detalle_ficha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ficha_paciente_id_ficha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Formulario_medicamento_id_formulario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insertaDetalleFichadServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarDetalleFichaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornarDetalleFichaServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarDetalleFichaServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionDetalleFichaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retornaPosicionDetalleFichaServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornaPosicionDetalleFichaServiceResult" type="tns:DetalleFicha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDetalleFichaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDetalleFichaServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarDetalleFichaServiceResult" type="tns:DetalleFicha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdDetalleFichaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarIdDetalleFichaServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarIdDetalleFichaServiceResult" type="tns:DetalleFicha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDetalleFichaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_detalle_ficha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDetalleFichaServiceResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="actualizarDetalleFichaService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalleficha" type="tns:DetalleFicha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizarDetalleFichaServiceResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertaDetalleFichadServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:insertaDetalleFichadService" />
+  </wsdl:message>
+  <wsdl:message name="insertaDetalleFichadServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:insertaDetalleFichadServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornarDetalleFichaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarDetalleFichaService" />
+  </wsdl:message>
+  <wsdl:message name="retornarDetalleFichaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarDetalleFichaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionDetalleFichaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornaPosicionDetalleFichaService" />
+  </wsdl:message>
+  <wsdl:message name="retornaPosicionDetalleFichaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornaPosicionDetalleFichaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarDetalleFichaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarDetalleFichaService" />
+  </wsdl:message>
+  <wsdl:message name="buscarDetalleFichaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarDetalleFichaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdDetalleFichaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarIdDetalleFichaService" />
+  </wsdl:message>
+  <wsdl:message name="buscarIdDetalleFichaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarIdDetalleFichaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDetalleFichaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarDetalleFichaService" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDetalleFichaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarDetalleFichaServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarDetalleFichaServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizarDetalleFichaService" />
+  </wsdl:message>
+  <wsdl:message name="actualizarDetalleFichaServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizarDetalleFichaServiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1DetalleFichaSoap">
+    <wsdl:operation name="insertaDetalleFichadService">
+      <wsdl:input message="tns:insertaDetalleFichadServiceSoapIn" />
+      <wsdl:output message="tns:insertaDetalleFichadServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleFichaService">
+      <wsdl:input message="tns:retornarDetalleFichaServiceSoapIn" />
+      <wsdl:output message="tns:retornarDetalleFichaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleFichaService">
+      <wsdl:input message="tns:retornaPosicionDetalleFichaServiceSoapIn" />
+      <wsdl:output message="tns:retornaPosicionDetalleFichaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleFichaService">
+      <wsdl:input message="tns:buscarDetalleFichaServiceSoapIn" />
+      <wsdl:output message="tns:buscarDetalleFichaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleFichaService">
+      <wsdl:input message="tns:buscarIdDetalleFichaServiceSoapIn" />
+      <wsdl:output message="tns:buscarIdDetalleFichaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleFichaService">
+      <wsdl:input message="tns:eliminarDetalleFichaServiceSoapIn" />
+      <wsdl:output message="tns:eliminarDetalleFichaServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleFichaService">
+      <wsdl:input message="tns:actualizarDetalleFichaServiceSoapIn" />
+      <wsdl:output message="tns:actualizarDetalleFichaServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1DetalleFichaSoap" type="tns:WebService1DetalleFichaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaDetalleFichadService">
+      <soap:operation soapAction="http://tempuri.org/insertaDetalleFichadService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleFichaService">
+      <soap:operation soapAction="http://tempuri.org/retornarDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleFichaService">
+      <soap:operation soapAction="http://tempuri.org/retornaPosicionDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleFichaService">
+      <soap:operation soapAction="http://tempuri.org/buscarDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleFichaService">
+      <soap:operation soapAction="http://tempuri.org/buscarIdDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleFichaService">
+      <soap:operation soapAction="http://tempuri.org/eliminarDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleFichaService">
+      <soap:operation soapAction="http://tempuri.org/actualizarDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1DetalleFichaSoap12" type="tns:WebService1DetalleFichaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertaDetalleFichadService">
+      <soap12:operation soapAction="http://tempuri.org/insertaDetalleFichadService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarDetalleFichaService">
+      <soap12:operation soapAction="http://tempuri.org/retornarDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornaPosicionDetalleFichaService">
+      <soap12:operation soapAction="http://tempuri.org/retornaPosicionDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDetalleFichaService">
+      <soap12:operation soapAction="http://tempuri.org/buscarDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarIdDetalleFichaService">
+      <soap12:operation soapAction="http://tempuri.org/buscarIdDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDetalleFichaService">
+      <soap12:operation soapAction="http://tempuri.org/eliminarDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarDetalleFichaService">
+      <soap12:operation soapAction="http://tempuri.org/actualizarDetalleFichaService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1DetalleFicha">
+    <wsdl:port name="WebService1DetalleFichaSoap" binding="tns:WebService1DetalleFichaSoap">
+      <soap:address location="http://localhost:16853/WebServiceDetalleFicha.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1DetalleFichaSoap12" binding="tns:WebService1DetalleFichaSoap12">
+      <soap12:address location="http://localhost:16853/WebServiceDetalleFicha.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
