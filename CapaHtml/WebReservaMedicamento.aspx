@@ -170,7 +170,7 @@
                         <br />
                         <div>
                             <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" />
-                            <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver_2</asp:HyperLink>
                         </div>
                     </div>
 
