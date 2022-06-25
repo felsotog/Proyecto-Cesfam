@@ -105,7 +105,6 @@
             <div class="title">
                 <h2><i class="fas fa-pills"></i> Formulario Ingreso Medicamento</h2>
             </div>
-            <div class="col">
                 <form id="formulario_registro" class="form-check" runat="server">
                     <div>
                         <fieldset>
@@ -116,7 +115,7 @@
                               </div>
                             </div>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString %>" SelectCommand="SELECT [id_farmaceuta] FROM [farmaceutico]"></asp:SqlDataSource>
-                            <asp:Table runat="server">
+                            <asp:Table runat="server" Width="100%">
                                 <asp:TableRow>
                                     <asp:TableCell>
                                         <asp:Label runat="server" ID="Label2" Text="ID Ingreso:"></asp:Label>
@@ -141,9 +140,6 @@
                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListidfarmaceuta" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_farmaceuta" DataValueField="id_farmaceuta" Width="100%">
                                         </asp:DropDownList>
                                     </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:Button ID="MostrarIdFarmaceuta" runat="server" CssClass="btn btn-info" Text="Mostrar ID" OnClick="MostrarIdFarmaceuta_Click"/>
-                                    </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell ColumnSpan="2">
@@ -158,39 +154,117 @@
                             <asp:Button ID="btnGuardarMedicamento" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardarMedicamento_Click" />
                             <asp:Button ID="Volver" runat="server" CssClass="btn btn-dark" Text="Volver" OnClick="Volver_Click" />
                         </div>
+
+                        
+                        <div class="mt-5">
+                          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_ingreso" DataSourceID="SqlDataSource2" CssClass="table table-dark">
+                              <Columns>
+                                  <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                  <asp:BoundField DataField="id_ingreso" HeaderText="id_ingreso" ReadOnly="True" SortExpression="id_ingreso" />
+                                  <asp:BoundField DataField="fecha_ingreso" HeaderText="fecha_ingreso" SortExpression="fecha_ingreso" />
+                                  <asp:BoundField DataField="farmaceutico_id_farmaceuta" HeaderText="farmaceutico_id_farmaceuta" ReadOnly="True" SortExpression="farmaceutico_id_farmaceuta" />
+                              </Columns>
+                          </asp:GridView>
+                          <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString50 %>" DeleteCommand="DELETE FROM [ingreso_medicamento] WHERE [id_ingreso] = @original_id_ingreso AND (([fecha_ingreso] = @original_fecha_ingreso) OR ([fecha_ingreso] IS NULL AND @original_fecha_ingreso IS NULL)) AND (([farmaceutico_id_farmaceuta] = @original_farmaceutico_id_farmaceuta) OR ([farmaceutico_id_farmaceuta] IS NULL AND @original_farmaceutico_id_farmaceuta IS NULL))" InsertCommand="INSERT INTO [ingreso_medicamento] ([id_ingreso], [fecha_ingreso], [farmaceutico_id_farmaceuta]) VALUES (@id_ingreso, @fecha_ingreso, @farmaceutico_id_farmaceuta)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [ingreso_medicamento]" UpdateCommand="UPDATE [ingreso_medicamento] SET [fecha_ingreso] = @fecha_ingreso, [farmaceutico_id_farmaceuta] = @farmaceutico_id_farmaceuta WHERE [id_ingreso] = @original_id_ingreso AND (([fecha_ingreso] = @original_fecha_ingreso) OR ([fecha_ingreso] IS NULL AND @original_fecha_ingreso IS NULL)) AND (([farmaceutico_id_farmaceuta] = @original_farmaceutico_id_farmaceuta) OR ([farmaceutico_id_farmaceuta] IS NULL AND @original_farmaceutico_id_farmaceuta IS NULL))">
+                              <DeleteParameters>
+                                  <asp:Parameter Name="original_id_ingreso" Type="String" />
+                                  <asp:Parameter DbType="Date" Name="original_fecha_ingreso" />
+                                  <asp:Parameter Name="original_farmaceutico_id_farmaceuta" Type="String" />
+                              </DeleteParameters>
+                              <InsertParameters>
+                                  <asp:Parameter Name="id_ingreso" Type="String" />
+                                  <asp:Parameter DbType="Date" Name="fecha_ingreso" />
+                                  <asp:Parameter Name="farmaceutico_id_farmaceuta" Type="String" />
+                              </InsertParameters>
+                              <UpdateParameters>
+                                  <asp:Parameter DbType="Date" Name="fecha_ingreso" />
+                                  <asp:Parameter Name="farmaceutico_id_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="original_id_ingreso" Type="String" />
+                                  <asp:Parameter DbType="Date" Name="original_fecha_ingreso" />
+                                  <asp:Parameter Name="original_farmaceutico_id_farmaceuta" Type="String" />
+                              </UpdateParameters>
+                          </asp:SqlDataSource>
+                        </div>
+
+
+                        <div class="mt-5">
+                            <fieldset>
+                               <div class="alert alert-primary d-flex align-items-center" role="alert">
+                                  <i class="fas fa-bell" width="34" height="34" style="padding-right: 8px;"></i>
+                                  <div>
+                                    Ingreso de Detalles
+                                  </div>
+                                </div>
+                                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString %>" SelectCommand="SELECT [id_farmaceuta] FROM [farmaceutico]"></asp:SqlDataSource>
+                                <asp:Table runat="server" Width="100%">
+                                    <asp:TableRow>
+                                        <asp:TableCell>
+                                            <asp:Label runat="server" ID="Label3" Text="ID Detalle:"></asp:Label>
+                                        </asp:TableCell>
+                                        <asp:TableCell>
+                                            <asp:TextBox CssClass="form-control" runat="server" ID="txtIddetalle" placeholder=""></asp:TextBox>
+                                        </asp:TableCell>
+                                    </asp:TableRow>
+                                    <asp:TableRow>
+                                        <asp:TableCell>
+                                            <asp:Label runat="server" ID="Label8" Text="Cantidad:"></asp:Label>
+                                        </asp:TableCell>
+                                        <asp:TableCell>
+                                            <asp:TextBox CssClass="form-control" runat="server" ID="txtCantidad" placeholder=""></asp:TextBox>
+                                        </asp:TableCell>
+                                    </asp:TableRow>
+                                    <asp:TableRow>
+                                        <asp:TableCell>
+                                            <asp:Label runat="server" ID="Label4" Text="Fecha Elaboración:"></asp:Label>
+                                        </asp:TableCell>
+                                        <asp:TableCell>
+                                            <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaelaboracion" TextMode="Date"></asp:TextBox>
+                                        </asp:TableCell>
+                                    </asp:TableRow>
+                                    <asp:TableRow>
+                                        <asp:TableCell>
+                                            <asp:Label runat="server" ID="Label9" Text="Fecha Vencimiento:"></asp:Label>
+                                        </asp:TableCell>
+                                        <asp:TableCell>
+                                            <asp:TextBox CssClass="form-control" runat="server" ID="txtFechavencimiento" TextMode="Date"></asp:TextBox>
+                                        </asp:TableCell>
+                                    </asp:TableRow>
+                                    <asp:TableRow>
+                                        <asp:TableCell>
+                                            <asp:Label runat="server" ID="Label5" Text="Codigo Medicamento:"></asp:Label>
+                                        </asp:TableCell>
+                                        <asp:TableCell>
+                                            <asp:DropDownList CssClass="btn btn_2" ID="DropDownListCodigomedicamento" runat="server" DataSourceID="SqlDataSource5" DataTextField="codigo" DataValueField="codigo" Width="100%">
+                                            </asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString56 %>" SelectCommand="SELECT [codigo] FROM [medicamento]"></asp:SqlDataSource>
+                                        </asp:TableCell>
+                                    </asp:TableRow>
+                                    <asp:TableRow>
+                                        <asp:TableCell>
+                                            <asp:Label runat="server" ID="Label10" Text="ID Ingreso:"></asp:Label>
+                                        </asp:TableCell>
+                                        <asp:TableCell>
+                                            <asp:DropDownList CssClass="btn btn_2" ID="DropDownListIngresoid" runat="server" DataSourceID="SqlDataSource6" DataTextField="id_ingreso" DataValueField="id_ingreso" Width="100%"></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString59 %>" SelectCommand="SELECT [id_ingreso] FROM [ingreso_medicamento]"></asp:SqlDataSource>
+                                        </asp:TableCell>
+                                    </asp:TableRow>
+                                    <asp:TableRow>
+                                        <asp:TableCell ColumnSpan="2">
+                                            <asp:Label runat="server" CssClass="alert-danger" ID="Label6"></asp:Label>
+                                            <asp:Label runat="server" CssClass="alert-success" ID="Label7"></asp:Label>
+                                        </asp:TableCell>
+                                    </asp:TableRow>
+                                </asp:Table>
+                            </fieldset>
+                            <br />
+                        <div>
+                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardarMedicamento_Click" />
+                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-dark" Text="Volver" OnClick="Volver_Click" />
+                        </div>
+                        </div>
                     </div>
 
                     <div class="mt-5">
-                      <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_ingreso" DataSourceID="SqlDataSource2" CssClass="table table-dark">
-                          <Columns>
-                              <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                              <asp:BoundField DataField="id_ingreso" HeaderText="id_ingreso" ReadOnly="True" SortExpression="id_ingreso" />
-                              <asp:BoundField DataField="fecha_ingreso" HeaderText="fecha_ingreso" SortExpression="fecha_ingreso" />
-                              <asp:BoundField DataField="farmaceutico_id_farmaceuta" HeaderText="farmaceutico_id_farmaceuta" ReadOnly="True" SortExpression="farmaceutico_id_farmaceuta" />
-                          </Columns>
-                      </asp:GridView>
-                      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString50 %>" DeleteCommand="DELETE FROM [ingreso_medicamento] WHERE [id_ingreso] = @original_id_ingreso AND (([fecha_ingreso] = @original_fecha_ingreso) OR ([fecha_ingreso] IS NULL AND @original_fecha_ingreso IS NULL)) AND (([farmaceutico_id_farmaceuta] = @original_farmaceutico_id_farmaceuta) OR ([farmaceutico_id_farmaceuta] IS NULL AND @original_farmaceutico_id_farmaceuta IS NULL))" InsertCommand="INSERT INTO [ingreso_medicamento] ([id_ingreso], [fecha_ingreso], [farmaceutico_id_farmaceuta]) VALUES (@id_ingreso, @fecha_ingreso, @farmaceutico_id_farmaceuta)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [ingreso_medicamento]" UpdateCommand="UPDATE [ingreso_medicamento] SET [fecha_ingreso] = @fecha_ingreso, [farmaceutico_id_farmaceuta] = @farmaceutico_id_farmaceuta WHERE [id_ingreso] = @original_id_ingreso AND (([fecha_ingreso] = @original_fecha_ingreso) OR ([fecha_ingreso] IS NULL AND @original_fecha_ingreso IS NULL)) AND (([farmaceutico_id_farmaceuta] = @original_farmaceutico_id_farmaceuta) OR ([farmaceutico_id_farmaceuta] IS NULL AND @original_farmaceutico_id_farmaceuta IS NULL))">
-                          <DeleteParameters>
-                              <asp:Parameter Name="original_id_ingreso" Type="String" />
-                              <asp:Parameter DbType="Date" Name="original_fecha_ingreso" />
-                              <asp:Parameter Name="original_farmaceutico_id_farmaceuta" Type="String" />
-                          </DeleteParameters>
-                          <InsertParameters>
-                              <asp:Parameter Name="id_ingreso" Type="String" />
-                              <asp:Parameter DbType="Date" Name="fecha_ingreso" />
-                              <asp:Parameter Name="farmaceutico_id_farmaceuta" Type="String" />
-                          </InsertParameters>
-                          <UpdateParameters>
-                              <asp:Parameter DbType="Date" Name="fecha_ingreso" />
-                              <asp:Parameter Name="farmaceutico_id_farmaceuta" Type="String" />
-                              <asp:Parameter Name="original_id_ingreso" Type="String" />
-                              <asp:Parameter DbType="Date" Name="original_fecha_ingreso" />
-                              <asp:Parameter Name="original_farmaceutico_id_farmaceuta" Type="String" />
-                          </UpdateParameters>
-                      </asp:SqlDataSource>
-                    </div>
-
-                    <div class="mt-2">
                          <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="id_detalleIngr" DataSourceID="SqlDataSource3" CssClass="table table-dark">
                               <Columns>
                                   <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
@@ -236,16 +310,6 @@
                     </div>
 
                 </form>
-            </div>
-            <div class="col">
-                <fieldset>
-                    <legend>Registros existentes</legend>
-                </fieldset>
-                <br/>
-                <div>
-                <asp:DataGrid runat="server" ID="GridViewFarmaceuta" CssClass="table table-dark table-sm"></asp:DataGrid>
-                </div>
-            </div>
         </div>
     </div>
 </body>

@@ -24,7 +24,7 @@ function generarTabla() {
 
     //Cargar los datos de la API y armar el contenido de la tabla
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open('GET', 'https://randomuser.me/api/?results=25', true)
+    xmlHttp.open('GET', 'https://randomuser.me/api/?results=13', true)
     xmlHttp.send();
 
     xmlHttp.onreadystatechange = function () {

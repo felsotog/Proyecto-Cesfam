@@ -248,13 +248,13 @@ table.table .avatar {
 /* Estilos Prueba */
 
 .example_container {
-	display: flex;
+	margin-top: 100px;
+	margin-bottom: 100px;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
 }
 
-#lblNombres, #lblCalendario, #Label1, #Label2, #lbfarmacia, #Label4, #Label3, #Label5, #Label6, #Label7 {
+#lblNombres, #lblCalendario, #Label1, #Label2, #lbfarmacia, #Label4, #Label3, #Label5, #Label6, #Label7, #Label8, #Label9, #Label10 {
 	color: #fff;
 	font-weight: 700;
 	font-size: 18px;
@@ -300,3 +300,6 @@ legend {
 	color: #fff;
 }
 
+#datos_tabla tr {
+	background-color: #fff!important;
+}
