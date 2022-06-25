@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebPaciente.aspx.cs" Inherits="CapaHtml.WebPaciente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebMedico.aspx.cs" Inherits="CapaHtml.WebMedico" %>
 
 <!DOCTYPE html>
 
@@ -103,7 +103,7 @@
     <div class="container small example_container">
         <div class="row">
             <div class="title">
-               <h2><i class="fas fa-user-circle"></i> Registro Paciente</h2>
+               <h2><i class="fas fa-user-md"></i> Registro Personal CESFAM</h2>
             </div>
             <div class="col">
                 <form id="formulario_registro" class="form-check" runat="server">
@@ -112,7 +112,7 @@
                            <div class="alert alert-success d-flex align-items-center" role="alert">
                               <i class="fas fa-bell" width="34" height="34" style="padding-right: 8px;"></i>
                               <div>
-                                Ingresar Datos del Paciente
+                                Ingresar Datos del Personal
                               </div>
                             </div>
                             <asp:Table runat="server" Width="100%">
@@ -134,10 +134,10 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label2" Text="Sector:"></asp:Label>
+                                        <asp:Label runat="server" ID="Label2" Text="Especialidad:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtSector" placeholder=""></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtEspecialidad" placeholder=""></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -157,6 +157,14 @@
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label5" Text="E-mail:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtEmail" placeholder=""></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
                                     <asp:TableCell ColumnSpan="2">
                                         <asp:Label runat="server" CssClass="alert-danger" ID="lblError"></asp:Label>
                                         <asp:Label runat="server" CssClass="alert-success" ID="lblSucces"></asp:Label>
@@ -172,41 +180,46 @@
                     </div>
 
                     <div class="mt-5">
-                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="rut" DataSourceID="SqlDataSource2" CssClass="table table-dark">
+                         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="rut_medico" DataSourceID="SqlDataSource2" CssClass="table table-dark">
                               <Columns>
                                   <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                  <asp:BoundField DataField="rut" HeaderText="rut" ReadOnly="True" SortExpression="rut" />
-                                  <asp:BoundField DataField="nombre_paciente" HeaderText="nombre_paciente" SortExpression="nombre_paciente" />
-                                  <asp:BoundField DataField="sector" HeaderText="sector" SortExpression="sector" />
-                                  <asp:BoundField DataField="telefono" HeaderText="telefono" SortExpression="telefono" />
+                                  <asp:BoundField DataField="rut_medico" HeaderText="rut_medico" ReadOnly="True" SortExpression="rut_medico" />
+                                  <asp:BoundField DataField="nombre_completo" HeaderText="nombre_completo" SortExpression="nombre_completo" />
+                                  <asp:BoundField DataField="especialidad" HeaderText="especialidad" SortExpression="especialidad" />
                                   <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
+                                  <asp:BoundField DataField="telefono" HeaderText="telefono" SortExpression="telefono" />
+                                  <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
                               </Columns>
                           </asp:GridView>
-                          <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString35 %>" DeleteCommand="DELETE FROM [paciente] WHERE [rut] = @original_rut AND (([nombre_paciente] = @original_nombre_paciente) OR ([nombre_paciente] IS NULL AND @original_nombre_paciente IS NULL)) AND (([sector] = @original_sector) OR ([sector] IS NULL AND @original_sector IS NULL)) AND (([telefono] = @original_telefono) OR ([telefono] IS NULL AND @original_telefono IS NULL)) AND (([direccion] = @original_direccion) OR ([direccion] IS NULL AND @original_direccion IS NULL))" InsertCommand="INSERT INTO [paciente] ([rut], [nombre_paciente], [sector], [telefono], [direccion]) VALUES (@rut, @nombre_paciente, @sector, @telefono, @direccion)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [paciente]" UpdateCommand="UPDATE [paciente] SET [nombre_paciente] = @nombre_paciente, [sector] = @sector, [telefono] = @telefono, [direccion] = @direccion WHERE [rut] = @original_rut AND (([nombre_paciente] = @original_nombre_paciente) OR ([nombre_paciente] IS NULL AND @original_nombre_paciente IS NULL)) AND (([sector] = @original_sector) OR ([sector] IS NULL AND @original_sector IS NULL)) AND (([telefono] = @original_telefono) OR ([telefono] IS NULL AND @original_telefono IS NULL)) AND (([direccion] = @original_direccion) OR ([direccion] IS NULL AND @original_direccion IS NULL))">
+                          <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString34 %>" DeleteCommand="DELETE FROM [medico] WHERE [rut_medico] = @original_rut_medico AND (([nombre_completo] = @original_nombre_completo) OR ([nombre_completo] IS NULL AND @original_nombre_completo IS NULL)) AND (([especialidad] = @original_especialidad) OR ([especialidad] IS NULL AND @original_especialidad IS NULL)) AND (([direccion] = @original_direccion) OR ([direccion] IS NULL AND @original_direccion IS NULL)) AND (([telefono] = @original_telefono) OR ([telefono] IS NULL AND @original_telefono IS NULL)) AND (([email] = @original_email) OR ([email] IS NULL AND @original_email IS NULL))" InsertCommand="INSERT INTO [medico] ([rut_medico], [nombre_completo], [especialidad], [direccion], [telefono], [email]) VALUES (@rut_medico, @nombre_completo, @especialidad, @direccion, @telefono, @email)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [medico]" UpdateCommand="UPDATE [medico] SET [nombre_completo] = @nombre_completo, [especialidad] = @especialidad, [direccion] = @direccion, [telefono] = @telefono, [email] = @email WHERE [rut_medico] = @original_rut_medico AND (([nombre_completo] = @original_nombre_completo) OR ([nombre_completo] IS NULL AND @original_nombre_completo IS NULL)) AND (([especialidad] = @original_especialidad) OR ([especialidad] IS NULL AND @original_especialidad IS NULL)) AND (([direccion] = @original_direccion) OR ([direccion] IS NULL AND @original_direccion IS NULL)) AND (([telefono] = @original_telefono) OR ([telefono] IS NULL AND @original_telefono IS NULL)) AND (([email] = @original_email) OR ([email] IS NULL AND @original_email IS NULL))">
                               <DeleteParameters>
-                                  <asp:Parameter Name="original_rut" Type="String" />
-                                  <asp:Parameter Name="original_nombre_paciente" Type="String" />
-                                  <asp:Parameter Name="original_sector" Type="String" />
-                                  <asp:Parameter Name="original_telefono" Type="Int32" />
+                                  <asp:Parameter Name="original_rut_medico" Type="String" />
+                                  <asp:Parameter Name="original_nombre_completo" Type="String" />
+                                  <asp:Parameter Name="original_especialidad" Type="String" />
                                   <asp:Parameter Name="original_direccion" Type="String" />
+                                  <asp:Parameter Name="original_telefono" Type="String" />
+                                  <asp:Parameter Name="original_email" Type="String" />
                               </DeleteParameters>
                               <InsertParameters>
-                                  <asp:Parameter Name="rut" Type="String" />
-                                  <asp:Parameter Name="nombre_paciente" Type="String" />
-                                  <asp:Parameter Name="sector" Type="String" />
-                                  <asp:Parameter Name="telefono" Type="Int32" />
+                                  <asp:Parameter Name="rut_medico" Type="String" />
+                                  <asp:Parameter Name="nombre_completo" Type="String" />
+                                  <asp:Parameter Name="especialidad" Type="String" />
                                   <asp:Parameter Name="direccion" Type="String" />
+                                  <asp:Parameter Name="telefono" Type="String" />
+                                  <asp:Parameter Name="email" Type="String" />
                               </InsertParameters>
                               <UpdateParameters>
-                                  <asp:Parameter Name="nombre_paciente" Type="String" />
-                                  <asp:Parameter Name="sector" Type="String" />
-                                  <asp:Parameter Name="telefono" Type="Int32" />
+                                  <asp:Parameter Name="nombre_completo" Type="String" />
+                                  <asp:Parameter Name="especialidad" Type="String" />
                                   <asp:Parameter Name="direccion" Type="String" />
-                                  <asp:Parameter Name="original_rut" Type="String" />
-                                  <asp:Parameter Name="original_nombre_paciente" Type="String" />
-                                  <asp:Parameter Name="original_sector" Type="String" />
-                                  <asp:Parameter Name="original_telefono" Type="Int32" />
+                                  <asp:Parameter Name="telefono" Type="String" />
+                                  <asp:Parameter Name="email" Type="String" />
+                                  <asp:Parameter Name="original_rut_medico" Type="String" />
+                                  <asp:Parameter Name="original_nombre_completo" Type="String" />
+                                  <asp:Parameter Name="original_especialidad" Type="String" />
                                   <asp:Parameter Name="original_direccion" Type="String" />
+                                  <asp:Parameter Name="original_telefono" Type="String" />
+                                  <asp:Parameter Name="original_email" Type="String" />
                               </UpdateParameters>
                           </asp:SqlDataSource>
                     </div>

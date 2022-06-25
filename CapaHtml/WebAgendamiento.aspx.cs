@@ -33,6 +33,7 @@ namespace CapaHtml
                 auxNegocioAgendamiento.insertaAgendamientoService(auxAgendamiento);
                 this.lblSucces.Text = "Todos los datos Guardados Correctamente";
                 Limpiar();
+                this.GridView1.DataBind();
             }
 
             void Limpiar()

@@ -20,7 +20,7 @@ namespace CapaNegocioCesfam
             this.conec1 = new ConexionCesfam();
             this.conec1.NombreBaseDeDatos = "CESFAM";
             this.conec1.NombreTabla = "detalle_receta";
-            this.conec1.CadenaConexion = @"Data Source=DESKTOP-UKNM7EP\SQLEXPRESS;Initial Catalog=CESFAM;Integrated Security=True";
+            this.conec1.CadenaConexion = "Data Source=DESKTOP-DQKDMBV;Initial Catalog=CESFAM;Integrated Security=True";
         }
 
         public void insertarDetalleReceta(DetalleReceta detallereceta)

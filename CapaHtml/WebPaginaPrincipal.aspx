@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
         <!--Main Navigation-->
@@ -56,10 +57,28 @@
                 <a class="nav-link" href="WebIngresoMedicamento.aspx">Ingreso Medicamento</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Crud_4.html">CRUD_4</a>
+                <a class="nav-link" href="WebFichaPaciente.aspx">Ficha Paciente</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Crud_5.html">CRUD_4</a>
+                <a class="nav-link" href="WebMedicamento.aspx">Medicamento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="WebMedico.aspx">Medico</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="WebPaciente.aspx">Paciente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="WebReservaMedicamento.aspx">Reservacion Medicamento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="WebSalidaMedicamento.aspx">Entrega Medicamento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="WebCaducarMedicamento.aspx">Merma</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="WebPacientesApi.html">Pacientes API</a>
               </li>
             </ul>
 
@@ -96,21 +115,22 @@
       <div id="intro" class="bg-image vh-100 shadow-1-strong">
         <div class="mask">
           <div class="container d-flex align-items-center justify-content-center text-center h-100">
-            <div class="text-white">
+            <div class="text-white box_mr">
               <img src="img/logo_index.png" alt="LOGO" class="img_title">
               <br><br>
               <h1 class="mb-3 title_index">CRUDs CESFAM</h1>
               <h7 class="mb-4">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. </h7><br><br><br>
-              <a href="WebAgendamiento.aspx"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Agendamiento</button></a>
-              <a href="WebFarmacia.aspx"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Farmacia</button></a>
-              <a href="WebIngresoMedicamento.aspx"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Ingreso Medicamento</button></a>
-              <a href="Crud_4.html"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Crud 4</button></a>
-              <a href="Crud_5.html"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Crud 5</button></a>
-              <a href="Crud_1.html"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Crud 1</button></a>
-              <a href="Crud_2.html"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Crud 2</button></a>
-              <a href="Crud_3.html"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Crud 3</button></a>
-              <a href="Crud_4.html"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Crud 4</button></a>
-              <a href="Crud_5.html"><button type="button" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right-short"></i> Crud 5</button></a>
+              <a href="WebAgendamiento.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Agendamiento</button></a>
+              <a href="WebFarmacia.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Farmacia</button></a>
+              <a href="WebIngresoMedicamento.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Ingreso Medicamento</button></a>
+              <a href="WebFichaPaciente.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Ficha Paciente</button></a>
+              <a href="WebMedicamento.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Medicamento</button></a>
+              <a href="WebMedico.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Medico</button></a>
+              <a href="WebPaciente.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Paciente</button></a>
+              <a href="WebReservaMedicamento.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Reserva Medicamento</button></a>
+              <a href="WebSalidaMedicamento.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Entrega Medicamento</button></a>
+              <a href="WebCaducarMedicamento.aspx"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Merma</button></a>
+              <a href="WebPacientesApi.html"><button type="button" class="btn btn-primary btn-lg mb-3"><i class="bi bi-arrow-right-short"></i> Pacientes API</button></a>
             </div>
           </div>
         </div>

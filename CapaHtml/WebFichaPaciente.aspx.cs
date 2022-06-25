@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace CapaHtml
 {
-    public partial class WebMedicamento : System.Web.UI.Page
+    public partial class WebFichaPaciente : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnGuardar_Click(object sender, EventArgs e)
+        protected void Volver_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("WebPaginaPrincipal.aspx");
         }
     }
 }

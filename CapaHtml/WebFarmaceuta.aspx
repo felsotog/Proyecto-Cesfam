@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebPaciente.aspx.cs" Inherits="CapaHtml.WebPaciente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFarmaceuta.aspx.cs" Inherits="CapaHtml.WebFarmaceuta" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Agendamiento</title>
+    <title>Farmacia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -103,57 +103,42 @@
     <div class="container small example_container">
         <div class="row">
             <div class="title">
-               <h2><i class="fas fa-user-circle"></i> Registro Paciente</h2>
+                <h2><i class="fas fa-notes-medical"></i> Registro Farmaceuta</h2>
             </div>
-            <div class="col">
                 <form id="formulario_registro" class="form-check" runat="server">
                     <div>
                         <fieldset>
                            <div class="alert alert-success d-flex align-items-center" role="alert">
                               <i class="fas fa-bell" width="34" height="34" style="padding-right: 8px;"></i>
                               <div>
-                                Ingresar Datos del Paciente
+                                Ingresar Datos del Farmaceuta
                               </div>
                             </div>
                             <asp:Table runat="server" Width="100%">
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" ID="lblNombres" Text="Rut:"></asp:Label>
+                                        <asp:Label runat="server" ID="Label1" Text="Rut:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtRut" placeholder="12365478-3"></asp:TextBox>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label1" Text="Nombre Completo:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtNombre" placeholder=""></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtIdfarmaceuta" placeholder="Farm1120"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label2" Text="Sector:"></asp:Label>
+                                        <asp:Label runat="server" ID="Label2" Text="Nombre Completo:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtSector" placeholder=""></asp:TextBox>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label3" Text="Dirección:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtDireccion" placeholder=""></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtNombreFarmaceuta" placeholder="Camelo"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label4" Text="Telefono:"></asp:Label>
+                                        <asp:Label runat="server" ID="Label3" Text="ID Farmacia:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtTelefono" placeholder=""></asp:TextBox>
+                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListidfarmacia" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_farmacia" DataValueField="id_farmacia" Width="100%">
+                                         </asp:DropDownList>
+                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString5 %>" SelectCommand="SELECT [id_farmacia] FROM [farmacia]"></asp:SqlDataSource>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -166,52 +151,41 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="btnAgendar1" runat="server" CssClass="btn btn-primary" Text="Agendar"/>
+                            <asp:Button ID="btnFarmacia" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnFarmacia_Click"/>
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
 
                     <div class="mt-5">
-                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="rut" DataSourceID="SqlDataSource2" CssClass="table table-dark">
+                         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id_farmaceuta" DataSourceID="SqlDataSource2" CssClass="table table-dark">
                               <Columns>
                                   <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                  <asp:BoundField DataField="rut" HeaderText="rut" ReadOnly="True" SortExpression="rut" />
-                                  <asp:BoundField DataField="nombre_paciente" HeaderText="nombre_paciente" SortExpression="nombre_paciente" />
-                                  <asp:BoundField DataField="sector" HeaderText="sector" SortExpression="sector" />
-                                  <asp:BoundField DataField="telefono" HeaderText="telefono" SortExpression="telefono" />
-                                  <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
+                                  <asp:BoundField DataField="id_farmaceuta" HeaderText="id_farmaceuta" ReadOnly="True" SortExpression="id_farmaceuta" />
+                                  <asp:BoundField DataField="nombre_farmaceuta" HeaderText="nombre_farmaceuta" SortExpression="nombre_farmaceuta" />
+                                  <asp:BoundField DataField="farmacia_id_farmacia" HeaderText="farmacia_id_farmacia" ReadOnly="True" SortExpression="farmacia_id_farmacia" />
                               </Columns>
                           </asp:GridView>
-                          <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString35 %>" DeleteCommand="DELETE FROM [paciente] WHERE [rut] = @original_rut AND (([nombre_paciente] = @original_nombre_paciente) OR ([nombre_paciente] IS NULL AND @original_nombre_paciente IS NULL)) AND (([sector] = @original_sector) OR ([sector] IS NULL AND @original_sector IS NULL)) AND (([telefono] = @original_telefono) OR ([telefono] IS NULL AND @original_telefono IS NULL)) AND (([direccion] = @original_direccion) OR ([direccion] IS NULL AND @original_direccion IS NULL))" InsertCommand="INSERT INTO [paciente] ([rut], [nombre_paciente], [sector], [telefono], [direccion]) VALUES (@rut, @nombre_paciente, @sector, @telefono, @direccion)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [paciente]" UpdateCommand="UPDATE [paciente] SET [nombre_paciente] = @nombre_paciente, [sector] = @sector, [telefono] = @telefono, [direccion] = @direccion WHERE [rut] = @original_rut AND (([nombre_paciente] = @original_nombre_paciente) OR ([nombre_paciente] IS NULL AND @original_nombre_paciente IS NULL)) AND (([sector] = @original_sector) OR ([sector] IS NULL AND @original_sector IS NULL)) AND (([telefono] = @original_telefono) OR ([telefono] IS NULL AND @original_telefono IS NULL)) AND (([direccion] = @original_direccion) OR ([direccion] IS NULL AND @original_direccion IS NULL))">
+                          <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString30 %>" DeleteCommand="DELETE FROM [farmaceutico] WHERE [id_farmaceuta] = @original_id_farmaceuta AND (([nombre_farmaceuta] = @original_nombre_farmaceuta) OR ([nombre_farmaceuta] IS NULL AND @original_nombre_farmaceuta IS NULL)) AND (([farmacia_id_farmacia] = @original_farmacia_id_farmacia) OR ([farmacia_id_farmacia] IS NULL AND @original_farmacia_id_farmacia IS NULL))" InsertCommand="INSERT INTO [farmaceutico] ([id_farmaceuta], [nombre_farmaceuta], [farmacia_id_farmacia]) VALUES (@id_farmaceuta, @nombre_farmaceuta, @farmacia_id_farmacia)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [farmaceutico]" UpdateCommand="UPDATE [farmaceutico] SET [nombre_farmaceuta] = @nombre_farmaceuta, [farmacia_id_farmacia] = @farmacia_id_farmacia WHERE [id_farmaceuta] = @original_id_farmaceuta AND (([nombre_farmaceuta] = @original_nombre_farmaceuta) OR ([nombre_farmaceuta] IS NULL AND @original_nombre_farmaceuta IS NULL)) AND (([farmacia_id_farmacia] = @original_farmacia_id_farmacia) OR ([farmacia_id_farmacia] IS NULL AND @original_farmacia_id_farmacia IS NULL))">
                               <DeleteParameters>
-                                  <asp:Parameter Name="original_rut" Type="String" />
-                                  <asp:Parameter Name="original_nombre_paciente" Type="String" />
-                                  <asp:Parameter Name="original_sector" Type="String" />
-                                  <asp:Parameter Name="original_telefono" Type="Int32" />
-                                  <asp:Parameter Name="original_direccion" Type="String" />
+                                  <asp:Parameter Name="original_id_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="original_nombre_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="original_farmacia_id_farmacia" Type="String" />
                               </DeleteParameters>
                               <InsertParameters>
-                                  <asp:Parameter Name="rut" Type="String" />
-                                  <asp:Parameter Name="nombre_paciente" Type="String" />
-                                  <asp:Parameter Name="sector" Type="String" />
-                                  <asp:Parameter Name="telefono" Type="Int32" />
-                                  <asp:Parameter Name="direccion" Type="String" />
+                                  <asp:Parameter Name="id_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="nombre_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="farmacia_id_farmacia" Type="String" />
                               </InsertParameters>
                               <UpdateParameters>
-                                  <asp:Parameter Name="nombre_paciente" Type="String" />
-                                  <asp:Parameter Name="sector" Type="String" />
-                                  <asp:Parameter Name="telefono" Type="Int32" />
-                                  <asp:Parameter Name="direccion" Type="String" />
-                                  <asp:Parameter Name="original_rut" Type="String" />
-                                  <asp:Parameter Name="original_nombre_paciente" Type="String" />
-                                  <asp:Parameter Name="original_sector" Type="String" />
-                                  <asp:Parameter Name="original_telefono" Type="Int32" />
-                                  <asp:Parameter Name="original_direccion" Type="String" />
+                                  <asp:Parameter Name="nombre_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="farmacia_id_farmacia" Type="String" />
+                                  <asp:Parameter Name="original_id_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="original_nombre_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="original_farmacia_id_farmacia" Type="String" />
                               </UpdateParameters>
                           </asp:SqlDataSource>
                     </div>
                 </form>
-            </div>
         </div>
     </div>
 </body>

@@ -1,3 +1,7 @@
+body {
+	background-image: linear-gradient(#42e695, #3bb2b8);
+}
+
 .bg-image {
 	background-image: linear-gradient(#42e695, #3bb2b8);
 }
@@ -240,3 +244,59 @@ table.table .avatar {
 .modal form label {
 	font-weight: normal;
 }
+
+/* Estilos Prueba */
+
+.example_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+#lblNombres, #lblCalendario, #Label1, #Label2, #lbfarmacia, #Label4, #Label3, #Label5, #Label6, #Label7 {
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.form-check {
+	padding: 0;
+	margin: 0;
+}
+
+.title {
+	color: #fff;
+	margin-bottom: 50px;
+	padding: 0;
+}
+
+.title h2 {
+	font-size: 3rem;
+}
+
+legend {
+	color: #fff;
+}
+
+.btn_2 {
+	background-color: #fff!important;
+}
+
+.table-dark tbody tr th {
+	background-color: #09687d!important;
+}
+
+.table-dark tbody tr th a {
+	color: #fff;
+}
+
+.table-dark tbody tr td a {
+	background-color: #09687d;
+	padding: 6px;
+	display: inline;
+	border-radius: 3px;
+	margin: 3px 2px;
+	color: #fff;
+}
+

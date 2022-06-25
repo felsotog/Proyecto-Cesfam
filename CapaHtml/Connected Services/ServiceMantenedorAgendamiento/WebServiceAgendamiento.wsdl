@@ -104,6 +104,23 @@
       <s:element name="actualizarAgendamientoServiceResponse">
         <s:complexType />
       </s:element>
+      <s:element name="retornarTotalAgendamientoService">
+        <s:complexType />
+      </s:element>
+      <s:element name="retornarTotalAgendamientoServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retornarTotalAgendamientoServiceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="insertaAgendamientoServiceSoapIn">
@@ -148,6 +165,12 @@
   <wsdl:message name="actualizarAgendamientoServiceSoapOut">
     <wsdl:part name="parameters" element="tns:actualizarAgendamientoServiceResponse" />
   </wsdl:message>
+  <wsdl:message name="retornarTotalAgendamientoServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:retornarTotalAgendamientoService" />
+  </wsdl:message>
+  <wsdl:message name="retornarTotalAgendamientoServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:retornarTotalAgendamientoServiceResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceAgendamientoSoap">
     <wsdl:operation name="insertaAgendamientoService">
       <wsdl:input message="tns:insertaAgendamientoServiceSoapIn" />
@@ -176,6 +199,10 @@
     <wsdl:operation name="actualizarAgendamientoService">
       <wsdl:input message="tns:actualizarAgendamientoServiceSoapIn" />
       <wsdl:output message="tns:actualizarAgendamientoServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarTotalAgendamientoService">
+      <wsdl:input message="tns:retornarTotalAgendamientoServiceSoapIn" />
+      <wsdl:output message="tns:retornarTotalAgendamientoServiceSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceAgendamientoSoap" type="tns:WebServiceAgendamientoSoap">
@@ -243,6 +270,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="retornarTotalAgendamientoService">
+      <soap:operation soapAction="http://tempuri.org/retornarTotalAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceAgendamientoSoap12" type="tns:WebServiceAgendamientoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -302,6 +338,15 @@
     </wsdl:operation>
     <wsdl:operation name="actualizarAgendamientoService">
       <soap12:operation soapAction="http://tempuri.org/actualizarAgendamientoService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarTotalAgendamientoService">
+      <soap12:operation soapAction="http://tempuri.org/retornarTotalAgendamientoService" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -23,11 +23,22 @@ namespace CapaHtml
             auxFarmacia.Nombre_farmacia = this.txtNombreFarmacia.Text;
             auxNegocioFarmacia.insertaFarmaciaService(auxFarmacia);
             this.lblSucces.Text = "Todos los datos Guardados Correctamente";
+            this.GridView1.DataBind();
         }
 
         protected void Volver_Click(object sender, EventArgs e)
         {
             Response.Redirect("WebPaginaPrincipal.aspx");
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TextBox1_TextChanged1(object sender, EventArgs e)
+        {
+
         }
     }
 }

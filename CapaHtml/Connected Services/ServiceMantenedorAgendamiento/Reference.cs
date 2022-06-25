@@ -64,6 +64,13 @@ namespace CapaHtml.ServiceMantenedorAgendamiento {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/actualizarAgendamientoService", ReplyAction="*")]
         System.Threading.Tasks.Task actualizarAgendamientoServiceAsync(CapaHtml.ServiceMantenedorAgendamiento.Agendamiento agendamiento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/retornarTotalAgendamientoService", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet retornarTotalAgendamientoService();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/retornarTotalAgendamientoService", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> retornarTotalAgendamientoServiceAsync();
     }
     
     /// <remarks/>
@@ -221,6 +228,14 @@ namespace CapaHtml.ServiceMantenedorAgendamiento {
         
         public System.Threading.Tasks.Task actualizarAgendamientoServiceAsync(CapaHtml.ServiceMantenedorAgendamiento.Agendamiento agendamiento) {
             return base.Channel.actualizarAgendamientoServiceAsync(agendamiento);
+        }
+        
+        public System.Data.DataSet retornarTotalAgendamientoService() {
+            return base.Channel.retornarTotalAgendamientoService();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> retornarTotalAgendamientoServiceAsync() {
+            return base.Channel.retornarTotalAgendamientoServiceAsync();
         }
     }
 }

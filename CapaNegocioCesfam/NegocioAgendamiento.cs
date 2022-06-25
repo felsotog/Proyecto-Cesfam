@@ -20,7 +20,7 @@ namespace CapaNegocioCesfam
             this.conec1 = new ConexionCesfam();
             this.conec1.NombreBaseDeDatos = "CESFAM";
             this.conec1.NombreTabla = "agendamiento";
-            this.conec1.CadenaConexion = "Data Source=DESKTOP-Q77LRSF\\SQLEXPRESS;Initial Catalog=cesfam;Integrated Security=True";
+            this.conec1.CadenaConexion = "Data Source=DESKTOP-DQKDMBV;Initial Catalog=CESFAM;Integrated Security=True";
         }
 
         public void insertarAgendamiento(Agendamiento agendamiento)

@@ -3,51 +3,44 @@
 //
 
 .btn {
-  font-family: $btn-font-family;
-  text-transform: uppercase;
-  vertical-align: bottom;
-  border: 0;
-  box-shadow: $btn-box-shadow;
-  font-weight: $btn-font-weight;
-  @include button-size-mdb(
-    $btn-padding-top,
-    $btn-padding-right,
-    $btn-padding-bottom,
-    $btn-padding-left,
-    $btn-font-size,
-    $btn-line-height
-  );
-
-  &:hover {
-    box-shadow: $btn-hover-box-shadow;
-  }
-
-  &:focus,
-  &.focus {
-    box-shadow: $btn-focus-box-shadow;
-  }
-
-  &:active,
-  &.active {
-    box-shadow: $btn-hover-box-shadow;
-
-    &:focus {
-      box-shadow: $btn-hover-box-shadow;
-    }
-  }
-
-  &:disabled,
-  &.disabled,
-  fieldset:disabled & {
-    box-shadow: $btn-box-shadow;
+    font-family: $btn-font-family;
+    text-transform: uppercase;
+    vertical-align: bottom;
     border: 0;
-  }
+    box-shadow: $btn-box-shadow;
+    font-weight: $btn-font-weight;
+    @include button-size-mdb( $btn-padding-top, $btn-padding-right, $btn-padding-bottom, $btn-padding-left, $btn-font-size, $btn-line-height );
 
-  .btn-check:focus + &,
-  &:focus {
-    outline: 0;
-    box-shadow: $btn-focus-box-shadow;
-  }
+    &:hover {
+        box-shadow: $btn-hover-box-shadow;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: $btn-focus-box-shadow;
+    }
+
+    &:active,
+    &.active {
+        box-shadow: $btn-hover-box-shadow;
+
+        &:focus {
+            box-shadow: $btn-hover-box-shadow;
+        }
+    }
+
+    &:disabled,
+    &.disabled,
+    fieldset:disabled & {
+        box-shadow: $btn-box-shadow;
+        border: 0;
+    }
+
+    .btn-check:focus + &,
+    &:focus {
+        outline: 0;
+        box-shadow: $btn-focus-box-shadow;
+    }
 }
 
 //

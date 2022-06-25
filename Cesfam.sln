@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaServicioCesfam", "CapaS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaHtml", "CapaHtml\CapaHtml.csproj", "{B596F278-75E6-4D79-B62D-96BA9EED5AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUIWeb", "GUIWeb\GUIWeb.csproj", "{9D70C0DF-E412-4CB0-93BE-EE0169425620}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{B596F278-75E6-4D79-B62D-96BA9EED5AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B596F278-75E6-4D79-B62D-96BA9EED5AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B596F278-75E6-4D79-B62D-96BA9EED5AAD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9D70C0DF-E412-4CB0-93BE-EE0169425620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D70C0DF-E412-4CB0-93BE-EE0169425620}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D70C0DF-E412-4CB0-93BE-EE0169425620}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D70C0DF-E412-4CB0-93BE-EE0169425620}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -80,6 +80,7 @@
     <Content Include="css\style.css" />
     <Content Include="img\logo_index.png" />
     <Content Include="img\mdb-favicon.ico" />
+    <Content Include="js\javascript_api.js" />
     <Content Include="js\main.js" />
     <Content Include="js\mdb.min.js" />
     <Content Include="js\picker.date.js" />
@@ -178,10 +179,15 @@
     <Content Include="src\js\mdb\util\touch\touchUtil.js" />
     <Content Include="WebAgendamiento.aspx" />
     <Content Include="WebCaducarMedicamento.aspx" />
+    <Content Include="WebFarmaceuta.aspx" />
     <Content Include="WebFarmacia.aspx" />
+    <Content Include="WebFichaPaciente.aspx" />
+    <Content Include="WebFormularioMedicamento.aspx" />
     <Content Include="WebIngresoMedicamento.aspx" />
     <Content Include="WebMedicamento.aspx" />
+    <Content Include="WebMedico.aspx" />
     <Content Include="WebPaciente.aspx" />
+    <Content Include="WebPacientesApi.html" />
     <Content Include="WebPaginaPrincipal.aspx" />
     <Content Include="WebReservaMedicamento.aspx" />
     <Content Include="WebSalidaMedicamento.aspx" />
@@ -376,8 +382,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web.config" />
-    <Content Include="WebAgendar.aspx" />
-    <Content Include="WebAjax.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\ServiceMantenedorAgendamiento\Reference.cs">
@@ -473,20 +477,6 @@
     <Compile Include="WebAgendamiento.aspx.designer.cs">
       <DependentUpon>WebAgendamiento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebAgendar.aspx.cs">
-      <DependentUpon>WebAgendar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebAgendar.aspx.designer.cs">
-      <DependentUpon>WebAgendar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebAjax.aspx.cs">
-      <DependentUpon>WebAjax.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebAjax.aspx.designer.cs">
-      <DependentUpon>WebAjax.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WebCaducarMedicamento.aspx.cs">
       <DependentUpon>WebCaducarMedicamento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -494,12 +484,33 @@
     <Compile Include="WebCaducarMedicamento.aspx.designer.cs">
       <DependentUpon>WebCaducarMedicamento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFarmaceuta.aspx.cs">
+      <DependentUpon>WebFarmaceuta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFarmaceuta.aspx.designer.cs">
+      <DependentUpon>WebFarmaceuta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFarmacia.aspx.cs">
       <DependentUpon>WebFarmacia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebFarmacia.aspx.designer.cs">
       <DependentUpon>WebFarmacia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFichaPaciente.aspx.cs">
+      <DependentUpon>WebFichaPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFichaPaciente.aspx.designer.cs">
+      <DependentUpon>WebFichaPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormularioMedicamento.aspx.cs">
+      <DependentUpon>WebFormularioMedicamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormularioMedicamento.aspx.designer.cs">
+      <DependentUpon>WebFormularioMedicamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebIngresoMedicamento.aspx.cs">
       <DependentUpon>WebIngresoMedicamento.aspx</DependentUpon>
@@ -514,6 +525,13 @@
     </Compile>
     <Compile Include="WebMedicamento.aspx.designer.cs">
       <DependentUpon>WebMedicamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebMedico.aspx.cs">
+      <DependentUpon>WebMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebMedico.aspx.designer.cs">
+      <DependentUpon>WebMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebPaciente.aspx.cs">
       <DependentUpon>WebPaciente.aspx</DependentUpon>

@@ -34,7 +34,7 @@ namespace CapaHtml
             ServiceMantenedorIngresoMedicamento.IngresoMedicamento auxIngresoMedicamento = new ServiceMantenedorIngresoMedicamento.IngresoMedicamento();
             auxIngresoMedicamento.Id_ingreso = this.txtIdIngreso.Text;
             auxIngresoMedicamento.Fecha_ingreso = DateTime.Parse(this.FechaIngreso.Text);
-            auxIngresoMedicamento.Farmaceutico_id_farmaceuta = this.txtIdFarmaceuta.Text;
+            auxIngresoMedicamento.Farmaceutico_id_farmaceuta = this.DropDownListidfarmaceuta.Text;
             auxNegocioIngresoMedicamento.insertaIngresoMedicamentoService(auxIngresoMedicamento);
             this.lblSucces.Text = "Todos los datos Guardados Correctamente";
         }

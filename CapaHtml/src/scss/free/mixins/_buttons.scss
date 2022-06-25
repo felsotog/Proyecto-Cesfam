@@ -47,14 +47,12 @@
   &:focus,
   &.focus {
     color: $color;
-    background-color: transparent;
   }
 
   &:active,
   &.active,
   &.dropdown-toggle.show {
     color: $color;
-    background-color: transparent;
 
     &:focus {
       box-shadow: none;

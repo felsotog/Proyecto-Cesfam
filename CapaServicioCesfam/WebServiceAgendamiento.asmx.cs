@@ -74,5 +74,13 @@ namespace CapaServicioCesfam
             NegocioAgendamiento auxNegocioAgendamiento = new NegocioAgendamiento();
             auxNegocioAgendamiento.actualizarAgendamiento(agendamiento);
         }
+
+        [WebMethod]
+
+        public DataSet retornarTotalAgendamientoService()
+        {
+            NegocioAgendamiento auxNegocioAgendamiento = new NegocioAgendamiento();
+            return auxNegocioAgendamiento.retornarTotalAgendamiento();
+        }
     }
 }
