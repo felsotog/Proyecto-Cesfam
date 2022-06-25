@@ -144,9 +144,9 @@
                                         <asp:Label runat="server" ID="Label3" Text="Rut Farmaceuta:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListrutfarmaceuta" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_farmaceuta" DataValueField="id_farmaceuta" Width="100%">
+                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_farmaceuta" DataValueField="id_farmaceuta" Width="100%">
                                          </asp:DropDownList>
-                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString9 %>" SelectCommand="SELECT [id_farmaceuta] FROM [farmaceutico]"></asp:SqlDataSource>
+                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString52 %>" SelectCommand="SELECT [id_farmaceuta] FROM [farmaceutico]"></asp:SqlDataSource>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -154,9 +154,7 @@
                                         <asp:Label runat="server" ID="Label4" Text="Codigo Medicamento:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListcodigomedicamento" runat="server" DataSourceID="SqlDataSource2" DataTextField="codigo" DataValueField="codigo" Width="100%">
-                                         </asp:DropDownList>
-                                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString10 %>" SelectCommand="SELECT [codigo] FROM [medicamento]"></asp:SqlDataSource>
+                                        <asp:DropDownList CssClass="btn btn_2" ID="DropDownList2" runat="server" Width="100%"></asp:DropDownList>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -170,11 +168,48 @@
                         <br />
                         <div>
                             <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" />
-                            <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver_2</asp:HyperLink>
+                            <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
 
                     <div class="mt-5">
+                         <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataKeyNames="id_reserva" DataSourceID="SqlDataSource4" CssClass="table table-dark">
+                              <Columns>
+                                  <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                  <asp:BoundField DataField="id_reserva" HeaderText="id_reserva" ReadOnly="True" SortExpression="id_reserva" />
+                                  <asp:BoundField DataField="fecha_reserva" HeaderText="fecha_reserva" SortExpression="fecha_reserva" />
+                                  <asp:BoundField DataField="cantidad_reserva" HeaderText="cantidad_reserva" SortExpression="cantidad_reserva" />
+                                  <asp:BoundField DataField="farmaceutico_id_farmaceuta" HeaderText="farmaceutico_id_farmaceuta" ReadOnly="True" SortExpression="farmaceutico_id_farmaceuta" />
+                                  <asp:BoundField DataField="medicamento_codigo" HeaderText="medicamento_codigo" ReadOnly="True" SortExpression="medicamento_codigo" />
+                              </Columns>
+                          </asp:GridView>
+                          <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString55 %>" DeleteCommand="DELETE FROM [reserva_medicamento] WHERE [id_reserva] = @original_id_reserva AND (([fecha_reserva] = @original_fecha_reserva) OR ([fecha_reserva] IS NULL AND @original_fecha_reserva IS NULL)) AND (([cantidad_reserva] = @original_cantidad_reserva) OR ([cantidad_reserva] IS NULL AND @original_cantidad_reserva IS NULL)) AND (([farmaceutico_id_farmaceuta] = @original_farmaceutico_id_farmaceuta) OR ([farmaceutico_id_farmaceuta] IS NULL AND @original_farmaceutico_id_farmaceuta IS NULL)) AND (([medicamento_codigo] = @original_medicamento_codigo) OR ([medicamento_codigo] IS NULL AND @original_medicamento_codigo IS NULL))" InsertCommand="INSERT INTO [reserva_medicamento] ([id_reserva], [fecha_reserva], [cantidad_reserva], [farmaceutico_id_farmaceuta], [medicamento_codigo]) VALUES (@id_reserva, @fecha_reserva, @cantidad_reserva, @farmaceutico_id_farmaceuta, @medicamento_codigo)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [reserva_medicamento]" UpdateCommand="UPDATE [reserva_medicamento] SET [fecha_reserva] = @fecha_reserva, [cantidad_reserva] = @cantidad_reserva, [farmaceutico_id_farmaceuta] = @farmaceutico_id_farmaceuta, [medicamento_codigo] = @medicamento_codigo WHERE [id_reserva] = @original_id_reserva AND (([fecha_reserva] = @original_fecha_reserva) OR ([fecha_reserva] IS NULL AND @original_fecha_reserva IS NULL)) AND (([cantidad_reserva] = @original_cantidad_reserva) OR ([cantidad_reserva] IS NULL AND @original_cantidad_reserva IS NULL)) AND (([farmaceutico_id_farmaceuta] = @original_farmaceutico_id_farmaceuta) OR ([farmaceutico_id_farmaceuta] IS NULL AND @original_farmaceutico_id_farmaceuta IS NULL)) AND (([medicamento_codigo] = @original_medicamento_codigo) OR ([medicamento_codigo] IS NULL AND @original_medicamento_codigo IS NULL))">
+                              <DeleteParameters>
+                                  <asp:Parameter Name="original_id_reserva" Type="String" />
+                                  <asp:Parameter DbType="Date" Name="original_fecha_reserva" />
+                                  <asp:Parameter Name="original_cantidad_reserva" Type="Int32" />
+                                  <asp:Parameter Name="original_farmaceutico_id_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="original_medicamento_codigo" Type="String" />
+                              </DeleteParameters>
+                              <InsertParameters>
+                                  <asp:Parameter Name="id_reserva" Type="String" />
+                                  <asp:Parameter DbType="Date" Name="fecha_reserva" />
+                                  <asp:Parameter Name="cantidad_reserva" Type="Int32" />
+                                  <asp:Parameter Name="farmaceutico_id_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="medicamento_codigo" Type="String" />
+                              </InsertParameters>
+                              <UpdateParameters>
+                                  <asp:Parameter DbType="Date" Name="fecha_reserva" />
+                                  <asp:Parameter Name="cantidad_reserva" Type="Int32" />
+                                  <asp:Parameter Name="farmaceutico_id_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="medicamento_codigo" Type="String" />
+                                  <asp:Parameter Name="original_id_reserva" Type="String" />
+                                  <asp:Parameter DbType="Date" Name="original_fecha_reserva" />
+                                  <asp:Parameter Name="original_cantidad_reserva" Type="Int32" />
+                                  <asp:Parameter Name="original_farmaceutico_id_farmaceuta" Type="String" />
+                                  <asp:Parameter Name="original_medicamento_codigo" Type="String" />
+                              </UpdateParameters>
+                          </asp:SqlDataSource>
                     </div>
                 </form>
         </div>

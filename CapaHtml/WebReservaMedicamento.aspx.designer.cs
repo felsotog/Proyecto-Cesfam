@@ -87,13 +87,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control DropDownListrutfarmaceuta.
+        /// Control DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListrutfarmaceuta;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// Control SqlDataSource1.
@@ -114,22 +114,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control DropDownListcodigomedicamento.
+        /// Control DropDownList2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListcodigomedicamento;
-
-        /// <summary>
-        /// Control SqlDataSource2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
 
         /// <summary>
         /// Control lblError.
@@ -166,5 +157,23 @@ namespace CapaHtml
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+
+        /// <summary>
+        /// Control GridView3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView3;
+
+        /// <summary>
+        /// Control SqlDataSource4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
     }
 }
