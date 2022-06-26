@@ -26,8 +26,8 @@ namespace CapaNegocioCesfam
         public void insertarDetalleFicha(DetalleFicha detalleficha)
         {
             this.configurarConexion();
-            this.conec1.CadenaSQL = "INSERT INTO " + this.conec1.NombreTabla + " (id_detalle_ficha,ficha_paciente_id_ficha,formulario_medicamento_id_formulario) VALUES ('"
-                + detalleficha.Id_detalle_ficha + "','" + detalleficha.Ficha_paciente_id_ficha + "', '" + detalleficha.Formulario_medicamento_id_formulario + "');";
+            this.conec1.CadenaSQL = "INSERT INTO " + this.conec1.NombreTabla + " (id_detalle_ficha,ficha_paciente_id_ficha,formulario_medicamento_id_formulario,comentarios) VALUES ('"
+                + detalleficha.Id_detalle_ficha + "','" + detalleficha.Ficha_paciente_id_ficha + "', '" + detalleficha.Formulario_medicamento_id_formulario + "', '" + detalleficha.Comentarios + "');";
             this.conec1.EsSelect = false;
             this.conec1.conectar();
         }
@@ -57,6 +57,7 @@ namespace CapaNegocioCesfam
                 auxDetalleFicha.Id_detalle_ficha = (String)dt.Rows[pos]["id_detalle_ficha"];
                 auxDetalleFicha.Ficha_paciente_id_ficha = (String)dt.Rows[pos]["ficha_paciente_id_ficha"];
                 auxDetalleFicha.Formulario_medicamento_id_formulario = (String)dt.Rows[pos]["formulario_medicamento_id_formulario"];
+                auxDetalleFicha.Comentarios = (String)dt.Rows[pos]["comentarios"];
 
 
 
@@ -66,6 +67,7 @@ namespace CapaNegocioCesfam
                 auxDetalleFicha.Id_detalle_ficha = "";
                 auxDetalleFicha.Ficha_paciente_id_ficha = "";
                 auxDetalleFicha.Formulario_medicamento_id_formulario = "";
+                auxDetalleFicha.Comentarios = "";
 
 
 
@@ -91,6 +93,7 @@ namespace CapaNegocioCesfam
                 auxDetalleFicha.Id_detalle_ficha = (String)dt.Rows[0]["id_detalle_ficha"];
                 auxDetalleFicha.Ficha_paciente_id_ficha = (String)dt.Rows[0]["ficha_paciente_id_ficha"];
                 auxDetalleFicha.Formulario_medicamento_id_formulario = (String)dt.Rows[0]["formulario_medicamento_id_formulario"];
+                auxDetalleFicha.Comentarios = (String)dt.Rows[0]["comentarios"];
 
 
 
@@ -100,6 +103,7 @@ namespace CapaNegocioCesfam
                 auxDetalleFicha.Id_detalle_ficha = "";
                 auxDetalleFicha.Ficha_paciente_id_ficha = "";
                 auxDetalleFicha.Formulario_medicamento_id_formulario = "";
+                auxDetalleFicha.Comentarios = "";
 
 
             }
@@ -119,7 +123,7 @@ namespace CapaNegocioCesfam
         {
             this.configurarConexion();
             this.conec1.CadenaSQL = "UPDATE " + this.conec1.NombreTabla + " SET "
-                + " ficha_paciente_id_ficha = '" + detalleficha.Ficha_paciente_id_ficha + "',formulario_medicamento_id_formulario = " + detalleficha.Formulario_medicamento_id_formulario
+                + " ficha_paciente_id_ficha = '" + detalleficha.Ficha_paciente_id_ficha + "',formulario_medicamento_id_formulario = " + detalleficha.Formulario_medicamento_id_formulario + "',comentarios = " + detalleficha.Comentarios
                 + "' WHERE id_detalle_ficha = '" + detalleficha.Id_detalle_ficha + "';";
             this.conec1.EsSelect = false;
             this.conec1.conectar();
@@ -141,6 +145,7 @@ namespace CapaNegocioCesfam
                 auxDetalleFicha.Id_detalle_ficha = (String)dt.Rows[0]["id_detalle_ficha"];
                 auxDetalleFicha.Ficha_paciente_id_ficha = (String)dt.Rows[0]["ficha_paciente_id_ficha"];
                 auxDetalleFicha.Formulario_medicamento_id_formulario = (String)dt.Rows[0]["formulario_medicamento_id_formulario"];
+                auxDetalleFicha.Comentarios = (String)dt.Rows[0]["comentarios"];
 
 
 
@@ -150,6 +155,7 @@ namespace CapaNegocioCesfam
                 auxDetalleFicha.Id_detalle_ficha = "";
                 auxDetalleFicha.Ficha_paciente_id_ficha = "";
                 auxDetalleFicha.Formulario_medicamento_id_formulario = "";
+                auxDetalleFicha.Comentarios = "";
 
 
 
@@ -175,6 +181,7 @@ namespace CapaNegocioCesfam
                 auxDetalleFicha.Id_detalle_ficha = (String)dt.Rows[0]["id_detalle_ficha"];
                 auxDetalleFicha.Ficha_paciente_id_ficha = (String)dt.Rows[0]["ficha_paciente_id_ficha"];
                 auxDetalleFicha.Formulario_medicamento_id_formulario = (String)dt.Rows[0]["formulario_medicamento_id_formulario"];
+                auxDetalleFicha.Comentarios = (String)dt.Rows[0]["comentarios"];
 
 
 
@@ -184,6 +191,7 @@ namespace CapaNegocioCesfam
                 auxDetalleFicha.Id_detalle_ficha = "";
                 auxDetalleFicha.Ficha_paciente_id_ficha = "";
                 auxDetalleFicha.Formulario_medicamento_id_formulario = "";
+                auxDetalleFicha.Comentarios = "";
 
 
             }

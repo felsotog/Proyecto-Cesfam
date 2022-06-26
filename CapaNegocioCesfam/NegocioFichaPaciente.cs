@@ -27,8 +27,8 @@ namespace CapaNegocioCesfam
         public void insertarFichaPaciente(FichaPaciente fichapaciente)
         {
             this.configurarConexion();
-            this.conec1.CadenaSQL = "INSERT INTO " + this.conec1.NombreTabla + " (id_ficha,descripcion,fecha_ficha,medico_rut_medico) VALUES ('"
-                + fichapaciente.Id_ficha + "','" + fichapaciente.Descripcion + "', '" + fichapaciente.Fecha_ficha + "', '" + fichapaciente.Medico_rut_medico + "');";
+            this.conec1.CadenaSQL = "INSERT INTO " + this.conec1.NombreTabla + " (id_ficha,descripcion,fecha_ficha,medico_rut_medico,paciente_rut) VALUES ('"
+                + fichapaciente.Id_ficha + "','" + fichapaciente.Descripcion + "', '" + fichapaciente.Fecha_ficha + "', '" + fichapaciente.Medico_rut_medico + "','" + fichapaciente.Paciente_rut + "');";
             this.conec1.EsSelect = false;
             this.conec1.conectar();
         }
@@ -59,6 +59,7 @@ namespace CapaNegocioCesfam
                 auxFichaPaciente.Descripcion = (String)dt.Rows[pos]["descripcion"];
                 auxFichaPaciente.Fecha_ficha = (DateTime)dt.Rows[pos]["fecha_ficha"];
                 auxFichaPaciente.Medico_rut_medico = (String)dt.Rows[pos]["medico_rut_medico"];
+                auxFichaPaciente.Paciente_rut= (String)dt.Rows[pos]["paciente_rut"];
 
 
 
@@ -69,6 +70,7 @@ namespace CapaNegocioCesfam
                 auxFichaPaciente.Descripcion = "";
                 auxFichaPaciente.Fecha_ficha = DateTime.Today;
                 auxFichaPaciente.Medico_rut_medico = "";
+                auxFichaPaciente.Paciente_rut= "";
 
 
 
@@ -95,6 +97,7 @@ namespace CapaNegocioCesfam
                 auxFichaPaciente.Descripcion = (String)dt.Rows[0]["descripcion"];
                 auxFichaPaciente.Fecha_ficha = (DateTime)dt.Rows[0]["fecha_ficha"];
                 auxFichaPaciente.Medico_rut_medico = (String)dt.Rows[0]["medico_rut_medico"];
+                auxFichaPaciente.Paciente_rut = (String)dt.Rows[0]["paciente_rut"];
 
 
 
@@ -106,6 +109,7 @@ namespace CapaNegocioCesfam
                 auxFichaPaciente.Descripcion = "";
                 auxFichaPaciente.Fecha_ficha = DateTime.Today;
                 auxFichaPaciente.Medico_rut_medico = "";
+                auxFichaPaciente.Paciente_rut = "";
 
 
             }
@@ -125,7 +129,7 @@ namespace CapaNegocioCesfam
         {
             this.configurarConexion();
             this.conec1.CadenaSQL = "UPDATE " + this.conec1.NombreTabla + " SET "
-                + " descripcion = '" + fichapaciente.Descripcion + "',fecha_ficha = " + fichapaciente.Fecha_ficha + "',medico_rut_medico = " + fichapaciente.Medico_rut_medico
+                + " descripcion = '" + fichapaciente.Descripcion + "',fecha_ficha = " + fichapaciente.Fecha_ficha + "',medico_rut_medico = " + fichapaciente.Medico_rut_medico + "',paciente_rut = " + fichapaciente.Paciente_rut
                 + "' WHERE id_ficha = '" + fichapaciente.Id_ficha + "';";
             this.conec1.EsSelect = false;
             this.conec1.conectar();
@@ -149,7 +153,7 @@ namespace CapaNegocioCesfam
                 auxFichaPaciente.Descripcion = (String)dt.Rows[0]["descripcion"];
                 auxFichaPaciente.Fecha_ficha = (DateTime)dt.Rows[0]["fecha_ficha"];
                 auxFichaPaciente.Medico_rut_medico = (String)dt.Rows[0]["medico_rut_medico"];
-
+                auxFichaPaciente.Paciente_rut = (String)dt.Rows[0]["paciente_rut"];
 
             }
             catch (Exception ex)
@@ -158,6 +162,7 @@ namespace CapaNegocioCesfam
                 auxFichaPaciente.Descripcion = "";
                 auxFichaPaciente.Fecha_ficha = DateTime.Today;
                 auxFichaPaciente.Medico_rut_medico = "";
+                auxFichaPaciente.Paciente_rut = "";
 
 
 
@@ -184,7 +189,7 @@ namespace CapaNegocioCesfam
                 auxFichaPaciente.Descripcion = (String)dt.Rows[0]["descripcion"];
                 auxFichaPaciente.Fecha_ficha = (DateTime)dt.Rows[0]["fecha_ficha"];
                 auxFichaPaciente.Medico_rut_medico = (String)dt.Rows[0]["medico_rut_medico"];
-
+                auxFichaPaciente.Paciente_rut = (String)dt.Rows[0]["paciente_rut"];
 
 
             }
@@ -194,6 +199,7 @@ namespace CapaNegocioCesfam
                 auxFichaPaciente.Descripcion = "";
                 auxFichaPaciente.Fecha_ficha = DateTime.Today;
                 auxFichaPaciente.Medico_rut_medico = "";
+                auxFichaPaciente.Paciente_rut = "";
 
 
             }
