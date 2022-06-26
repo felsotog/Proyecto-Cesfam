@@ -19,7 +19,7 @@ namespace CapaNegocioCesfam
             this.conec1 = new ConexionCesfam();
             this.conec1.NombreBaseDeDatos = "CESFAM";
             this.conec1.NombreTabla = "farmaceutico";
-            this.conec1.CadenaConexion = "Data Source=DESKTOP-DQKDMBV;Initial Catalog=CESFAM;Integrated Security=True";
+            this.conec1.CadenaConexion = "Data Source=localhost;Initial Catalog=CESFAM;Integrated Security=True";
         }
 
         public void insertarFarmaceuta(Farmaceutico farmaceutico)

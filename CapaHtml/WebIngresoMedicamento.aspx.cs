@@ -23,9 +23,7 @@ namespace CapaHtml
         {
             ServiceMantenedorFarmaceutico.WebServiceFarmaceuticoSoapClient auxNegocioFarmaceutico = new ServiceMantenedorFarmaceutico.WebServiceFarmaceuticoSoapClient();
 
-            this.GridViewFarmaceuta.DataSource = auxNegocioFarmaceutico.retornarTotalFarmaceutasService();
-            this.GridViewFarmaceuta.DataMember = "farmaceutico";
-            this.GridViewFarmaceuta.DataBind();
+            
         }
 
         protected void btnGuardarMedicamento_Click(object sender, EventArgs e)
