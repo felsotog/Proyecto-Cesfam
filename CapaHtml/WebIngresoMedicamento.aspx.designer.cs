@@ -105,13 +105,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label lblSucces;
 
         /// <summary>
-        /// Control btnGuardarMedicamento.
+        /// Control btnGuardarIngreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarMedicamento;
+        protected global::System.Web.UI.WebControls.Button btnGuardarIngreso;
 
         /// <summary>
         /// Control Volver.
@@ -294,13 +294,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// Control Button1.
+        /// Control btnGuardarDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnGuardarDetalle;
 
         /// <summary>
         /// Control Button2.

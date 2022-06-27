@@ -159,8 +159,8 @@
                                     <asp:TableCell>
                                         <asp:Label runat="server" ID="Label2" Text="Descripcion:"></asp:Label>
                                     </asp:TableCell>
-                                    <asp:TableCell>
-                                        <textarea class="form-control" id="txtDescripcion" cols="20" name="S1" rows="2"></textarea>
+                                    <asp:TableCell>                                        
+                                        <textarea class="form-control" runat="server"  id="TextAreaDescripcion"  cols="20" name="S2" rows="2"></textarea>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -168,7 +168,7 @@
                                         <asp:Label runat="server" ID="Label3" Text="Cantidad:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox1" placeholder=""></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtCantidad" placeholder=""></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -191,7 +191,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click1" />
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
@@ -249,7 +249,8 @@
                                   <asp:Parameter Name="original_farmacia_id_farmacia" Type="String" />
                               </UpdateParameters>
                           </asp:SqlDataSource>
-                    </div>
+                         
+                         </div>
                 </form>
         </div>
     </div>

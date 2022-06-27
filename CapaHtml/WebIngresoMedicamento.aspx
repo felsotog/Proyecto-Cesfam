@@ -151,7 +151,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="btnGuardarMedicamento" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardarMedicamento_Click" />
+                            <asp:Button ID="btnGuardarIngreso" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardarIngreso_Click" />
                             <asp:Button ID="Volver" runat="server" CssClass="btn btn-dark" Text="Volver" OnClick="Volver_Click" />
                         </div>
 
@@ -258,7 +258,7 @@
                             </fieldset>
                             <br />
                         <div>
-                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardarMedicamento_Click" />
+                            <asp:Button ID="btnGuardarDetalle" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardarDetalle_Click" />
                             <asp:Button ID="Button2" runat="server" CssClass="btn btn-dark" Text="Volver" OnClick="Volver_Click" />
                         </div>
                         </div>
