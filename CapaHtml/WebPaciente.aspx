@@ -153,7 +153,8 @@
                                         <asp:Label runat="server" ID="Label4" Text="Telefono:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtTelefono" placeholder=""></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtTelefono" placeholder="" MaxLength="10" ></asp:TextBox>
+                                        
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -166,7 +167,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="btnAgendar1" runat="server" CssClass="btn btn-primary" Text="Agendar"/>
+                            <asp:Button ID="btnAgendar1" runat="server" CssClass="btn btn-primary" Text="Agendar" OnClick="btnAgendar1_Click"/>
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
@@ -208,7 +209,9 @@
                                   <asp:Parameter Name="original_telefono" Type="Int32" />
                                   <asp:Parameter Name="original_direccion" Type="String" />
                               </UpdateParameters>
-                          </asp:SqlDataSource>
+                          </asp:SqlDataSource>                   
+                         
+                         
                     </div>
                 </form>
             </div>
