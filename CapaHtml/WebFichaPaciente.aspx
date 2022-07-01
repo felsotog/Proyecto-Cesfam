@@ -143,19 +143,12 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label3" Text="ID Detalle:"></asp:Label>
+                                        <asp:Label runat="server" ID="Label3" Text="Rut Paciente:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox1" placeholder="Camelo"></asp:TextBox>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label4" Text="ID Formulario Medicamento:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:DropDownList CssClass="btn btn_2" ID="DropDownListidformulario" runat="server" Width="100%">
-                                        </asp:DropDownList>
+                                          <asp:DropDownList CssClass="btn btn_2" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="rut" DataValueField="rut" Width="100%">
+                                          </asp:DropDownList>
+                                          <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString66 %>" SelectCommand="SELECT [rut] FROM [paciente]"></asp:SqlDataSource>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -172,40 +165,133 @@
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
-
                     <div class="mt-5">
-                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_ficha" DataSourceID="SqlDataSource2" CssClass="table table-dark">
-                              <Columns>
-                                  <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                                  <asp:BoundField DataField="id_ficha" HeaderText="id_ficha" ReadOnly="True" SortExpression="id_ficha" />
-                                  <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
-                                  <asp:BoundField DataField="fecha_ficha" HeaderText="fecha_ficha" SortExpression="fecha_ficha" />
-                                  <asp:BoundField DataField="medico_rut_medico" HeaderText="medico_rut_medico" ReadOnly="True" SortExpression="medico_rut_medico" />
-                              </Columns>
-                          </asp:GridView>
-                          <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString38 %>" DeleteCommand="DELETE FROM [ficha_paciente] WHERE [id_ficha] = @original_id_ficha AND (([descripcion] = @original_descripcion) OR ([descripcion] IS NULL AND @original_descripcion IS NULL)) AND (([fecha_ficha] = @original_fecha_ficha) OR ([fecha_ficha] IS NULL AND @original_fecha_ficha IS NULL)) AND (([medico_rut_medico] = @original_medico_rut_medico) OR ([medico_rut_medico] IS NULL AND @original_medico_rut_medico IS NULL))" InsertCommand="INSERT INTO [ficha_paciente] ([id_ficha], [descripcion], [fecha_ficha], [medico_rut_medico]) VALUES (@id_ficha, @descripcion, @fecha_ficha, @medico_rut_medico)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [ficha_paciente]" UpdateCommand="UPDATE [ficha_paciente] SET [descripcion] = @descripcion, [fecha_ficha] = @fecha_ficha, [medico_rut_medico] = @medico_rut_medico WHERE [id_ficha] = @original_id_ficha AND (([descripcion] = @original_descripcion) OR ([descripcion] IS NULL AND @original_descripcion IS NULL)) AND (([fecha_ficha] = @original_fecha_ficha) OR ([fecha_ficha] IS NULL AND @original_fecha_ficha IS NULL)) AND (([medico_rut_medico] = @original_medico_rut_medico) OR ([medico_rut_medico] IS NULL AND @original_medico_rut_medico IS NULL))">
-                              <DeleteParameters>
-                                  <asp:Parameter Name="original_id_ficha" Type="String" />
-                                  <asp:Parameter Name="original_descripcion" Type="String" />
-                                  <asp:Parameter DbType="Date" Name="original_fecha_ficha" />
-                                  <asp:Parameter Name="original_medico_rut_medico" Type="String" />
-                              </DeleteParameters>
-                              <InsertParameters>
-                                  <asp:Parameter Name="id_ficha" Type="String" />
-                                  <asp:Parameter Name="descripcion" Type="String" />
-                                  <asp:Parameter DbType="Date" Name="fecha_ficha" />
-                                  <asp:Parameter Name="medico_rut_medico" Type="String" />
-                              </InsertParameters>
-                              <UpdateParameters>
-                                  <asp:Parameter Name="descripcion" Type="String" />
-                                  <asp:Parameter DbType="Date" Name="fecha_ficha" />
-                                  <asp:Parameter Name="medico_rut_medico" Type="String" />
-                                  <asp:Parameter Name="original_id_ficha" Type="String" />
-                                  <asp:Parameter Name="original_descripcion" Type="String" />
-                                  <asp:Parameter DbType="Date" Name="original_fecha_ficha" />
-                                  <asp:Parameter Name="original_medico_rut_medico" Type="String" />
-                              </UpdateParameters>
-                          </asp:SqlDataSource>
+                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="id_ficha" DataSourceID="SqlDataSource2" CssClass="table table-dark">
+                             <Columns>
+                                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                 <asp:BoundField DataField="id_ficha" HeaderText="id_ficha" ReadOnly="True" SortExpression="id_ficha" />
+                                 <asp:BoundField DataField="fecha_ficha" HeaderText="fecha_ficha" SortExpression="fecha_ficha" />
+                                 <asp:BoundField DataField="medico_rut_medico" HeaderText="medico_rut_medico" SortExpression="medico_rut_medico" />
+                                 <asp:BoundField DataField="paciente_rut" HeaderText="paciente_rut" SortExpression="paciente_rut" />
+                             </Columns>
+                         </asp:GridView>
+                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString65 %>" DeleteCommand="DELETE FROM [ficha_paciente] WHERE [id_ficha] = @original_id_ficha AND (([fecha_ficha] = @original_fecha_ficha) OR ([fecha_ficha] IS NULL AND @original_fecha_ficha IS NULL)) AND (([medico_rut_medico] = @original_medico_rut_medico) OR ([medico_rut_medico] IS NULL AND @original_medico_rut_medico IS NULL)) AND (([paciente_rut] = @original_paciente_rut) OR ([paciente_rut] IS NULL AND @original_paciente_rut IS NULL))" InsertCommand="INSERT INTO [ficha_paciente] ([id_ficha], [fecha_ficha], [medico_rut_medico], [paciente_rut]) VALUES (@id_ficha, @fecha_ficha, @medico_rut_medico, @paciente_rut)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [ficha_paciente]" UpdateCommand="UPDATE [ficha_paciente] SET [fecha_ficha] = @fecha_ficha, [medico_rut_medico] = @medico_rut_medico, [paciente_rut] = @paciente_rut WHERE [id_ficha] = @original_id_ficha AND (([fecha_ficha] = @original_fecha_ficha) OR ([fecha_ficha] IS NULL AND @original_fecha_ficha IS NULL)) AND (([medico_rut_medico] = @original_medico_rut_medico) OR ([medico_rut_medico] IS NULL AND @original_medico_rut_medico IS NULL)) AND (([paciente_rut] = @original_paciente_rut) OR ([paciente_rut] IS NULL AND @original_paciente_rut IS NULL))">
+                             <DeleteParameters>
+                                 <asp:Parameter Name="original_id_ficha" Type="String" />
+                                 <asp:Parameter DbType="Date" Name="original_fecha_ficha" />
+                                 <asp:Parameter Name="original_medico_rut_medico" Type="String" />
+                                 <asp:Parameter Name="original_paciente_rut" Type="String" />
+                             </DeleteParameters>
+                             <InsertParameters>
+                                 <asp:Parameter Name="id_ficha" Type="String" />
+                                 <asp:Parameter DbType="Date" Name="fecha_ficha" />
+                                 <asp:Parameter Name="medico_rut_medico" Type="String" />
+                                 <asp:Parameter Name="paciente_rut" Type="String" />
+                             </InsertParameters>
+                             <UpdateParameters>
+                                 <asp:Parameter DbType="Date" Name="fecha_ficha" />
+                                 <asp:Parameter Name="medico_rut_medico" Type="String" />
+                                 <asp:Parameter Name="paciente_rut" Type="String" />
+                                 <asp:Parameter Name="original_id_ficha" Type="String" />
+                                 <asp:Parameter DbType="Date" Name="original_fecha_ficha" />
+                                 <asp:Parameter Name="original_medico_rut_medico" Type="String" />
+                                 <asp:Parameter Name="original_paciente_rut" Type="String" />
+                             </UpdateParameters>
+                         </asp:SqlDataSource>
+                    </div>
+
+                    <div class="pt-5">
+                        <fieldset>
+                           <div class="alert alert-success d-flex align-items-center" role="alert">
+                              <i class="fas fa-bell" width="34" height="34" style="padding-right: 8px;"></i>
+                              <div>
+                                Ingresar Datos del Detalle
+                              </div>
+                            </div>
+                            <asp:Table runat="server" Width="100%">
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label8" Text="ID Detalle:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox4" placeholder="Camelo"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label9" Text="ID Formulario Medicamento:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownList2" runat="server" DataSourceID="SqlDataSource4" DataTextField="id_formulario" DataValueField="id_formulario" Width="100%">
+                                         </asp:DropDownList>
+                                         <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString67 %>" SelectCommand="SELECT [id_formulario] FROM [formulario_medicamento]"></asp:SqlDataSource>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label4" Text="ID Ficha:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                          <asp:DropDownList CssClass="btn btn_2" ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="id_ficha" DataValueField="id_ficha" Width="100%">
+                                          </asp:DropDownList>
+                                          <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString68 %>" SelectCommand="SELECT [id_ficha] FROM [ficha_paciente]"></asp:SqlDataSource>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label5" Text="Comentarios:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <textarea class="form-control" runat="server"  id="TextAreaComentarios"  cols="20" name="S2" rows="2"></textarea>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell ColumnSpan="2">
+                                        <asp:Label runat="server" CssClass="alert-danger" ID="Label10"></asp:Label>
+                                        <asp:Label runat="server" CssClass="alert-success" ID="Label11"></asp:Label>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                            </asp:Table>
+                        </fieldset>
+                        <br />
+                        <div>
+                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:HyperLink ID="HyperLink2"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                      <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_detalle_ficha" DataSourceID="SqlDataSource6" CssClass="table table-dark">
+                          <Columns>
+                              <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                              <asp:BoundField DataField="id_detalle_ficha" HeaderText="id_detalle_ficha" ReadOnly="True" SortExpression="id_detalle_ficha" />
+                              <asp:BoundField DataField="ficha_paciente_id_ficha" HeaderText="ficha_paciente_id_ficha" SortExpression="ficha_paciente_id_ficha" />
+                              <asp:BoundField DataField="formulario_medicamento_id_formulario" HeaderText="formulario_medicamento_id_formulario" SortExpression="formulario_medicamento_id_formulario" />
+                              <asp:BoundField DataField="comentarios" HeaderText="comentarios" SortExpression="comentarios" />
+                          </Columns>
+                      </asp:GridView>
+                      <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString69 %>" DeleteCommand="DELETE FROM [detalle_ficha] WHERE [id_detalle_ficha] = @original_id_detalle_ficha AND (([ficha_paciente_id_ficha] = @original_ficha_paciente_id_ficha) OR ([ficha_paciente_id_ficha] IS NULL AND @original_ficha_paciente_id_ficha IS NULL)) AND (([formulario_medicamento_id_formulario] = @original_formulario_medicamento_id_formulario) OR ([formulario_medicamento_id_formulario] IS NULL AND @original_formulario_medicamento_id_formulario IS NULL)) AND (([comentarios] = @original_comentarios) OR ([comentarios] IS NULL AND @original_comentarios IS NULL))" InsertCommand="INSERT INTO [detalle_ficha] ([id_detalle_ficha], [ficha_paciente_id_ficha], [formulario_medicamento_id_formulario], [comentarios]) VALUES (@id_detalle_ficha, @ficha_paciente_id_ficha, @formulario_medicamento_id_formulario, @comentarios)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [detalle_ficha]" UpdateCommand="UPDATE [detalle_ficha] SET [ficha_paciente_id_ficha] = @ficha_paciente_id_ficha, [formulario_medicamento_id_formulario] = @formulario_medicamento_id_formulario, [comentarios] = @comentarios WHERE [id_detalle_ficha] = @original_id_detalle_ficha AND (([ficha_paciente_id_ficha] = @original_ficha_paciente_id_ficha) OR ([ficha_paciente_id_ficha] IS NULL AND @original_ficha_paciente_id_ficha IS NULL)) AND (([formulario_medicamento_id_formulario] = @original_formulario_medicamento_id_formulario) OR ([formulario_medicamento_id_formulario] IS NULL AND @original_formulario_medicamento_id_formulario IS NULL)) AND (([comentarios] = @original_comentarios) OR ([comentarios] IS NULL AND @original_comentarios IS NULL))">
+                          <DeleteParameters>
+                              <asp:Parameter Name="original_id_detalle_ficha" Type="String" />
+                              <asp:Parameter Name="original_ficha_paciente_id_ficha" Type="String" />
+                              <asp:Parameter Name="original_formulario_medicamento_id_formulario" Type="String" />
+                              <asp:Parameter Name="original_comentarios" Type="String" />
+                          </DeleteParameters>
+                          <InsertParameters>
+                              <asp:Parameter Name="id_detalle_ficha" Type="String" />
+                              <asp:Parameter Name="ficha_paciente_id_ficha" Type="String" />
+                              <asp:Parameter Name="formulario_medicamento_id_formulario" Type="String" />
+                              <asp:Parameter Name="comentarios" Type="String" />
+                          </InsertParameters>
+                          <UpdateParameters>
+                              <asp:Parameter Name="ficha_paciente_id_ficha" Type="String" />
+                              <asp:Parameter Name="formulario_medicamento_id_formulario" Type="String" />
+                              <asp:Parameter Name="comentarios" Type="String" />
+                              <asp:Parameter Name="original_id_detalle_ficha" Type="String" />
+                              <asp:Parameter Name="original_ficha_paciente_id_ficha" Type="String" />
+                              <asp:Parameter Name="original_formulario_medicamento_id_formulario" Type="String" />
+                              <asp:Parameter Name="original_comentarios" Type="String" />
+                          </UpdateParameters>
+                      </asp:SqlDataSource>
                     </div>
                 </form>
         </div>

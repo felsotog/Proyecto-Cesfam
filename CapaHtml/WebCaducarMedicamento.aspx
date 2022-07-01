@@ -115,7 +115,7 @@
                           <div class="alert alert-success d-flex align-items-center" role="alert">
                               <i class="fas fa-bell" width="34" height="34" style="padding-right: 8px;"></i>
                               <div>
-                                Ingresar Datos de Agendamiento de Hora
+                                Ingresar Datos Merma
                               </div>
                             </div>
                             <asp:Table runat="server" Width="100%">
@@ -136,40 +136,6 @@
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label1" Text="ID Detalle:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtIddetalle" placeholder="1-8"></asp:TextBox>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label2" Text="Cantidad:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtCantidadcaducada" placeholder="1-9"></asp:TextBox>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label3" Text="Motivo:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <textarea class="form-control" id="TextAreamotivo" cols="20" name="S1" rows="2"></textarea>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label4" Text="Codigo Medicamento:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                         <asp:DropDownList CssClass="btn btn_2"  ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo"  Width="100%">
-                                         </asp:DropDownList>
-                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString18 %>" SelectCommand="SELECT [codigo] FROM [medicamento]"></asp:SqlDataSource>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
                                     <asp:TableCell ColumnSpan="2">
                                         <asp:Label runat="server" CssClass="alert-danger" ID="lblError"></asp:Label>
                                         <asp:Label runat="server" CssClass="alert-success" ID="lblSucces"></asp:Label>
@@ -181,6 +147,98 @@
                         <div>
                             <asp:Button ID="btnAgendar1" runat="server" CssClass="btn btn-primary" Text="Agendar" OnClick="btnAgendar1_Click"/>
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="id_caducidad" DataSourceID="SqlDataSource4" CssClass="table table-dark">
+                              <Columns>
+                                  <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                  <asp:BoundField DataField="id_caducidad" HeaderText="id_caducidad" ReadOnly="True" SortExpression="id_caducidad" />
+                                  <asp:BoundField DataField="fecha_caducidad" HeaderText="fecha_caducidad" SortExpression="fecha_caducidad" />
+                              </Columns>
+                          </asp:GridView>
+                          <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString79 %>" DeleteCommand="DELETE FROM [caducar_medicamento] WHERE [id_caducidad] = @original_id_caducidad AND (([fecha_caducidad] = @original_fecha_caducidad) OR ([fecha_caducidad] IS NULL AND @original_fecha_caducidad IS NULL))" InsertCommand="INSERT INTO [caducar_medicamento] ([id_caducidad], [fecha_caducidad]) VALUES (@id_caducidad, @fecha_caducidad)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [caducar_medicamento]" UpdateCommand="UPDATE [caducar_medicamento] SET [fecha_caducidad] = @fecha_caducidad WHERE [id_caducidad] = @original_id_caducidad AND (([fecha_caducidad] = @original_fecha_caducidad) OR ([fecha_caducidad] IS NULL AND @original_fecha_caducidad IS NULL))">
+                              <DeleteParameters>
+                                  <asp:Parameter Name="original_id_caducidad" Type="String" />
+                                  <asp:Parameter Name="original_fecha_caducidad" Type="String" />
+                              </DeleteParameters>
+                              <InsertParameters>
+                                  <asp:Parameter Name="id_caducidad" Type="String" />
+                                  <asp:Parameter Name="fecha_caducidad" Type="String" />
+                              </InsertParameters>
+                              <UpdateParameters>
+                                  <asp:Parameter Name="fecha_caducidad" Type="String" />
+                                  <asp:Parameter Name="original_id_caducidad" Type="String" />
+                                  <asp:Parameter Name="original_fecha_caducidad" Type="String" />
+                              </UpdateParameters>
+                          </asp:SqlDataSource>
+                    </div>
+
+                    <div class="mt-5">
+                        <fieldset>
+                          <div class="alert alert-success d-flex align-items-center" role="alert">
+                              <i class="fas fa-bell" width="34" height="34" style="padding-right: 8px;"></i>
+                              <div>
+                                Ingresar Detalles Merma
+                              </div>
+                            </div>
+                            <asp:Table runat="server" Width="100%">
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label7" Text="ID Detalle:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox3" placeholder="1-8"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label8" Text="Cantidad:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox4" placeholder="1-9"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label9" Text="Motivo:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <textarea class="form-control" id="TextAreamotivo" cols="20" name="S1" rows="2"></textarea>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label10" Text="Codigo Medicamento:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                         <asp:DropDownList CssClass="btn btn_2"  ID="DropDownListCodigoM" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigo" DataValueField="codigo"  Width="100%">
+                                         </asp:DropDownList>
+                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString18 %>" SelectCommand="SELECT [codigo] FROM [medicamento]"></asp:SqlDataSource>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label1" Text="ID Merma:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:DropDownList CssClass="btn btn_2" ID="DropDownListMermaId" runat="server" DataSourceID="SqlDataSource3" DataTextField="id_caducidad" DataValueField="id_caducidad" Width="100%">
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString78 %>" SelectCommand="SELECT [id_caducidad] FROM [caducar_medicamento]"></asp:SqlDataSource>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell ColumnSpan="2">
+                                        <asp:Label runat="server" CssClass="alert-danger" ID="Label11"></asp:Label>
+                                        <asp:Label runat="server" CssClass="alert-success" ID="Label12"></asp:Label>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                            </asp:Table>
+                        </fieldset>
+                        <br />
+                        <div>
+                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Agendar" OnClick="btnAgendar1_Click"/>
+                            <asp:HyperLink ID="HyperLink2"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
 

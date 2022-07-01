@@ -111,7 +111,7 @@
                            <div class="alert alert-success d-flex align-items-center" role="alert">
                               <i class="fas fa-bell" width="34" height="34" style="padding-right: 8px;"></i>
                               <div>
-                                Ingresar Datos de la Receta
+                                Ingresar Datos del Formulario
                               </div>
                             </div>
                             <asp:Table runat="server" Width="100%">
@@ -133,44 +133,12 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label5" Text="Rut Medico:"></asp:Label>
+                                        <asp:Label runat="server" ID="Label2" Text="Rut Medico:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListrutmedico" runat="server" Width="100%">
-                                         </asp:DropDownList>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label6" Text="ID Detalle:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtIddetallereceta" placeholder=""></asp:TextBox>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label2" Text="Cantidad:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextCantidad" placeholder=""></asp:TextBox>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label3" Text="Rut Paciente:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:DropDownList CssClass="btn btn_2" ID="DropDownListrutpaciente" runat="server" Width="100%">
+                                        <asp:DropDownList CssClass="btn btn_2" ID="DropDownListRutM" runat="server" DataSourceID="SqlDataSource1" DataTextField="rut_medico" DataValueField="rut_medico" Width="100%">
                                         </asp:DropDownList>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                                <asp:TableRow>
-                                    <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label4" Text="Codigo Medicamento:"></asp:Label>
-                                    </asp:TableCell>
-                                    <asp:TableCell>
-                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListcodigomedicamento" runat="server" Width="100%"></asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString71 %>" SelectCommand="SELECT [rut_medico] FROM [medico]"></asp:SqlDataSource>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -187,7 +155,6 @@
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
-
                     <div class="mt-5">
                          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="id_formulario" DataSourceID="SqlDataSource2" CssClass="table table-dark">
                               <Columns>
@@ -214,6 +181,115 @@
                                   <asp:Parameter Name="original_id_formulario" Type="String" />
                                   <asp:Parameter DbType="Date" Name="original_fecha_receta" />
                                   <asp:Parameter Name="original_medico_rut_medico" Type="String" />
+                              </UpdateParameters>
+                          </asp:SqlDataSource>
+                    </div>
+
+                    <div class="mt-5">
+                        <fieldset>
+                           <div class="alert alert-success d-flex align-items-center" role="alert">
+                              <i class="fas fa-bell" width="34" height="34" style="padding-right: 8px;"></i>
+                              <div>
+                                Ingresar Datos de la Receta
+                              </div>
+                            </div>
+                            <asp:Table runat="server" Width="100%">
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label3" Text="ID Detalle:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox3" placeholder=""></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label4" Text="Cantidad:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox4" placeholder=""></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label5" Text="Rut Paciente:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListRutP" runat="server" DataSourceID="SqlDataSource3" DataTextField="rut" DataValueField="rut" Width="100%">
+                                         </asp:DropDownList>
+                                         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString70 %>" SelectCommand="SELECT [rut] FROM [paciente]"></asp:SqlDataSource>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label7" Text="ID Formulario:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListFormId" runat="server" DataSourceID="SqlDataSource4" DataTextField="rut" DataValueField="rut" Width="100%">
+                                         </asp:DropDownList>
+                                         <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString70 %>" SelectCommand="SELECT [rut] FROM [paciente]"></asp:SqlDataSource>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Label runat="server" ID="Label6" Text="Codigo Medicamento:"></asp:Label>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:DropDownList CssClass="btn btn_2" ID="DropDownListCodigoM" runat="server" DataSourceID="SqlDataSource5" DataTextField="codigo" DataValueField="codigo" Width="100%">
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString72 %>" SelectCommand="SELECT [codigo] FROM [medicamento]"></asp:SqlDataSource>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell ColumnSpan="2">
+                                        <asp:Label runat="server" CssClass="alert-danger" ID="Label14"></asp:Label>
+                                        <asp:Label runat="server" CssClass="alert-success" ID="Label15"></asp:Label>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                            </asp:Table>
+                        </fieldset>
+                        <br />
+                        <div>
+                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:HyperLink ID="HyperLink2"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="id_detalle_receta" DataSourceID="SqlDataSource6" CssClass="table table-dark">
+                              <Columns>
+                                  <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                  <asp:BoundField DataField="id_detalle_receta" HeaderText="id_detalle_receta" ReadOnly="True" SortExpression="id_detalle_receta" />
+                                  <asp:BoundField DataField="cantidad" HeaderText="cantidad" SortExpression="cantidad" />
+                                  <asp:BoundField DataField="paciente_rut" HeaderText="paciente_rut" SortExpression="paciente_rut" />
+                                  <asp:BoundField DataField="formulario_medicamento_id_formulario" HeaderText="formulario_medicamento_id_formulario" SortExpression="formulario_medicamento_id_formulario" />
+                                  <asp:BoundField DataField="medicamento_codigo" HeaderText="medicamento_codigo" SortExpression="medicamento_codigo" />
+                              </Columns>
+                          </asp:GridView>
+                          <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString73 %>" DeleteCommand="DELETE FROM [detalle_receta] WHERE [id_detalle_receta] = @original_id_detalle_receta AND (([cantidad] = @original_cantidad) OR ([cantidad] IS NULL AND @original_cantidad IS NULL)) AND (([paciente_rut] = @original_paciente_rut) OR ([paciente_rut] IS NULL AND @original_paciente_rut IS NULL)) AND (([formulario_medicamento_id_formulario] = @original_formulario_medicamento_id_formulario) OR ([formulario_medicamento_id_formulario] IS NULL AND @original_formulario_medicamento_id_formulario IS NULL)) AND (([medicamento_codigo] = @original_medicamento_codigo) OR ([medicamento_codigo] IS NULL AND @original_medicamento_codigo IS NULL))" InsertCommand="INSERT INTO [detalle_receta] ([id_detalle_receta], [cantidad], [paciente_rut], [formulario_medicamento_id_formulario], [medicamento_codigo]) VALUES (@id_detalle_receta, @cantidad, @paciente_rut, @formulario_medicamento_id_formulario, @medicamento_codigo)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [detalle_receta]" UpdateCommand="UPDATE [detalle_receta] SET [cantidad] = @cantidad, [paciente_rut] = @paciente_rut, [formulario_medicamento_id_formulario] = @formulario_medicamento_id_formulario, [medicamento_codigo] = @medicamento_codigo WHERE [id_detalle_receta] = @original_id_detalle_receta AND (([cantidad] = @original_cantidad) OR ([cantidad] IS NULL AND @original_cantidad IS NULL)) AND (([paciente_rut] = @original_paciente_rut) OR ([paciente_rut] IS NULL AND @original_paciente_rut IS NULL)) AND (([formulario_medicamento_id_formulario] = @original_formulario_medicamento_id_formulario) OR ([formulario_medicamento_id_formulario] IS NULL AND @original_formulario_medicamento_id_formulario IS NULL)) AND (([medicamento_codigo] = @original_medicamento_codigo) OR ([medicamento_codigo] IS NULL AND @original_medicamento_codigo IS NULL))">
+                              <DeleteParameters>
+                                  <asp:Parameter Name="original_id_detalle_receta" Type="String" />
+                                  <asp:Parameter Name="original_cantidad" Type="Int32" />
+                                  <asp:Parameter Name="original_paciente_rut" Type="String" />
+                                  <asp:Parameter Name="original_formulario_medicamento_id_formulario" Type="String" />
+                                  <asp:Parameter Name="original_medicamento_codigo" Type="String" />
+                              </DeleteParameters>
+                              <InsertParameters>
+                                  <asp:Parameter Name="id_detalle_receta" Type="String" />
+                                  <asp:Parameter Name="cantidad" Type="Int32" />
+                                  <asp:Parameter Name="paciente_rut" Type="String" />
+                                  <asp:Parameter Name="formulario_medicamento_id_formulario" Type="String" />
+                                  <asp:Parameter Name="medicamento_codigo" Type="String" />
+                              </InsertParameters>
+                              <UpdateParameters>
+                                  <asp:Parameter Name="cantidad" Type="Int32" />
+                                  <asp:Parameter Name="paciente_rut" Type="String" />
+                                  <asp:Parameter Name="formulario_medicamento_id_formulario" Type="String" />
+                                  <asp:Parameter Name="medicamento_codigo" Type="String" />
+                                  <asp:Parameter Name="original_id_detalle_receta" Type="String" />
+                                  <asp:Parameter Name="original_cantidad" Type="Int32" />
+                                  <asp:Parameter Name="original_paciente_rut" Type="String" />
+                                  <asp:Parameter Name="original_formulario_medicamento_id_formulario" Type="String" />
+                                  <asp:Parameter Name="original_medicamento_codigo" Type="String" />
                               </UpdateParameters>
                           </asp:SqlDataSource>
                     </div>
