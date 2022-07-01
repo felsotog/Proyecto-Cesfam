@@ -76,11 +76,11 @@ namespace CapaHtml.ServiceMantenedorFichaPaciente {
         
         private string id_fichaField;
         
-        private string descripcionField;
-        
         private System.DateTime fecha_fichaField;
         
         private string medico_rut_medicoField;
+        
+        private string paciente_rutField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -96,18 +96,6 @@ namespace CapaHtml.ServiceMantenedorFichaPaciente {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Descripcion {
-            get {
-                return this.descripcionField;
-            }
-            set {
-                this.descripcionField = value;
-                this.RaisePropertyChanged("Descripcion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public System.DateTime Fecha_ficha {
             get {
                 return this.fecha_fichaField;
@@ -119,7 +107,7 @@ namespace CapaHtml.ServiceMantenedorFichaPaciente {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Medico_rut_medico {
             get {
                 return this.medico_rut_medicoField;
@@ -127,6 +115,18 @@ namespace CapaHtml.ServiceMantenedorFichaPaciente {
             set {
                 this.medico_rut_medicoField = value;
                 this.RaisePropertyChanged("Medico_rut_medico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Paciente_rut {
+            get {
+                return this.paciente_rutField;
+            }
+            set {
+                this.paciente_rutField = value;
+                this.RaisePropertyChanged("Paciente_rut");
             }
         }
         

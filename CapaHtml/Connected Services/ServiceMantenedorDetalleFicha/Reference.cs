@@ -80,6 +80,8 @@ namespace CapaHtml.ServiceMantenedorDetalleFicha {
         
         private string formulario_medicamento_id_formularioField;
         
+        private string comentariosField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Id_detalle_ficha {
@@ -113,6 +115,18 @@ namespace CapaHtml.ServiceMantenedorDetalleFicha {
             set {
                 this.formulario_medicamento_id_formularioField = value;
                 this.RaisePropertyChanged("Formulario_medicamento_id_formulario");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Comentarios {
+            get {
+                return this.comentariosField;
+            }
+            set {
+                this.comentariosField = value;
+                this.RaisePropertyChanged("Comentarios");
             }
         }
         

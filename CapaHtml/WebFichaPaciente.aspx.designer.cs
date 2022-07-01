@@ -51,13 +51,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label lblCalendario;
 
         /// <summary>
-        /// Control Calendario.
+        /// Control txtCalendario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Calendario;
+        protected global::System.Web.UI.WebControls.TextBox txtCalendario;
 
         /// <summary>
         /// Control Label2.
@@ -96,13 +96,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control DropDownListRutPac.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRutPac;
 
         /// <summary>
         /// Control SqlDataSource3.
@@ -177,13 +177,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// Control TextBox4.
+        /// Control txtIdDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtIdDetalle;
 
         /// <summary>
         /// Control Label9.
@@ -195,13 +195,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// Control DropDownList2.
+        /// Control DropDownListIdForm.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIdForm;
 
         /// <summary>
         /// Control SqlDataSource4.
@@ -222,13 +222,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control DropDownList3.
+        /// Control DropDownListIdFicha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIdFicha;
 
         /// <summary>
         /// Control SqlDataSource5.
@@ -276,13 +276,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
-        /// Control Button1.
+        /// Control btnGuardarDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnGuardarDetalle;
 
         /// <summary>
         /// Control HyperLink2.

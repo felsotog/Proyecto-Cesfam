@@ -128,7 +128,7 @@
                                         <asp:Label runat="server" ID="lblCalendario" Text="Fecha:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="Calendario" TextMode="Date"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtCalendario" TextMode="Date"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -146,7 +146,7 @@
                                         <asp:Label runat="server" ID="Label3" Text="Rut Paciente:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                          <asp:DropDownList CssClass="btn btn_2" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="rut" DataValueField="rut" Width="100%">
+                                          <asp:DropDownList CssClass="btn btn_2" ID="DropDownListRutPac" runat="server" DataSourceID="SqlDataSource3" DataTextField="rut" DataValueField="rut" Width="100%">
                                           </asp:DropDownList>
                                           <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString66 %>" SelectCommand="SELECT [rut] FROM [paciente]"></asp:SqlDataSource>
                                     </asp:TableCell>
@@ -161,7 +161,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click" />
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                                         <asp:Label runat="server" ID="Label8" Text="ID Detalle:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox4" placeholder="Camelo"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtIdDetalle" placeholder="Camelo"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -222,7 +222,7 @@
                                         <asp:Label runat="server" ID="Label9" Text="ID Formulario Medicamento:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownList2" runat="server" DataSourceID="SqlDataSource4" DataTextField="id_formulario" DataValueField="id_formulario" Width="100%">
+                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListIdForm" runat="server" DataSourceID="SqlDataSource4" DataTextField="id_formulario" DataValueField="id_formulario" Width="100%">
                                          </asp:DropDownList>
                                          <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString67 %>" SelectCommand="SELECT [id_formulario] FROM [formulario_medicamento]"></asp:SqlDataSource>
                                     </asp:TableCell>
@@ -232,7 +232,7 @@
                                         <asp:Label runat="server" ID="Label4" Text="ID Ficha:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                          <asp:DropDownList CssClass="btn btn_2" ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="id_ficha" DataValueField="id_ficha" Width="100%">
+                                          <asp:DropDownList CssClass="btn btn_2" ID="DropDownListIdFicha" runat="server" DataSourceID="SqlDataSource2" DataTextField="id_ficha" DataValueField="id_ficha" Width="100%">
                                           </asp:DropDownList>
                                           <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString68 %>" SelectCommand="SELECT [id_ficha] FROM [ficha_paciente]"></asp:SqlDataSource>
                                     </asp:TableCell>
@@ -255,7 +255,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:Button ID="btnGuardarDetalle" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardarDetalle_Click" />
                             <asp:HyperLink ID="HyperLink2"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>

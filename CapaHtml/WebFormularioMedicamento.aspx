@@ -151,7 +151,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click" />
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
@@ -250,7 +250,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:Button ID="btnGuardarDetalle" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardarDetalle_Click" />
                             <asp:HyperLink ID="HyperLink2"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>

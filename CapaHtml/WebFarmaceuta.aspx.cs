@@ -48,28 +48,25 @@ namespace CapaHtml
                         if (string.IsNullOrEmpty(this.txtIdfarmaceuta.Text) || string.IsNullOrEmpty(this.txtNombreFarmaceuta.Text) || string.IsNullOrEmpty(this.DropDownListidfarmacia.Text))
 
                         {
-                            //this.LabelMensaje1.Text = "complete todos los campos";
+                            this.lblError.Text = "complete todos los campos";
                         }
                         else
                         {
                             auxNegocioFarmaceutico.insertaFarmaceuticoService(auxFarmaceutico);
                             this.LimpiarIngreso();
 
-                            //this.LabelMensaje1.Text = "datos guardados correctamente";
+                            this.lblSucces.Text = "datos guardados correctamente";
                             this.GridView1.DataBind();
-
-
-
                         }
                     }
                     else
                     {
-                        //this.LabelMensaje1.Text = "ingreso Farmaceuta ya existe";
+                        this.lblError.Text = "ingreso Farmaceuta ya existe";
                     }
                 }
                 catch (Exception ex)
                 {
-                    //this.LabelMensaje1.Text = "error al guardar";
+                    this.lblError.Text = "error al guardar";
                 }
 
             }

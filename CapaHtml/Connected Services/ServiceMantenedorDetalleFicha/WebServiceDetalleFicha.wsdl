@@ -14,6 +14,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Id_detalle_ficha" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Ficha_paciente_id_ficha" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Formulario_medicamento_id_formulario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comentarios" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="insertaDetalleFichadServiceResponse">

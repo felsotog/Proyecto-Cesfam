@@ -27,7 +27,7 @@ namespace CapaNegocioCesfam
         {
             this.configurarConexion();
             this.conec1.CadenaSQL = "INSERT INTO " + this.conec1.NombreTabla + " ( id_detalle,cantidad_caducada,motivo,medicamento_codigo,caducar_medicamento_id_caducidad) VALUES ('"
-                + detallecaducidad.Id_detalle + "'," + detallecaducidad.Cantidad_caducada + ", '" + detallecaducidad.Motivo + "', '" + detallecaducidad.Medicamento_codigo + "', '"  + detallecaducidad.Caducar_medicamento_id_caducidad + "';";
+                + detallecaducidad.Id_detalle + "'," + detallecaducidad.Cantidad_caducada + ", '" + detallecaducidad.Motivo + "', '" + detallecaducidad.Medicamento_codigo + "', '"  + detallecaducidad.Caducar_medicamento_id_caducidad + "');";
             this.conec1.EsSelect = false;
             this.conec1.conectar();
         }

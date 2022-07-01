@@ -139,7 +139,7 @@ namespace CapaNegocioCesfam
         {
             this.configurarConexion();
             this.conec1.CadenaSQL = "UPDATE " + this.conec1.NombreTabla + " SET "
-                + "nombre_medicamento = '" + medicamento.Nombre_medicamento + "',tipo_medicamento = " + medicamento.Tipo_medicamento + ",fecha_fabricacion = " + medicamento.Fecha_fabricacion + ",fecha_vencimiento = '" + medicamento.Fecha_vencimiento + ",descripcion = '" + medicamento.Descripcion + ",cantidad = '" + medicamento.Cantidad + ",farmacia_id_farmacia = '" + medicamento.Farmacia_id_farmacia
+                + "nombre_medicamento = '" + medicamento.Nombre_medicamento + "',tipo_medicamento = '" + medicamento.Tipo_medicamento + "',fecha_fabricacion = '" + medicamento.Fecha_fabricacion + "',fecha_vencimiento = '" + medicamento.Fecha_vencimiento + "',descripcion = '" + medicamento.Descripcion + "',cantidad = " + medicamento.Cantidad + ",farmacia_id_farmacia = '" + medicamento.Farmacia_id_farmacia
                 + "' WHERE codigo = '" + medicamento.Codigo + "';";
             this.conec1.EsSelect = false;
             this.conec1.conectar();

@@ -188,7 +188,7 @@
                                         <asp:Label runat="server" ID="Label7" Text="ID Detalle:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox3" placeholder="1-8"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="TxtIdDetalle" placeholder="1-8"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -196,15 +196,15 @@
                                         <asp:Label runat="server" ID="Label8" Text="Cantidad:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox CssClass="form-control" runat="server" ID="TextBox4" placeholder="1-9"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" runat="server" ID="txtCantidad" placeholder="1-9"></asp:TextBox>                                         
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Label runat="server" ID="Label9" Text="Motivo:"></asp:Label>
+                                        <asp:Label runat="server" ID="Label9" Text="TextAreaMotivo:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <textarea class="form-control" id="TextAreamotivo" cols="20" name="S1" rows="2"></textarea>
+                                        <textarea class="form-control" runat="server"  id="TextAreaMotivo" cols="20" name="S1" rows="2"></textarea>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -236,8 +236,8 @@
                             </asp:Table>
                         </fieldset>
                         <br />
-                        <div>
-                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="Agendar" OnClick="btnAgendar1_Click"/>
+                        <div>                          
+                            <asp:Button ID="btonGuardarDetalle" runat="server" CssClass="btn btn-primary"  OnClick="btonGuardarDetalle_Click" Text="Guardar" />
                             <asp:HyperLink ID="HyperLink2"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
@@ -279,11 +279,15 @@
                                       <asp:Parameter Name="original_medicamento_codigo" Type="String" />
                                       <asp:Parameter Name="original_caducar_medicamento_id_caducidad" Type="String" />
                                   </UpdateParameters>
-                              </asp:SqlDataSource>
+                              </asp:SqlDataSource>                   
+                     
+                              
+                     
                         </div>
                 </form>
             </div>
         </div>
     </div>
+      
 </body>
 </html>

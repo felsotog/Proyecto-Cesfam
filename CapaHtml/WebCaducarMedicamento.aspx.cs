@@ -46,14 +46,14 @@ namespace CapaHtml
                         if (string.IsNullOrEmpty(this.txtIdmerma.Text) || string.IsNullOrEmpty(this.txtFechacaducidad.Text))
 
                         {
-                            //this.LabelMensaje1.Text = "complete todos los campos";
+                            this.lblError.Text = "complete todos los campos";
                         }
                         else
                         {
                             auxNegocioCaducarMedicamento.insertaCaducarMedicamentoService(auxCaducarMedicamento);
                             this.LimpiarIngreso();
 
-                            //this.LabelMensaje1.Text = "datos guardados correctamente";
+                            this.lblSucces.Text = "datos guardados correctamente";
                             this.GridView1.DataBind();
 
 
@@ -62,12 +62,72 @@ namespace CapaHtml
                     }
                     else
                     {
-                        //this.LabelMensaje1.Text = "ingreso Merma ya existe";
+                        this.lblError.Text = "ingreso Merma ya existe";
                     }
                 }
                 catch (Exception ex)
                 {
-                    //this.LabelMensaje1.Text = "error al guardar";
+                    this.lblError.Text = "error al guardar";
+                }
+
+            }
+
+            
+        }
+
+        protected void btnGuardarDetalle_Click(object sender, EventArgs e)
+        {
+
+           
+        }
+
+        protected void btonGuardarDetalle_Click(object sender, EventArgs e)
+        {
+            ServiceMantenedorDetalleCaducidad.WebService1DetalleCaducidadSoapClient auxNegocioDetalleCaducidad = new ServiceMantenedorDetalleCaducidad.WebService1DetalleCaducidadSoapClient();
+            ServiceMantenedorDetalleCaducidad.DetalleCaducidad auxDetalleCaducidad = new ServiceMantenedorDetalleCaducidad.DetalleCaducidad();
+
+            auxDetalleCaducidad.Id_detalle = this.TxtIdDetalle.Text;
+            auxDetalleCaducidad.Cantidad_caducada = int.Parse(this.txtCantidad.Text);
+            auxDetalleCaducidad.Motivo = this.TextAreaMotivo.InnerText;
+            auxDetalleCaducidad.Medicamento_codigo = this.DropDownListCodigoM.SelectedValue;
+            auxDetalleCaducidad.Caducar_medicamento_id_caducidad = this.DropDownListMermaId.SelectedValue;
+
+
+
+            if (String.IsNullOrEmpty(auxNegocioDetalleCaducidad.buscarDetalleCaducidadService(auxDetalleCaducidad.Id_detalle).Id_detalle))
+            {
+                try
+                {
+
+
+                    if (String.IsNullOrEmpty(auxNegocioDetalleCaducidad.buscarDetalleCaducidadService(auxDetalleCaducidad.Id_detalle).Id_detalle))
+                    {
+
+                        if (string.IsNullOrEmpty(this.TxtIdDetalle.Text) || string.IsNullOrEmpty(this.txtCantidad.Text) || string.IsNullOrEmpty(this.TextAreaMotivo.InnerText) || string.IsNullOrEmpty(this.DropDownListCodigoM.SelectedValue) || string.IsNullOrEmpty(this.DropDownListMermaId.SelectedValue))
+
+                        {
+                            this.Label11.Text = "complete todos los campos";
+                        }
+                        else
+                        {
+                            auxNegocioDetalleCaducidad.insertaDetalleCaducidadService(auxDetalleCaducidad);
+                            this.LimpiarIngreso();
+
+                            this.Label12.Text = "datos guardados correctamente";
+                            this.GridView1.DataBind();
+
+
+
+                        }
+                    }
+                    else
+                    {
+                        this.Label11.Text = "ingreso Merma ya existe";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    this.Label1.Text = "error al guardar";
                 }
 
             }

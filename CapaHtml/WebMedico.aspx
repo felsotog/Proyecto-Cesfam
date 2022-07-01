@@ -174,7 +174,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="btnAgendar1" runat="server" CssClass="btn btn-primary" Text="Agendar"/>
+                            <asp:Button ID="btnAgendar1" runat="server" CssClass="btn btn-primary" Text="Agendar" OnClick="btnAgendar1_Click"/>
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
