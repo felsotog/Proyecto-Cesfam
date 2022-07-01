@@ -38,7 +38,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
           <!-- Navbar brand -->
-          <a class="navbar-brand nav-link" target="_blank" href="Index.html">
+          <a class="navbar-brand nav-link" target="_blank" href="WebPaginaPrincipal.aspx">
             <strong>CESFAM</strong>
           </a>
           <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
