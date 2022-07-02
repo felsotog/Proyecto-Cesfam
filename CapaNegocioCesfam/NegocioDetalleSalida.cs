@@ -27,7 +27,7 @@ namespace CapaNegocioCesfam
         {
             this.configurarConexion();
             this.conec1.CadenaSQL = "INSERT INTO " + this.conec1.NombreTabla + " ( id_detallesalida,cantidad,medicamento_codigo,salida_medicamento_id_salida) VALUES ('"
-                + detallesalida.Id_detalleSalida + "'," + detallesalida.Cantidad + ", '" + detallesalida.Medicamento_codigo + "', '" + detallesalida.Salida_medicamento_id_salida + "';";
+                + detallesalida.Id_detalleSalida + "'," + detallesalida.Cantidad + ", '" + detallesalida.Medicamento_codigo + "', '" + detallesalida.Salida_medicamento_id_salida + "');";
             this.conec1.EsSelect = false;
             this.conec1.conectar();
         }
@@ -127,7 +127,7 @@ namespace CapaNegocioCesfam
         {
             this.configurarConexion();
             this.conec1.CadenaSQL = "UPDATE " + this.conec1.NombreTabla + " SET "
-                + " cantidad = '" + detallesalida.Cantidad + "',medicamento_codigo = " + detallesalida.Medicamento_codigo + "',salida_medicamento_id_salida = " + detallesalida.Salida_medicamento_id_salida 
+                + " cantidad = " + detallesalida.Cantidad  + " ,medicamento_codigo = '" + detallesalida.Medicamento_codigo + "',salida_medicamento_id_salida = '" + detallesalida.Salida_medicamento_id_salida 
                 + "' WHERE id_detallesalida = '" + detallesalida.Id_detalleSalida + "';";
             this.conec1.EsSelect = false;
             this.conec1.conectar();

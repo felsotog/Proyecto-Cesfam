@@ -22,10 +22,21 @@ namespace CapaServicioCesfam
 
         [WebMethod]
 
-        public void insertaDetalleSalidaService(DetalleSalida detalle_salida)
+        public void insertaDetalleSalidaService(DetalleSalida detalleSalida, String id_detalle_Salida, String codigo)
         {
-            NegocioDetalleSalida auxnegocioDetalleSalida = new NegocioDetalleSalida();
-            auxnegocioDetalleSalida.insertarDetalleSalida(detalle_salida);
+            int stock_medicamento;
+            int cantidad_salida;
+
+            NegocioMedicamento auxNegocioMedicamento = new NegocioMedicamento();
+            Medicamento auxMedicamento = auxNegocioMedicamento.buscarIdMedicamento(codigo);
+            stock_medicamento = auxMedicamento.Cantidad;
+            NegocioDetalleSalida auxNegocioDetalleSalida = new NegocioDetalleSalida();
+            auxNegocioDetalleSalida.insertarDetalleSalida(detalleSalida);
+            DetalleSalida auxDetalleSalida = auxNegocioDetalleSalida.buscarIdDetalleSalida(id_detalle_Salida);
+            cantidad_salida = auxDetalleSalida.Cantidad;
+            auxMedicamento.Codigo = codigo;
+            auxMedicamento.Cantidad = stock_medicamento - cantidad_salida;
+            auxNegocioMedicamento.actualizarMedicamento(auxMedicamento);
 
         }
 

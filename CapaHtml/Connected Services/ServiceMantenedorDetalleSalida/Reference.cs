@@ -18,10 +18,10 @@ namespace CapaHtml.ServiceMantenedorDetalleSalida {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/insertaDetalleSalidaService", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void insertaDetalleSalidaService(CapaHtml.ServiceMantenedorDetalleSalida.DetalleSalida detalle_salida);
+        void insertaDetalleSalidaService(CapaHtml.ServiceMantenedorDetalleSalida.DetalleSalida detalleSalida, string id_detalle_Salida, string codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/insertaDetalleSalidaService", ReplyAction="*")]
-        System.Threading.Tasks.Task insertaDetalleSalidaServiceAsync(CapaHtml.ServiceMantenedorDetalleSalida.DetalleSalida detalle_salida);
+        System.Threading.Tasks.Task insertaDetalleSalidaServiceAsync(CapaHtml.ServiceMantenedorDetalleSalida.DetalleSalida detalleSalida, string id_detalle_Salida, string codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/retornarDetalleSalidaService", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -167,12 +167,12 @@ namespace CapaHtml.ServiceMantenedorDetalleSalida {
                 base(binding, remoteAddress) {
         }
         
-        public void insertaDetalleSalidaService(CapaHtml.ServiceMantenedorDetalleSalida.DetalleSalida detalle_salida) {
-            base.Channel.insertaDetalleSalidaService(detalle_salida);
+        public void insertaDetalleSalidaService(CapaHtml.ServiceMantenedorDetalleSalida.DetalleSalida detalleSalida, string id_detalle_Salida, string codigo) {
+            base.Channel.insertaDetalleSalidaService(detalleSalida, id_detalle_Salida, codigo);
         }
         
-        public System.Threading.Tasks.Task insertaDetalleSalidaServiceAsync(CapaHtml.ServiceMantenedorDetalleSalida.DetalleSalida detalle_salida) {
-            return base.Channel.insertaDetalleSalidaServiceAsync(detalle_salida);
+        public System.Threading.Tasks.Task insertaDetalleSalidaServiceAsync(CapaHtml.ServiceMantenedorDetalleSalida.DetalleSalida detalleSalida, string id_detalle_Salida, string codigo) {
+            return base.Channel.insertaDetalleSalidaServiceAsync(detalleSalida, id_detalle_Salida, codigo);
         }
         
         public System.Data.DataSet retornarDetalleSalidaService(string id_detalle_salida) {

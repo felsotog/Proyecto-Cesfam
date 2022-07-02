@@ -27,7 +27,7 @@ namespace CapaNegocioCesfam
         {
             this.configurarConexion();
             this.conec1.CadenaSQL = "INSERT INTO " + this.conec1.NombreTabla + " ( id_detalle_receta,cantidad,paciente_rut,formulario_medicamento_id_formulario,medicamento_codigo) VALUES ('"
-                + detallereceta.Id_detalle_receta + "'," + detallereceta.Cantidad + ", '" + detallereceta.Paciente_rut + "', '" + detallereceta.Formulario_medicamento_id_formulario + "', '" + detallereceta.Medicamento_codigo + "'; ";
+                + detallereceta.Id_detalle_receta + "'," + detallereceta.Cantidad + ", '" + detallereceta.Paciente_rut + "', '" + detallereceta.Formulario_medicamento_id_formulario + "', '" + detallereceta.Medicamento_codigo + "'); ";
             this.conec1.EsSelect = false;
             this.conec1.conectar();
         }

@@ -87,13 +87,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control DropDownListRutFar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRutFar;
 
         /// <summary>
         /// Control SqlDataSource1.
@@ -114,13 +114,22 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control DropDownList2.
+        /// Control DropDownListCodig.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCodig;
+
+        /// <summary>
+        /// Control SqlDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
         /// Control lblError.

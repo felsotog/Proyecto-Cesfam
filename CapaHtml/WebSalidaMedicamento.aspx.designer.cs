@@ -69,13 +69,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control DropDownListRutFarm.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRutFarm;
 
         /// <summary>
         /// Control SqlDataSource1.
@@ -177,13 +177,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control textIddetalle.
+        /// Control txtIdDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textIddetalle;
+        protected global::System.Web.UI.WebControls.TextBox txtIdDetalle;
 
         /// <summary>
         /// Control Label3.
@@ -195,13 +195,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtCantidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtCantidad;
 
         /// <summary>
         /// Control Label6.
@@ -276,13 +276,13 @@ namespace CapaHtml
         protected global::System.Web.UI.WebControls.Label Label15;
 
         /// <summary>
-        /// Control Button1.
+        /// Control btnGuardarDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnGuardarDetalle;
 
         /// <summary>
         /// Control HyperLink2.

@@ -144,7 +144,7 @@
                                         <asp:Label runat="server" ID="Label3" Text="Rut Farmaceuta:"></asp:Label>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_farmaceuta" DataValueField="id_farmaceuta" Width="100%">
+                                         <asp:DropDownList CssClass="btn btn_2" ID="DropDownListRutFar" runat="server" DataSourceID="SqlDataSource1" DataTextField="id_farmaceuta" DataValueField="id_farmaceuta" Width="100%">
                                          </asp:DropDownList>
                                          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString52 %>" SelectCommand="SELECT [id_farmaceuta] FROM [farmaceutico]"></asp:SqlDataSource>
                                     </asp:TableCell>
@@ -153,8 +153,9 @@
                                     <asp:TableCell>
                                         <asp:Label runat="server" ID="Label4" Text="Codigo Medicamento:"></asp:Label>
                                     </asp:TableCell>
-                                    <asp:TableCell>
-                                        <asp:DropDownList CssClass="btn btn_2" ID="DropDownList2" runat="server" Width="100%"></asp:DropDownList>
+                                    <asp:TableCell>                                
+                                        <asp:DropDownList CssClass="btn btn_2" ID="DropDownListCodig" runat="server"  Width="100%" DataSourceID="SqlDataSource2" DataTextField="codigo" DataValueField="codigo"></asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CESFAMConnectionString80 %>" SelectCommand="SELECT [codigo] FROM [medicamento]"></asp:SqlDataSource>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -167,7 +168,7 @@
                         </fieldset>
                         <br />
                         <div>
-                            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" />
+                            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click" />
                             <asp:HyperLink ID="HyperLink1"  CssClass="btn btn-dark" runat="server" NavigateUrl="~/WebPaginaPrincipal.aspx">Volver</asp:HyperLink>
                         </div>
                     </div>
