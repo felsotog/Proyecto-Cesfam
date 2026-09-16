@@ -75,5 +75,11 @@ namespace CapaServicioCesfam
             NegocioMedicamento auxNegocioMedicamento = new NegocioMedicamento();
             auxNegocioMedicamento.actualizarMedicamento(medicamento);
         }
+
+        [WebMethod]
+        public DataSet retornarTotalMedicamentosService()
+        {
+            return new NegocioMedicamento().retornarTotalMedicamentos();
+        }
     }
 }

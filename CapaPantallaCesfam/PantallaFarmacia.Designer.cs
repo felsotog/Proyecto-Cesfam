@@ -39,67 +39,81 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(121, 209);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(127)))), ((int)(((byte)(91)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(40, 182);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Size = new System.Drawing.Size(320, 42);
+            this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtIdCiudad
             // 
-            this.txtIdCiudad.Location = new System.Drawing.Point(121, 125);
+            this.txtIdCiudad.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtIdCiudad.Location = new System.Drawing.Point(40, 139);
             this.txtIdCiudad.Name = "txtIdCiudad";
-            this.txtIdCiudad.Size = new System.Drawing.Size(100, 20);
+            this.txtIdCiudad.Size = new System.Drawing.Size(320, 25);
             this.txtIdCiudad.TabIndex = 1;
+            this.txtIdCiudad.Visible = false;
             // 
             // txtIdFarmacia
             // 
-            this.txtIdFarmacia.Location = new System.Drawing.Point(121, 88);
+            this.txtIdFarmacia.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtIdFarmacia.Location = new System.Drawing.Point(40, 82);
             this.txtIdFarmacia.Name = "txtIdFarmacia";
-            this.txtIdFarmacia.Size = new System.Drawing.Size(100, 20);
-            this.txtIdFarmacia.TabIndex = 2;
+            this.txtIdFarmacia.Size = new System.Drawing.Size(320, 25);
+            this.txtIdFarmacia.TabIndex = 0;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(121, 161);
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtNombre.Location = new System.Drawing.Point(40, 139);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.Size = new System.Drawing.Size(320, 25);
+            this.txtNombre.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 88);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(37, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(120, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "id_farmacia";
+            this.label1.Text = "Código de farmacia";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 125);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(37, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(107, 15);
             this.label2.TabIndex = 5;
-            this.label2.Text = "id_ciudad";
+            this.label2.Text = "Código de ciudad";
+            this.label2.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 161);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(37, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(129, 15);
             this.label3.TabIndex = 6;
-            this.label3.Text = "nombre";
+            this.label3.Text = "Nombre de la farmacia";
             // 
             // PantallaFarmacia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(246)))));
+            this.ClientSize = new System.Drawing.Size(400, 260);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -107,8 +121,12 @@
             this.Controls.Add(this.txtIdFarmacia);
             this.Controls.Add(this.txtIdCiudad);
             this.Controls.Add(this.btnGuardar);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "PantallaFarmacia";
-            this.Text = "PantallaFarmacia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CESFAM · Registrar farmacia";
             this.ResumeLayout(false);
             this.PerformLayout();
 

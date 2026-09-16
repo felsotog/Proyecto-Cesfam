@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="NegocioAgendamiento.cs" />
     <Compile Include="NegocioCaducarMedicamento.cs" />
+    <Compile Include="NegocioBase.cs" />
+    <Compile Include="NegocioCiudad.cs" />
     <Compile Include="NegocioDetalleCaducidad.cs" />
     <Compile Include="NegocioDetalleFicha.cs" />
     <Compile Include="NegocioDetalleIngreso.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="NegocioMedicamento.cs" />
     <Compile Include="NegocioMedico.cs" />
     <Compile Include="NegocioPaciente.cs" />
+    <Compile Include="NegocioPersonalCesfam.cs" />
     <Compile Include="NegocioReservaMedicamento.cs" />
     <Compile Include="NegocioSalidMedicamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

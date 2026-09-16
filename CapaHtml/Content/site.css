@@ -1,0 +1,121 @@
+:root {
+    --cesfam-primary: #087f5b;
+    --cesfam-primary-dark: #056044;
+    --cesfam-surface: #ffffff;
+    --cesfam-background: #f3f7f6;
+    --cesfam-border: #dce8e4;
+    --cesfam-text: #172b25;
+    --cesfam-muted: #62746e;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--cesfam-background);
+    color: var(--cesfam-text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.app-header {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--cesfam-border);
+    background: var(--cesfam-surface);
+    box-shadow: 0 10px 30px rgba(16, 61, 48, .06);
+}
+
+.app-kicker {
+    color: var(--cesfam-primary);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    border-color: var(--cesfam-primary);
+    background: var(--cesfam-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: var(--cesfam-primary-dark);
+    background: var(--cesfam-primary-dark);
+}
+
+.text-primary {
+    color: var(--cesfam-primary) !important;
+}
+
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.35rem;
+    border: 1px solid var(--cesfam-border);
+    border-radius: .9rem;
+    background: var(--cesfam-surface);
+    box-shadow: 0 10px 25px rgba(16, 61, 48, .05);
+}
+
+.summary-card strong {
+    color: var(--cesfam-primary);
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.summary-card span {
+    margin-top: .55rem;
+    color: var(--cesfam-muted);
+}
+
+.inventory-table {
+    overflow: hidden;
+    border: 1px solid var(--cesfam-border);
+    border-radius: .9rem;
+    background: var(--cesfam-surface);
+}
+
+.inventory-table thead th {
+    padding: 1rem;
+    border-bottom-color: var(--cesfam-border);
+    background: #e7f3ef;
+    color: var(--cesfam-primary-dark);
+    font-size: .82rem;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+
+.inventory-table tbody td {
+    padding: .9rem 1rem;
+}
+
+.inventory-search {
+    width: min(100%, 19rem);
+}
+
+.inventory-search .form-control:focus {
+    border-color: var(--cesfam-primary);
+    box-shadow: 0 0 0 .2rem rgba(8, 127, 91, .15);
+}
+
+.status-badge {
+    display: inline-flex;
+    padding: .32rem .65rem;
+    border-radius: 999px;
+    font-size: .76rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-success {
+    background: #d9f3e8;
+    color: #075a42;
+}
+
+.status-warning {
+    background: #fff0c2;
+    color: #745500;
+}
+
+.status-danger {
+    background: #fde1e1;
+    color: #9b1c1c;
+}

@@ -62,25 +62,23 @@ namespace CapaServicioCesfam
 
         [WebMethod]
 
-        public void eliminarFarmaciaService(String id_farmacia)
+        public void eliminarFarmaceuticoService(String id_ciudad)
         {
-            NegocioFarmacia auxNegocioFarmacia = new NegocioFarmacia();
-            auxNegocioFarmacia.eliminarFarmacia(id_farmacia);
+            NegocioFarmaceutico negocio = new NegocioFarmaceutico();
+            negocio.eliminarFarmaceuta(id_ciudad);
         }
 
         [WebMethod]
-
-        public void actualizarCiudadService(Farmacia farmacia)
+        public void actualizarFarmaceuticoService(Farmaceutico farmaceutico)
         {
-            NegocioFarmacia auxNegocioFarmacia = new NegocioFarmacia();
-            auxNegocioFarmacia.actualizarFarmacia(farmacia);
+            NegocioFarmaceutico negocio = new NegocioFarmaceutico();
+            negocio.actualizarFarmaceuta(farmaceutico);
         }
 
         [WebMethod]
-        public DataSet retornarTotalFarmaceutasService()
+        public DataSet retornarTotalFarmaceuticosService()
         {
-            NegocioFarmaceutico auxNegocioFarmaceutico = new NegocioFarmaceutico();
-            return auxNegocioFarmaceutico.retornarTotalFarmaceutas();
+            return new NegocioFarmaceutico().retornarTotalFarmaceutas();
         }
     }
 }

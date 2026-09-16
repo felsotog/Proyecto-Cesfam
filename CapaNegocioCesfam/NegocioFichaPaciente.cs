@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +21,6 @@ namespace CapaNegocioCesfam
             this.conec1 = new ConexionCesfam();
             this.conec1.NombreBaseDeDatos = "CESFAM";
             this.conec1.NombreTabla = "ficha_paciente";
-            this.conec1.CadenaConexion = "Data Source=localhost;Initial Catalog=CESFAM;Integrated Security=True";
         }
 
         public void insertarFichaPaciente(FichaPaciente fichapaciente)
@@ -219,4 +218,3 @@ namespace CapaNegocioCesfam
         // }
     }
 }
-

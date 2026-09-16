@@ -75,6 +75,7 @@
     <Content Include="WebServiceSalidaMedicamento.asmx" />
     <Content Include="WebServiceIngresoMedicamento.asmx" />
     <Content Include="WebServiceCaducarMedicamento.asmx" />
+    <Content Include="WebServiceCiudad.asmx" />
     <Content Include="WebServiceDetalleCaducidad.asmx" />
     <Content Include="WebServiceDetalleFicha.asmx" />
     <Content Include="WebServiceDetalleIngreso.asmx" />
@@ -85,6 +86,7 @@
     <Content Include="WebServiceFichaPaciente.asmx" />
     <Content Include="WebServiceFormularioMedicamento.asmx" />
     <Content Include="WebServiceMedicamento.asmx" />
+    <Content Include="WebServicePersonalCesfam.asmx" />
     <Content Include="Web.config" />
     <Content Include="WebServiceFarmacia.asmx" />
   </ItemGroup>
@@ -96,6 +98,10 @@
     </Compile>
     <Compile Include="WebServiceCaducarMedicamento.asmx.cs">
       <DependentUpon>WebServiceCaducarMedicamento.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceCiudad.asmx.cs">
+      <DependentUpon>WebServiceCiudad.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServiceDetalleCaducidad.asmx.cs">
@@ -140,6 +146,10 @@
     </Compile>
     <Compile Include="WebServiceMedicamento.asmx.cs">
       <DependentUpon>WebServiceMedicamento.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServicePersonalCesfam.asmx.cs">
+      <DependentUpon>WebServicePersonalCesfam.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServiceMedico.asmx.cs">

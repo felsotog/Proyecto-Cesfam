@@ -1,221 +1,109 @@
-﻿using CapaConexion;
-using System;
+using CapaConexion;
 using CapaDTOCesfam;
-using System.Collections.Generic;
+using System;
 using System.Data;
-using System.Linq;
-using System.Text;
 
 namespace CapaNegocioCesfam
 {
-    public class NegocioFarmaceutico
+    public class NegocioFarmaceutico : NegocioBase
     {
+        private const string Tabla = "farmaceutico";
         private ConexionCesfam conec1;
 
-        public ConexionCesfam Conec1 { get => conec1; set => conec1 = value; }
+        public ConexionCesfam Conec1 { get { return conec1; } set { conec1 = value; } }
 
         public void configurarConexion()
         {
-            this.conec1 = new ConexionCesfam();
-            this.conec1.NombreBaseDeDatos = "CESFAM";
-            this.conec1.NombreTabla = "farmaceutico";
-            this.conec1.CadenaConexion = "Data Source=localhost;Initial Catalog=CESFAM;Integrated Security=True";
+            conec1 = CrearConexion(Tabla);
         }
 
         public void insertarFarmaceuta(Farmaceutico farmaceutico)
         {
-            this.configurarConexion();
-            this.conec1.CadenaSQL = "INSERT INTO " + this.conec1.NombreTabla + " (id_farmaceuta,nombre_farmaceuta,farmacia_id_farmacia) VALUES ('"
-                + farmaceutico.Id_farmaceuta + "','" + farmaceutico.Nombre_farmaceuta + "', '" + farmaceutico.Farmacia_id_farmacia + "');";
-            this.conec1.EsSelect = false;
-            this.conec1.conectar();
+            Validar(farmaceutico);
+            configurarConexion();
+            conec1.EjecutarComando(
+                "INSERT INTO farmaceutico (id_farmaceuta, nombre_farmaceuta, farmacia_id_farmacia) VALUES (@id, @nombre, @farmacia)",
+                Texto("@id", farmaceutico.Id_farmaceuta, 20),
+                Texto("@nombre", farmaceutico.Nombre_farmaceuta, 120),
+                Texto("@farmacia", farmaceutico.Farmacia_id_farmacia, 20));
         }
-
 
         public DataSet retornarFarmaceuta(string id_farmaceuta)
         {
-            this.configurarConexion();
-            this.conec1.CadenaSQL = " SELECT * FROM " + this.conec1.NombreTabla + " WHERE id_farmaceuta = '" + id_farmaceuta + "';";
-            this.conec1.EsSelect = true;
-            this.conec1.conectar();
-            return this.conec1.DbDataSet;
+            Requerido(id_farmaceuta, "id_farmaceuta");
+            configurarConexion();
+            return conec1.EjecutarConsulta(
+                Tabla,
+                "SELECT id_farmaceuta, nombre_farmaceuta, farmacia_id_farmacia FROM farmaceutico WHERE id_farmaceuta = @id",
+                Texto("@id", id_farmaceuta, 20));
         }
 
         public Farmaceutico retornaPosicionFarmaceuta(int pos, string id_farmaceuta)
         {
-            this.configurarConexion();
-            this.Conec1.CadenaSQL = "SELECT * FROM " + this.conec1.NombreTabla + " WHERE id_farmaceuta = '" + id_farmaceuta + "';";
-
-            this.conec1.EsSelect = true;
-            this.Conec1.conectar();
-            Farmaceutico auxFarmaceuta = new Farmaceutico();
-            DataTable dt = new DataTable();
-            dt = this.conec1.DbDataSet.Tables[this.conec1.NombreTabla];
-            try
-            {
-                auxFarmaceuta.Id_farmaceuta = (String)dt.Rows[pos]["id_farmaceuta"];
-                auxFarmaceuta.Nombre_farmaceuta = (String)dt.Rows[pos]["nombre_farmaceuta"];
-                auxFarmaceuta.Farmacia_id_farmacia = (String)dt.Rows[pos]["farmacia_id_farmacia"];
-
-
-
-            }
-            catch (Exception ex)
-            {
-                auxFarmaceuta.Id_farmaceuta = "";
-                auxFarmaceuta.Nombre_farmaceuta = "";
-                auxFarmaceuta.Farmacia_id_farmacia = "";
-
-
-
-            }
-
-            return auxFarmaceuta;
+            return Mapear(ObtenerTabla(retornarFarmaceuta(id_farmaceuta), Tabla), pos);
         }
 
-
-
-        public Farmaceutico buscarFarmaceuta(String id_farmaceuta)
+        public Farmaceutico buscarFarmaceuta(string id_farmaceuta)
         {
-            this.configurarConexion();
-            this.Conec1.CadenaSQL = " SELECT * FROM " + this.Conec1.NombreTabla +
-                " WHERE id_farmaceuta = '" + id_farmaceuta + "';";
-            this.conec1.EsSelect = true;
-            this.conec1.conectar();
-            Farmaceutico auxFarmaceuta = new Farmaceutico();
-            DataTable dt = new DataTable();
-            dt = this.conec1.DbDataSet.Tables[this.conec1.NombreTabla];
-            try
-            {
-                auxFarmaceuta.Id_farmaceuta = (String)dt.Rows[0]["id_farmaceuta"];
-                auxFarmaceuta.Nombre_farmaceuta = (String)dt.Rows[0]["nombre_farmaceuta"];
-                auxFarmaceuta.Farmacia_id_farmacia = (String)dt.Rows[0]["farmacia_id_farmacia"];
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-                auxFarmaceuta.Id_farmaceuta = "";
-                auxFarmaceuta.Nombre_farmaceuta = "";
-                auxFarmaceuta.Farmacia_id_farmacia = "";
-
-
-
-
-
-            }
-            return auxFarmaceuta;
+            return Mapear(ObtenerTabla(retornarFarmaceuta(id_farmaceuta), Tabla), 0);
         }
 
-        public void eliminarFarmaceuta(String id_farmaceuta)
+        public void eliminarFarmaceuta(string id_farmaceuta)
         {
-            this.configurarConexion();
-            this.conec1.CadenaSQL = " DELETE FROM " + this.conec1.NombreTabla +
-                " WHERE id_farmaceuta = '" + id_farmaceuta + "';";
-            this.conec1.EsSelect = false;
-            this.conec1.conectar();
+            Requerido(id_farmaceuta, "id_farmaceuta");
+            configurarConexion();
+            conec1.EjecutarComando(
+                "DELETE FROM farmaceutico WHERE id_farmaceuta = @id",
+                Texto("@id", id_farmaceuta, 20));
         }
 
         public void actualizarFarmaceuta(Farmaceutico farmaceuta)
         {
-            this.configurarConexion();
-            this.conec1.CadenaSQL = "UPDATE " + this.conec1.NombreTabla + " SET "
-                + " nombre_famaceuta = '" + farmaceuta.Nombre_farmaceuta + "',farmacia_id_farmacia = " + farmaceuta.Farmacia_id_farmacia
-                + "' WHERE id_farmaceuta = '" + farmaceuta.Id_farmaceuta + "';";
-            this.conec1.EsSelect = false;
-            this.conec1.conectar();
+            Validar(farmaceuta);
+            configurarConexion();
+            conec1.EjecutarComando(
+                "UPDATE farmaceutico SET nombre_farmaceuta = @nombre, farmacia_id_farmacia = @farmacia WHERE id_farmaceuta = @id",
+                Texto("@nombre", farmaceuta.Nombre_farmaceuta, 120),
+                Texto("@farmacia", farmaceuta.Farmacia_id_farmacia, 20),
+                Texto("@id", farmaceuta.Id_farmaceuta, 20));
         }
 
-
-        public Farmaceutico buscarIdFarmaceutico(String id_farmaceuta)
+        public Farmaceutico buscarIdFarmaceutico(string id_farmaceuta)
         {
-            this.configurarConexion();
-            this.Conec1.CadenaSQL = " SELECT * FROM " + this.Conec1.NombreTabla +
-                " WHERE id_farmaceuta = '" + id_farmaceuta + "';";
-            this.conec1.EsSelect = true;
-            this.conec1.conectar();
-            Farmaceutico auxFarmaceutico = new Farmaceutico();
-            DataTable dt = new DataTable();
-            dt = this.conec1.DbDataSet.Tables[this.conec1.NombreTabla];
-            try
-            {
-                auxFarmaceutico.Id_farmaceuta = (String)dt.Rows[0]["id_farmaceuta"];
-                auxFarmaceutico.Nombre_farmaceuta = (String)dt.Rows[0]["nombre_farmaceuta"];
-                auxFarmaceutico.Farmacia_id_farmacia = (String)dt.Rows[0]["farmacia_id_farmacia"];
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-                auxFarmaceutico.Id_farmaceuta = "";
-                auxFarmaceutico.Nombre_farmaceuta = "";
-                auxFarmaceutico.Farmacia_id_farmacia = "";
-               
-
-
-
-
-
-            }
-            return auxFarmaceutico;
-
+            return buscarFarmaceuta(id_farmaceuta);
         }
 
-        public Farmaceutico buscar_Farmaceuta(String id_farmaceuta)
+        public Farmaceutico buscar_Farmaceuta(string id_farmaceuta)
         {
-            this.configurarConexion();
-            this.Conec1.CadenaSQL = " SELECT * FROM " + this.Conec1.NombreTabla +
-                " WHERE id_farmaceuta = '" + id_farmaceuta + "';";
-            this.conec1.EsSelect = true;
-            this.conec1.conectar();
-            Farmaceutico auxFarmaceuta = new Farmaceutico();
-            DataTable dt = new DataTable();
-            dt = this.conec1.DbDataSet.Tables[this.conec1.NombreTabla];
-            try
-            {
-                auxFarmaceuta.Id_farmaceuta = (String)dt.Rows[0]["id_farmaceuta"];
-                auxFarmaceuta.Nombre_farmaceuta = (String)dt.Rows[0]["nombre_farmaceuta"];
-                auxFarmaceuta.Farmacia_id_farmacia = (String)dt.Rows[0]["farmacia_id_farmacia"];
-
-
-
-            }
-            catch (Exception ex)
-            {
-                auxFarmaceuta.Id_farmaceuta = "";
-                auxFarmaceuta.Nombre_farmaceuta = "";
-                auxFarmaceuta.Farmacia_id_farmacia = "";
-
-
-
-
-
-            }
-            return auxFarmaceuta;
-
-
+            return buscarFarmaceuta(id_farmaceuta);
         }
 
         public DataSet retornarTotalFarmaceutas()
         {
-            this.configurarConexion();
-            this.conec1.CadenaSQL = " SELECT * FROM " + this.conec1.NombreTabla;
-            this.conec1.EsSelect = true;
-            this.conec1.conectar();
-            return this.conec1.DbDataSet;
+            configurarConexion();
+            return conec1.EjecutarConsulta(
+                Tabla,
+                "SELECT id_farmaceuta, nombre_farmaceuta, farmacia_id_farmacia FROM farmaceutico ORDER BY nombre_farmaceuta");
         }
 
-        //public DataSet retornarStockMedicamento(string id_medicamento)
-        //{
-        //  this.configurarConexion();
-        //  this.conec1.CadenaSQL = " select ma.nombre,pro.codigo,pro.descripcion,pro.precio_unitario,pro.cantidad_total from marca ma join producto pro on(ma.id_marca=pro.marca_id_marca) where  pro.codigo = '" + codigo + "';";
-        //  this.conec1.EsSelect = true;
-        //  this.conec1.conectar();
-        //  return this.conec1.DbDataSet;
-        // }
+        private static void Validar(Farmaceutico farmaceutico)
+        {
+            if (farmaceutico == null) throw new ArgumentNullException("farmaceutico");
+            Requerido(farmaceutico.Id_farmaceuta, "id_farmaceuta");
+            Requerido(farmaceutico.Nombre_farmaceuta, "nombre_farmaceuta");
+            Requerido(farmaceutico.Farmacia_id_farmacia, "farmacia_id_farmacia");
+        }
+
+        private static Farmaceutico Mapear(DataTable tabla, int posicion)
+        {
+            if (!PosicionValida(tabla, posicion)) return new Farmaceutico();
+            DataRow fila = tabla.Rows[posicion];
+            return new Farmaceutico
+            {
+                Id_farmaceuta = Convert.ToString(fila["id_farmaceuta"]),
+                Nombre_farmaceuta = Convert.ToString(fila["nombre_farmaceuta"]),
+                Farmacia_id_farmacia = Convert.ToString(fila["farmacia_id_farmacia"])
+            };
+        }
     }
 }
