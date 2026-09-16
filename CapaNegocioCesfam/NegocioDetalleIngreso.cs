@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,7 +21,6 @@ namespace CapaNegocioCesfam
             this.conec1 = new ConexionCesfam();
             this.conec1.NombreBaseDeDatos = "CESFAM";
             this.conec1.NombreTabla = "detalle_ingreso";
-            this.conec1.CadenaConexion = "Data Source=localhost;Initial Catalog=CESFAM;Integrated Security=True";
         }
 
         public void insertarDetalleIngreso(DetalleIngreso detalle_ingreso)
@@ -237,4 +236,3 @@ namespace CapaNegocioCesfam
 
     }
 }
-

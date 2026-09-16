@@ -178,6 +178,8 @@
     <Content Include="src\js\mdb\util\touch\swipe.js" />
     <Content Include="src\js\mdb\util\touch\touchUtil.js" />
     <Content Include="WebAgendamiento.aspx" />
+    <Content Include="WebAjax.aspx" />
+    <Content Include="Content\site.css" />
     <Content Include="WebCaducarMedicamento.aspx" />
     <Content Include="WebFarmaceuta.aspx" />
     <Content Include="WebFarmacia.aspx" />
@@ -525,6 +527,13 @@
     </Compile>
     <Compile Include="WebMedicamento.aspx.designer.cs">
       <DependentUpon>WebMedicamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebAjax.aspx.cs">
+      <DependentUpon>WebAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebAjax.aspx.designer.cs">
+      <DependentUpon>WebAjax.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebMedico.aspx.cs">
       <DependentUpon>WebMedico.aspx</DependentUpon>

@@ -70,10 +70,16 @@ namespace CapaServicioCesfam
 
         [WebMethod]
 
-        public void actualizarCiudadService(Farmacia farmacia)
+        public void actualizarFarmaciaService(Farmacia farmacia)
         {
             NegocioFarmacia auxNegocioFarmacia = new NegocioFarmacia();
             auxNegocioFarmacia.actualizarFarmacia(farmacia);
+        }
+
+        [WebMethod]
+        public DataSet retornarTotalFarmaciasService()
+        {
+            return new NegocioFarmacia().retornarTotalFarmacias();
         }
     }
 }
