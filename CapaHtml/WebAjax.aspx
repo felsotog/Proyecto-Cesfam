@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebAjax.aspx.cs" Inherits="CapaHtml.WebAjax" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebAjax.aspx.cs" Inherits="CapaHtml.WebAjax" CodePage="65001" %>
 
 <!doctype html>
 <html lang="es">
@@ -11,17 +11,51 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+            <a class="brand" href="WebAjax.aspx">
+                <span class="brand-mark">+</span>
+                <span><strong>CESFAM</strong><small>Gestión de farmacia</small></span>
+            </a>
+            <nav class="main-nav">
+                <p class="nav-label">Principal</p>
+                <a class="nav-item active" href="WebAjax.aspx"><span>▦</span> Resumen</a>
+                <a class="nav-item" href="WebAgendamiento.aspx"><span>□</span> Agendamiento</a>
+                <a class="nav-item" href="WebPaciente.aspx"><span>○</span> Pacientes</a>
+                <p class="nav-label nav-label-spaced">Farmacia</p>
+                <a class="nav-item" href="WebFarmacia.aspx"><span>✚</span> Farmacia</a>
+                <a class="nav-item" href="WebMedicamento.aspx"><span>◫</span> Medicamentos</a>
+                <a class="nav-item" href="WebIngresoMedicamento.aspx"><span>↓</span> Ingresos</a>
+                <a class="nav-item" href="WebSalidaMedicamento.aspx"><span>↑</span> Entregas</a>
+                <a class="nav-item" href="WebCaducarMedicamento.aspx"><span>×</span> Mermas</a>
+            </nav>
+            <div class="sidebar-footer"><i></i><span><strong>Sistema local</strong><small>ASP.NET · SQL Server</small></span></div>
+        </aside>
+        <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar menú"></button>
+
         <header class="app-header">
             <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
-                <div>
-                    <p class="app-kicker mb-1">Sistema de gestión</p>
-                    <h1 class="h3 mb-0">Farmacia CESFAM</h1>
+                <div class="header-title">
+                    <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menú">☰</button>
+                    <div><p class="app-kicker mb-1">Panel administrativo</p><h1 class="h5 mb-0">Gestión de farmacia</h1></div>
                 </div>
-                <button id="refreshButton" class="btn btn-primary" type="button">Actualizar información</button>
+                <div class="header-actions">
+                    <button id="refreshButton" class="refresh-button" type="button">↻ <span>Actualizar</span></button>
+                    <button class="account-button" id="accountButton" type="button" aria-expanded="false">
+                        <span class="account-avatar">MZ</span><span class="account-copy"><strong>Michael Zamorano</strong><small>Administrador</small></span>
+                    </button>
+                    <div class="account-menu" id="accountMenu" hidden>
+                        <p><strong>Sesión activa</strong><span>Administrador CESFAM</span></p>
+                        <a href="WebPaginaPrincipal.aspx">Ir a la página principal</a>
+                    </div>
+                </div>
             </div>
         </header>
 
         <main class="container py-5">
+            <section class="welcome-panel">
+                <div><p class="welcome-kicker">Centro de Salud Familiar</p><h2>Hola, Michael</h2><p>Revisa el inventario y accede a las operaciones principales de farmacia.</p></div>
+                <span class="welcome-cross" aria-hidden="true">+</span>
+            </section>
             <section aria-labelledby="summaryTitle">
                 <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
                     <div>
@@ -78,6 +112,11 @@
         const lastUpdate = document.querySelector("#lastUpdate");
         const refreshButton = document.querySelector("#refreshButton");
         const medicineSearch = document.querySelector("#medicineSearch");
+        const sidebar = document.querySelector("#sidebar");
+        const sidebarBackdrop = document.querySelector("#sidebarBackdrop");
+        const menuButton = document.querySelector("#menuButton");
+        const accountButton = document.querySelector("#accountButton");
+        const accountMenu = document.querySelector("#accountMenu");
         let currentMedicines = [];
 
         async function callPageMethod(method) {
@@ -172,6 +211,8 @@
                 filterMedicines();
                 lastUpdate.textContent = `Actualizado: ${new Date().toLocaleString("es-CL")}`;
             } catch (error) {
+                summaryCards.innerHTML = '<div class="col-12"><div class="empty-state"><strong>Datos no disponibles</strong><span>Conecta la base CESFAM para ver los indicadores.</span></div></div>';
+                medicinesBody.innerHTML = '<tr><td colspan="6" class="text-center py-4">El inventario estará disponible al conectar SQL Server.</td></tr>';
                 errorMessage.textContent = "No fue posible cargar la información. Revisa la conexión a SQL Server y vuelve a intentarlo.";
                 errorMessage.classList.remove("d-none");
             } finally {
@@ -181,6 +222,9 @@
 
         refreshButton.addEventListener("click", loadDashboard);
         medicineSearch.addEventListener("input", filterMedicines);
+        menuButton.addEventListener("click", () => { sidebar.classList.add("is-open"); sidebarBackdrop.classList.add("is-visible"); });
+        sidebarBackdrop.addEventListener("click", () => { sidebar.classList.remove("is-open"); sidebarBackdrop.classList.remove("is-visible"); });
+        accountButton.addEventListener("click", () => { const open = accountMenu.hidden; accountMenu.hidden = !open; accountButton.setAttribute("aria-expanded", String(open)); });
         loadDashboard();
     </script>
 </body>
