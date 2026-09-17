@@ -78,10 +78,12 @@
     <Content Include="css\mdb.min.css" />
     <Content Include="css\mdb.rtl.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\modern-shell.css" />
     <Content Include="img\logo_index.png" />
     <Content Include="img\mdb-favicon.ico" />
     <Content Include="js\javascript_api.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\modern-shell.js" />
     <Content Include="js\mdb.min.js" />
     <Content Include="js\picker.date.js" />
     <Content Include="js\picker.js" />

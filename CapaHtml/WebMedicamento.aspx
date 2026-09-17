@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebMedicamento.aspx.cs" Inherits="CapaHtml.WebMedicamento" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebMedicamento.aspx.cs" CodePage="65001" Inherits="CapaHtml.WebMedicamento" %>
 
 <!DOCTYPE html>
 
@@ -18,87 +18,10 @@
     <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modern-shell.css" />
 </head>
 <body class="form-control bg-light">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
-        <div class="container-fluid">
-          <!-- Navbar brand -->
-          <a class="navbar-brand nav-link" target="_blank" href="WebPaginaPrincipal.aspx">
-            <strong>CESFAM</strong>
-          </a>
-          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-            aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarExample01">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="WebAgendamiento.aspx" rel="nofollow">Agendamiento</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebFarmacia.aspx">Farmacia</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebIngresoMedicamento.aspx">Ingreso Medicamento</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebFichaPaciente.aspx">Ficha Paciente</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebMedicamento.aspx">Medicamento</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebMedico.aspx">Medico</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebPaciente.aspx">Paciente</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebFarmaceuta.aspx">Farmaceuta</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebFormularioMedicamento.aspx">Receta medica</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebReservaMedicamento.aspx">Reservacion Medicamento</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebSalidaMedicamento.aspx">Entrega Medicamento</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="WebCaducarMedicamento.aspx">Merma</a>
-              </li>
-            </ul>
 
-            <ul class="navbar-nav d-flex flex-row">
-              <!-- Icons -->
-              <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
-                  target="_blank">
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </li>
-              <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Navbar -->
 
     <div class="container example_container">
         <div class="row">
@@ -249,10 +172,11 @@
                                   <asp:Parameter Name="original_farmacia_id_farmacia" Type="String" />
                               </UpdateParameters>
                           </asp:SqlDataSource>
-                         
+
                          </div>
                 </form>
         </div>
     </div>
+    <script src="js/modern-shell.js"></script>
 </body>
 </html>
