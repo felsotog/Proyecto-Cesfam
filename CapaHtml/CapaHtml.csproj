@@ -81,6 +81,7 @@
     <Content Include="css\modern-shell.css" />
     <Content Include="css\agendamiento.css" />
     <Content Include="css\pacientes.css" />
+    <Content Include="css\medicos.css" />
     <Content Include="css\landing.css" />
     <Content Include="img\logo_index.png" />
     <Content Include="img\mdb-favicon.ico" />
