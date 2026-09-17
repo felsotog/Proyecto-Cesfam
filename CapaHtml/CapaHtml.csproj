@@ -85,6 +85,7 @@
     <Content Include="css\ficha-clinica.css" />
     <Content Include="css\farmacia.css" />
     <Content Include="css\medicamentos.css" />
+    <Content Include="css\ingresos.css" />
     <Content Include="css\landing.css" />
     <Content Include="img\logo_index.png" />
     <Content Include="img\mdb-favicon.ico" />
