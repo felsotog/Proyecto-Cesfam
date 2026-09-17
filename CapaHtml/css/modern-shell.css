@@ -9,6 +9,52 @@
     --shell-width: 258px;
 }
 
+/* Evita mostrar por un instante la interfaz heredada antes de crear el shell moderno. */
+body.cesfam-shell-page:not(.cesfam-modern-shell) {
+    min-height: 100vh;
+    overflow: hidden;
+    border: 0 !important;
+    background: #f4f7f6 !important;
+}
+
+body.cesfam-shell-page:not(.cesfam-modern-shell) > * {
+    visibility: hidden !important;
+}
+
+body.cesfam-shell-page:not(.cesfam-modern-shell)::before {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    visibility: visible !important;
+    color: var(--shell-primary-dark);
+    content: "Cargando CESFAM";
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: .78rem;
+    font-weight: 750;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transform: translate(-50%, 20px);
+}
+
+body.cesfam-shell-page:not(.cesfam-modern-shell)::after {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    visibility: visible !important;
+    border: 3px solid #cfe4dc;
+    border-top-color: var(--shell-primary);
+    border-radius: 50%;
+    content: "";
+    animation: shell-loading .7s linear infinite;
+    transform: translate(-50%, -28px);
+}
+
+@keyframes shell-loading {
+    to { transform: translate(-50%, -28px) rotate(360deg); }
+}
+
 body.cesfam-modern-shell {
     min-height: 100vh;
     margin: 0 !important;

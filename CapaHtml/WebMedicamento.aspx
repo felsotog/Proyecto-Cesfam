@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/modern-shell.css" />
 </head>
-<body class="form-control bg-light">
+<body class="form-control bg-light cesfam-shell-page">
 
 
     <div class="container example_container">
