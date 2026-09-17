@@ -1,0 +1,122 @@
+/* Diseño específico de la agenda. Mantiene intactos los controles Web Forms. */
+body.cesfam-modern-shell .appointment-page {
+    width: min(1180px, calc(100% - 44px)) !important;
+    max-width: 1180px !important;
+    margin: 26px auto 48px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.appointment-page *,
+.appointment-page *::before,
+.appointment-page *::after { box-sizing: border-box; }
+
+.appointment-hero {
+    position: relative;
+    display: flex;
+    min-height: 190px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 34px 42px;
+    overflow: hidden;
+    border-radius: 22px;
+    background: linear-gradient(120deg, #0a7658 0%, #118765 58%, #20a177 100%);
+    color: #fff;
+    box-shadow: 0 20px 44px rgba(8, 93, 69, .18);
+}
+
+.appointment-hero::before,
+.appointment-hero::after {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 50%;
+    content: "";
+}
+
+.appointment-hero::before { right: 70px; bottom: -135px; width: 310px; height: 310px; }
+.appointment-hero::after { right: -68px; top: -130px; width: 290px; height: 290px; }
+.appointment-hero-copy { position: relative; z-index: 1; max-width: 690px; }
+.appointment-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: #c9f0e3; font-size: .72rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+.appointment-hero h1 { margin: 10px 0 9px; color: #fff; font-size: clamp(1.65rem, 3vw, 2.35rem); font-weight: 760; letter-spacing: -.025em; }
+.appointment-hero p { max-width: 590px; margin: 0; color: rgba(255,255,255,.84); font-size: .96rem; line-height: 1.65; }
+.appointment-hero-icon { position: relative; z-index: 1; display: grid; width: 86px; height: 86px; flex: 0 0 86px; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 24px; background: rgba(255,255,255,.13); color: #fff; font-size: 2.25rem; box-shadow: inset 0 1px rgba(255,255,255,.2); backdrop-filter: blur(4px); }
+
+.appointment-layout { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 22px; margin-top: 24px; align-items: stretch; }
+.appointment-card,
+.appointment-guide { border: 1px solid #dfe9e6; border-radius: 18px; background: #fff; box-shadow: 0 12px 32px rgba(16,42,37,.055); }
+.appointment-form-card { padding: 28px 30px 26px; }
+.appointment-section-heading { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 25px; }
+.appointment-section-icon { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border-radius: 12px; background: #e7f5f0; color: #087f5b; font-size: .9rem; }
+.appointment-section-kicker { display: block; margin-bottom: 4px; color: #087f5b; font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.appointment-section-heading h2,
+.appointment-guide h2,
+.appointment-list-heading h2 { margin: 0; color: #1c302a; font-size: 1.15rem; font-weight: 740; }
+.appointment-section-heading p,
+.appointment-list-heading p { margin: 5px 0 0; color: #70817c; font-size: .78rem; line-height: 1.5; }
+
+body.cesfam-modern-shell .appointment-form-table tbody { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px; }
+body.cesfam-modern-shell .appointment-form-table tr { display: flex; min-width: 0; flex-direction: column; }
+body.cesfam-modern-shell .appointment-form-table tr:last-child { grid-column: 1 / -1; }
+body.cesfam-modern-shell .appointment-form-table td,
+body.cesfam-modern-shell .appointment-form-table td:first-child,
+body.cesfam-modern-shell .appointment-form-table td:last-child { display: block; width: 100% !important; padding: 0 !important; }
+body.cesfam-modern-shell .appointment-form-table label,
+body.cesfam-modern-shell .appointment-form-table span[id] { display: block; margin-bottom: 7px; color: #344c45 !important; font-size: .75rem !important; font-weight: 700 !important; }
+body.cesfam-modern-shell .appointment-form-table input.form-control { width: 100%; height: 46px; padding: 10px 13px; border: 1px solid #d5e2de; border-radius: 10px; background: #fbfcfc; color: #20352f; font-size: .84rem; box-shadow: none; }
+body.cesfam-modern-shell .appointment-form-table input.form-control::placeholder { color: #9aa9a4; }
+body.cesfam-modern-shell .appointment-form-table input.form-control:focus { border-color: #14906b; background: #fff; box-shadow: 0 0 0 3px rgba(8,127,91,.1); }
+.appointment-feedback:empty { display: none; }
+.appointment-feedback span:empty { display: none !important; }
+.appointment-feedback span:not(:empty) { display: block; margin: 2px 0 0 !important; padding: 10px 13px; border-radius: 9px; }
+.appointment-actions { display: flex; align-items: center; gap: 10px; margin-top: 24px; padding-top: 20px; border-top: 1px solid #e7eeec; }
+body.cesfam-modern-shell .appointment-actions .btn { min-height: 42px; margin: 0; padding: 9px 18px; border-radius: 9px; font-size: .78rem; font-weight: 700; letter-spacing: 0; text-transform: none; box-shadow: none; }
+body.cesfam-modern-shell .appointment-primary-action { min-width: 128px; box-shadow: 0 8px 18px rgba(8,127,91,.16) !important; }
+
+.appointment-guide { padding: 29px 26px; background: linear-gradient(180deg, #f8fbfa 0%, #f2f8f6 100%); }
+.appointment-guide-icon { display: grid; width: 48px; height: 48px; margin-bottom: 22px; place-items: center; border-radius: 14px; background: #163f35; color: #fff; font-size: 1.05rem; box-shadow: 0 9px 20px rgba(16,42,37,.15); }
+.appointment-guide h2 { margin-top: 5px; line-height: 1.4; }
+.appointment-guide > p { margin: 10px 0 20px; color: #687c76; font-size: .8rem; line-height: 1.6; }
+.appointment-guide ul { display: grid; gap: 13px; margin: 0; padding: 17px 0 0; border-top: 1px solid #dce8e4; list-style: none; }
+.appointment-guide li { display: flex; align-items: flex-start; gap: 10px; color: #40564f; font-size: .75rem; line-height: 1.5; }
+.appointment-guide li i { display: grid; width: 19px; height: 19px; flex: 0 0 19px; place-items: center; border-radius: 50%; background: #dcefe8; color: #087f5b; font-size: .55rem; }
+
+.appointment-list-card { margin-top: 22px; padding: 27px 30px 18px; }
+.appointment-list-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 19px; }
+.appointment-count { display: inline-flex; min-height: 32px; align-items: center; padding: 6px 12px; border-radius: 999px; background: #edf6f3; color: #17664e !important; font-size: .7rem !important; font-weight: 750 !important; white-space: nowrap; }
+.appointment-table-wrap { width: 100%; overflow-x: auto; border: 1px solid #dfe8e5; border-radius: 12px; }
+body.cesfam-modern-shell table.appointment-table { width: 100%; min-width: 720px; margin: 0; border: 0; border-radius: 0; border-collapse: collapse; box-shadow: none; }
+body.cesfam-modern-shell table.appointment-table > tbody > tr:first-child > th { padding: 13px 15px !important; border: 0 !important; background: #f0f6f4 !important; color: #3e5850 !important; font-size: .66rem !important; font-weight: 800 !important; letter-spacing: .045em; text-transform: uppercase; white-space: nowrap; }
+body.cesfam-modern-shell table.appointment-table > tbody > tr > td { padding: 14px 15px !important; border: 0 !important; border-top: 1px solid #e7eeec !important; color: #455b54 !important; font-size: .77rem !important; vertical-align: middle; white-space: nowrap; }
+body.cesfam-modern-shell table.appointment-table > tbody > tr:nth-child(even) > td { background: #fbfcfc !important; }
+body.cesfam-modern-shell table.appointment-table > tbody > tr:hover > td { background: #f2f8f6 !important; }
+body.cesfam-modern-shell table.appointment-table a { margin: 0 6px 0 0 !important; padding: 6px 9px !important; border: 1px solid #d6e6e1 !important; border-radius: 7px !important; background: #fff !important; color: #17664e !important; font-size: .68rem !important; font-weight: 700; }
+
+@media (max-width: 1040px) {
+    .appointment-layout { grid-template-columns: 1fr; }
+    .appointment-guide { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; }
+    .appointment-guide-icon { grid-row: 1 / 4; }
+    .appointment-guide ul { grid-column: 1 / -1; grid-template-columns: repeat(3, 1fr); margin-top: 5px; }
+}
+
+@media (max-width: 700px) {
+    body.cesfam-modern-shell .appointment-page { width: calc(100% - 24px) !important; margin-top: 18px !important; padding: 0 !important; }
+    .appointment-hero { min-height: 0; padding: 27px 24px; }
+    .appointment-hero-icon { display: none; }
+    .appointment-form-card,
+    .appointment-guide,
+    .appointment-list-card { padding: 22px 19px; }
+    body.cesfam-modern-shell .appointment-form-table tbody { grid-template-columns: 1fr; gap: 15px; }
+    body.cesfam-modern-shell .appointment-form-table tr:last-child { grid-column: auto; }
+    .appointment-guide { display: block; }
+    .appointment-guide-icon { margin-bottom: 18px; }
+    .appointment-guide ul { display: grid; grid-template-columns: 1fr; }
+    .appointment-list-heading { align-items: flex-start; flex-direction: column; gap: 11px; }
+}
+
+@media (max-width: 430px) {
+    .appointment-actions { align-items: stretch; flex-direction: column; }
+    body.cesfam-modern-shell .appointment-actions .btn { width: 100%; }
+}

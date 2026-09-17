@@ -1,0 +1,128 @@
+/* Vista de pacientes: directorio clínico y formulario de registro. */
+body.cesfam-modern-shell .patients-page {
+    width: min(1180px, calc(100% - 44px)) !important;
+    max-width: 1180px !important;
+    margin: 26px auto 48px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.patients-page *,
+.patients-page *::before,
+.patients-page *::after { box-sizing: border-box; }
+
+.patients-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .72fr);
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid #dce8e4;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 16px 38px rgba(16,42,37,.07);
+}
+
+.patients-hero::before { position: absolute; top: 0; left: 0; width: 7px; height: 100%; background: linear-gradient(#0b8060, #4eb99a); content: ""; }
+.patients-hero-main { padding: 36px 42px 35px 45px; }
+.patients-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: #087f5b; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.patients-hero h1 { margin: 9px 0 8px; color: #18322b; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 770; letter-spacing: -.03em; }
+.patients-hero-main p { max-width: 620px; margin: 0; color: #6a7d77; font-size: .91rem; line-height: 1.65; }
+.patients-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; padding: 22px; background: #f0f7f5; }
+.patients-summary-item { display: flex; min-width: 0; align-items: center; gap: 12px; padding: 18px 14px; border-radius: 14px; background: rgba(255,255,255,.72); }
+.patients-summary-icon { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border-radius: 12px; background: #dff2eb; color: #087f5b; }
+.patients-summary-icon.secondary { background: #e7eef8; color: #446a9b; }
+.patients-summary-item strong,
+.patients-summary-item small { display: block; }
+.patients-summary-item strong { color: #1d352e; font-size: 1.35rem; line-height: 1.1; }
+.patients-summary-item small { margin-top: 4px; color: #758781; font-size: .64rem; line-height: 1.35; }
+
+.patients-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 22px; margin-top: 22px; align-items: stretch; }
+.patients-card,
+.patients-side-panel { border: 1px solid #dfe9e6; border-radius: 18px; background: #fff; box-shadow: 0 12px 32px rgba(16,42,37,.055); }
+.patients-form-card { padding: 28px 30px 26px; }
+.patients-section-heading { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 25px; }
+.patients-section-icon { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border-radius: 12px; background: #e5f4ef; color: #087f5b; }
+.patients-kicker { display: block; margin-bottom: 4px; color: #087f5b; font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.patients-section-heading h2,
+.patients-side-panel h2,
+.patients-list-heading h2 { margin: 0; color: #1c302a; font-size: 1.15rem; font-weight: 740; }
+.patients-section-heading p,
+.patients-list-heading p { margin: 5px 0 0; color: #70817c; font-size: .78rem; line-height: 1.5; }
+
+body.cesfam-modern-shell .patients-form-table tbody { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px 20px; }
+body.cesfam-modern-shell .patients-form-table tr { display: flex; min-width: 0; flex-direction: column; }
+body.cesfam-modern-shell .patients-form-table tr:nth-child(2),
+body.cesfam-modern-shell .patients-form-table tr:nth-child(4),
+body.cesfam-modern-shell .patients-form-table tr:last-child { grid-column: 1 / -1; }
+body.cesfam-modern-shell .patients-form-table td,
+body.cesfam-modern-shell .patients-form-table td:first-child,
+body.cesfam-modern-shell .patients-form-table td:last-child { display: block; width: 100% !important; padding: 0 !important; }
+body.cesfam-modern-shell .patients-form-table label,
+body.cesfam-modern-shell .patients-form-table span[id] { display: block; margin-bottom: 7px; color: #344c45 !important; font-size: .75rem !important; font-weight: 700 !important; }
+body.cesfam-modern-shell .patients-form-table input.form-control { width: 100%; height: 46px; padding: 10px 13px; border: 1px solid #d5e2de; border-radius: 10px; background: #fbfcfc; color: #20352f; font-size: .84rem; box-shadow: none; }
+body.cesfam-modern-shell .patients-form-table input.form-control::placeholder { color: #9aa9a4; }
+body.cesfam-modern-shell .patients-form-table input.form-control:focus { border-color: #14906b; background: #fff; box-shadow: 0 0 0 3px rgba(8,127,91,.1); }
+.patients-feedback span:empty { display: none !important; }
+.patients-feedback span:not(:empty) { display: block; margin: 2px 0 0 !important; padding: 10px 13px; border-radius: 9px; }
+.patients-actions { display: flex; align-items: center; gap: 10px; margin-top: 24px; padding-top: 20px; border-top: 1px solid #e7eeec; }
+body.cesfam-modern-shell .patients-actions .btn { min-height: 42px; margin: 0; padding: 9px 18px; border-radius: 9px; font-size: .78rem; font-weight: 700; letter-spacing: 0; line-height: 22px; text-transform: none; box-shadow: none; }
+body.cesfam-modern-shell .patients-primary-action { min-width: 150px; box-shadow: 0 8px 18px rgba(8,127,91,.16) !important; }
+
+.patients-side-panel { position: relative; padding: 30px 27px; overflow: hidden; background: linear-gradient(150deg, #173c34 0%, #0d5b48 100%); color: #fff; }
+.patients-side-panel::after { position: absolute; right: -85px; bottom: -95px; width: 240px; height: 240px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; content: ""; }
+.patients-side-icon { position: relative; z-index: 1; display: grid; width: 48px; height: 48px; margin-bottom: 23px; place-items: center; border: 1px solid rgba(255,255,255,.16); border-radius: 14px; background: rgba(255,255,255,.09); color: #bde8d9; font-size: 1.05rem; }
+.patients-side-panel .patients-kicker { color: #8fd2bb; }
+.patients-side-panel h2 { position: relative; z-index: 1; color: #fff; line-height: 1.4; }
+.patients-side-panel > p { position: relative; z-index: 1; margin: 11px 0 21px; color: #c7d9d4; font-size: .79rem; line-height: 1.65; }
+.patients-data-list { position: relative; z-index: 1; display: grid; gap: 5px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,.12); }
+.patients-data-list > div { display: flex; align-items: center; gap: 12px; padding: 10px 0; }
+.patients-data-list i { width: 22px; color: #80ceb3; text-align: center; }
+.patients-data-list strong,
+.patients-data-list small { display: block; }
+.patients-data-list strong { color: #fff; font-size: .75rem; }
+.patients-data-list small { margin-top: 2px; color: #a9c5bc; font-size: .65rem; }
+
+.patients-list-card { margin-top: 22px; padding: 27px 30px 18px; }
+.patients-list-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 19px; }
+.patients-count { display: inline-flex; min-height: 32px; align-items: center; padding: 6px 12px; border-radius: 999px; background: #edf6f3; color: #17664e !important; font-size: .7rem !important; font-weight: 750 !important; white-space: nowrap; }
+.patients-table-wrap { width: 100%; overflow-x: auto; border: 1px solid #dfe8e5; border-radius: 12px; }
+body.cesfam-modern-shell table.patients-table { width: 100%; min-width: 880px; margin: 0; border: 0; border-radius: 0; border-collapse: collapse; box-shadow: none; }
+body.cesfam-modern-shell table.patients-table > tbody > tr:first-child > th { padding: 13px 15px !important; border: 0 !important; background: #f0f6f4 !important; color: #3e5850 !important; font-size: .66rem !important; font-weight: 800 !important; letter-spacing: .045em; text-transform: uppercase; white-space: nowrap; }
+body.cesfam-modern-shell table.patients-table > tbody > tr > td { padding: 14px 15px !important; border: 0 !important; border-top: 1px solid #e7eeec !important; color: #455b54 !important; font-size: .77rem !important; vertical-align: middle; white-space: nowrap; }
+body.cesfam-modern-shell table.patients-table > tbody > tr:nth-child(even) > td { background: #fbfcfc !important; }
+body.cesfam-modern-shell table.patients-table > tbody > tr:hover > td { background: #f2f8f6 !important; }
+body.cesfam-modern-shell table.patients-table a { margin: 0 6px 0 0 !important; padding: 6px 9px !important; border: 1px solid #d6e6e1 !important; border-radius: 7px !important; background: #fff !important; color: #17664e !important; font-size: .68rem !important; font-weight: 700; }
+
+@media (max-width: 1050px) {
+    .patients-hero { grid-template-columns: 1fr; }
+    .patients-hero-main { padding-bottom: 24px; }
+    .patients-summary { padding-top: 0; }
+    .patients-layout { grid-template-columns: 1fr; }
+    .patients-side-panel { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; }
+    .patients-side-icon { grid-row: 1 / 4; }
+    .patients-data-list { grid-column: 1 / -1; grid-template-columns: repeat(3, 1fr); margin-top: 5px; }
+}
+
+@media (max-width: 700px) {
+    body.cesfam-modern-shell .patients-page { width: calc(100% - 24px) !important; margin-top: 18px !important; padding: 0 !important; }
+    .patients-hero-main { padding: 28px 24px 22px 28px; }
+    .patients-summary { grid-template-columns: 1fr; padding: 0 18px 18px; }
+    .patients-form-card,
+    .patients-side-panel,
+    .patients-list-card { padding: 22px 19px; }
+    body.cesfam-modern-shell .patients-form-table tbody { grid-template-columns: 1fr; gap: 15px; }
+    body.cesfam-modern-shell .patients-form-table tr:nth-child(2),
+    body.cesfam-modern-shell .patients-form-table tr:nth-child(4),
+    body.cesfam-modern-shell .patients-form-table tr:last-child { grid-column: auto; }
+    .patients-side-panel { display: block; }
+    .patients-data-list { display: grid; grid-template-columns: 1fr; }
+    .patients-list-heading { align-items: flex-start; flex-direction: column; gap: 11px; }
+}
+
+@media (max-width: 430px) {
+    .patients-actions { align-items: stretch; flex-direction: column; }
+    body.cesfam-modern-shell .patients-actions .btn { width: 100%; }
+}
