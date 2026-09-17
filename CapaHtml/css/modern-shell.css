@@ -1,0 +1,119 @@
+﻿/* Variables del sistema visual compartido por las páginas administrativas. */
+:root {
+    --shell-primary: #087f5b;
+    --shell-primary-dark: #056347;
+    --shell-sidebar: #102a25;
+    --shell-text: #172b25;
+    --shell-muted: #667a74;
+    --shell-border: #dfe8e5;
+    --shell-width: 258px;
+}
+
+body.cesfam-modern-shell {
+    min-height: 100vh;
+    margin: 0 !important;
+    padding: 76px 0 30px var(--shell-width) !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #f4f7f6 !important;
+    color: var(--shell-text);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif !important;
+}
+
+.legacy-navbar { display: none !important; }
+
+/* Navegación principal fija en escritorio. */
+.modern-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 2040;
+    display: flex;
+    width: var(--shell-width);
+    flex-direction: column;
+    padding: 25px 17px 20px;
+    overflow-y: auto;
+    background: var(--shell-sidebar);
+    color: #fff;
+    box-shadow: 12px 0 34px rgba(7, 35, 29, .1);
+    transition: transform .24s ease;
+}
+
+.modern-brand { display: flex; align-items: center; gap: 12px; padding: 0 9px 26px; color: #fff !important; text-decoration: none; }
+.modern-brand-mark { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border-radius: 13px; background: #fff; color: var(--shell-primary); font-size: 1.8rem; font-weight: 300; line-height: 1; }
+.modern-brand strong, .modern-brand small, .modern-sidebar-footer strong, .modern-sidebar-footer small { display: block; }
+.modern-brand strong { font-size: 1.05rem; letter-spacing: .045em; }
+.modern-brand small { margin-top: 2px; color: #9bb6ae; font-size: .7rem; }
+.modern-nav { flex: 1; }
+.modern-nav-label { margin: 3px 12px 8px; color: #71968c; font-size: .65rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.modern-nav-label.spaced { margin-top: 24px; }
+.modern-nav-item { display: flex; min-height: 44px; align-items: center; gap: 13px; margin: 3px 0; padding: 0 13px; border-radius: 11px; color: #c9d9d5 !important; font-size: .86rem; font-weight: 500; text-decoration: none; }
+.modern-nav-item span { width: 19px; color: #9bb6ae; text-align: center; }
+.modern-nav-item:hover { background: rgba(255,255,255,.07); color: #fff !important; }
+.modern-nav-item.active { background: var(--shell-primary); color: #fff !important; box-shadow: 0 8px 18px rgba(0,0,0,.14); }
+.modern-sidebar-footer { display: flex; align-items: center; gap: 11px; margin-top: 20px; padding: 15px 11px 2px; border-top: 1px solid rgba(255,255,255,.08); }
+.modern-sidebar-footer i { width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: #38d39f; box-shadow: 0 0 0 5px rgba(56,211,159,.12); }
+.modern-sidebar-footer strong { font-size: .76rem; }
+.modern-sidebar-footer small { margin-top: 2px; color: #9bb6ae; font-size: .65rem; }
+
+/* Cabecera compartida con el título de la vista y los datos de sesión. */
+.modern-topbar { position: fixed; inset: 0 0 auto var(--shell-width); z-index: 2020; display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 15px; padding: 12px 30px; border-bottom: 1px solid var(--shell-border); background: rgba(255,255,255,.96); box-shadow: 0 6px 18px rgba(16,42,37,.04); backdrop-filter: blur(12px); }
+.modern-topbar-start, .modern-topbar-user { display: flex; align-items: center; gap: 11px; }
+.modern-menu-button { display: none; width: 40px; height: 40px; border: 0; border-radius: 10px; background: #edf4f1; color: var(--shell-text); font-size: 1.25rem; }
+.modern-page-title span, .modern-page-title strong, .modern-user-copy strong, .modern-user-copy small { display: block; }
+.modern-page-title span { color: var(--shell-muted); font-size: .68rem; }
+.modern-page-title strong { font-size: .94rem; }
+.modern-topbar-user { position: relative; border: 0; border-radius: 12px; padding: 4px 7px 4px 4px; background: transparent; text-align: left; }
+.modern-topbar-user:hover { background: #f0f5f3; }
+.modern-avatar { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 11px; background: #e5f4ef; color: var(--shell-primary-dark); font-size: .72rem; font-weight: 800; }
+.modern-user-copy strong { font-size: .76rem; }
+.modern-user-copy small { color: var(--shell-muted); font-size: .65rem; }
+.modern-user-menu { position: fixed; top: 68px; right: 25px; z-index: 2050; width: 225px; padding: 16px; border: 1px solid var(--shell-border); border-radius: 13px; background: #fff; box-shadow: 0 16px 40px rgba(16,42,37,.15); }
+.modern-user-menu[hidden] { display: none; }
+.modern-user-menu strong, .modern-user-menu span { display: block; }
+.modern-user-menu strong { font-size: .82rem; }
+.modern-user-menu span { margin-top: 3px; color: var(--shell-muted); font-size: .7rem; }
+.modern-user-menu a { display: block; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--shell-border); color: var(--shell-primary); font-size: .74rem; font-weight: 650; text-decoration: none; }
+.modern-shell-backdrop { display: none; }
+
+/* Adaptación visual de formularios y GridView heredados del proyecto original. */
+body.cesfam-modern-shell .example_container { width: min(1120px, calc(100% - 36px)) !important; max-width: 1120px !important; margin: 30px auto 50px !important; padding: 28px !important; border: 1px solid var(--shell-border); border-radius: 18px; background: #fff; box-shadow: 0 14px 35px rgba(16,42,37,.07); }
+body.cesfam-modern-shell .example_container .title h2 { margin-bottom: 22px; color: var(--shell-text) !important; font-size: 1.45rem; font-weight: 720; }
+body.cesfam-modern-shell .example_container label, body.cesfam-modern-shell .example_container td { color: #40554f !important; font-size: .9rem !important; }
+body.cesfam-modern-shell .example_container span[id] { color: #40554f !important; font-size: .88rem !important; font-weight: 650 !important; }
+body.cesfam-modern-shell .example_container fieldset table td:first-child { width: 35%; padding-right: 18px; }
+body.cesfam-modern-shell .example_container fieldset table td:last-child { width: 65%; }
+body.cesfam-modern-shell .form-control { border-color: #d8e4e0; border-radius: 9px; }
+body.cesfam-modern-shell input.form-control:focus, body.cesfam-modern-shell select.form-control:focus { border-color: var(--shell-primary); box-shadow: 0 0 0 .2rem rgba(8,127,91,.12); }
+body.cesfam-modern-shell .alert-success { border-color: #cbe9de; border-radius: 10px; background: #eaf7f2; color: #0a674c; }
+body.cesfam-modern-shell .btn-primary { border-color: var(--shell-primary) !important; background: var(--shell-primary) !important; color: #fff !important; }
+body.cesfam-modern-shell .btn-primary:hover { border-color: var(--shell-primary-dark) !important; background: var(--shell-primary-dark) !important; }
+body.cesfam-modern-shell .btn-dark { border-color: #dbe5e2 !important; background: #edf3f1 !important; color: #365048 !important; }
+body.cesfam-modern-shell table.table-dark { --bs-table-bg: #fff; --bs-table-striped-bg: #f7faf9; --bs-table-striped-color: #263c35; --bs-table-color: #263c35; --bs-table-border-color: #e2ebe8; overflow: hidden; border: 1px solid #dce8e4; border-radius: 11px; background: #fff !important; color: #263c35 !important; }
+body.cesfam-modern-shell table.table-dark > tbody > tr > td { border-color: #e3ece9 !important; background: #fff !important; color: #40554f !important; box-shadow: none !important; }
+body.cesfam-modern-shell table.table-dark > tbody > tr:nth-child(even) > td { background: #f7faf9 !important; }
+body.cesfam-modern-shell table.table-dark > tbody > tr:first-child > th { border-color: #c9e2da !important; background: #e7f4ef !important; color: #075f46 !important; box-shadow: none !important; }
+body.cesfam-modern-shell table.table-dark a { color: var(--shell-primary-dark) !important; }
+body.cesfam-modern-shell table.table-dark input[type="submit"], body.cesfam-modern-shell table.table-dark a[href*="Edit"], body.cesfam-modern-shell table.table-dark a[href*="Delete"] { display: inline-block; margin: 2px; padding: 6px 9px; border: 1px solid #cfe1db; border-radius: 7px; background: #eef6f3; color: #17634d !important; font-size: .72rem; text-decoration: none; }
+
+/* En pantallas pequeñas el menú se convierte en un panel lateral desplegable. */
+@media (max-width: 900px) {
+    body.cesfam-modern-shell { padding-left: 0 !important; }
+    .modern-sidebar { transform: translateX(-105%); }
+    .modern-sidebar.is-open { transform: translateX(0); }
+    .modern-topbar { left: 0; padding: 10px 18px; }
+    .modern-menu-button { display: block; }
+    .modern-shell-backdrop { position: fixed; inset: 0; z-index: 2030; border: 0; background: rgba(7,31,25,.48); }
+    .modern-shell-backdrop.is-visible { display: block; }
+}
+
+@media (max-width: 560px) {
+    body.cesfam-modern-shell { padding-top: 66px !important; }
+    .modern-topbar { min-height: 66px; }
+    .modern-page-title span, .modern-user-copy { display: none; }
+    .modern-page-title strong { font-size: .83rem; }
+    .modern-topbar-user { padding: 0; }
+    .modern-avatar { width: 40px; height: 40px; }
+    body.cesfam-modern-shell .example_container { width: calc(100% - 24px) !important; margin-top: 18px !important; padding: 18px !important; }
+    body.cesfam-modern-shell .example_container .title h2 { font-size: 1.2rem; }
+    body.cesfam-modern-shell .example_container fieldset table td { display: block; width: 100% !important; padding: 5px 0 !important; }
+}
