@@ -1,3 +1,4 @@
+﻿/* Variables del sistema visual compartido por las páginas administrativas. */
 :root {
     --shell-primary: #087f5b;
     --shell-primary-dark: #056347;
@@ -21,6 +22,7 @@ body.cesfam-modern-shell {
 
 .legacy-navbar { display: none !important; }
 
+/* Navegación principal fija en escritorio. */
 .modern-sidebar {
     position: fixed;
     inset: 0 auto 0 0;
@@ -53,6 +55,7 @@ body.cesfam-modern-shell {
 .modern-sidebar-footer strong { font-size: .76rem; }
 .modern-sidebar-footer small { margin-top: 2px; color: #9bb6ae; font-size: .65rem; }
 
+/* Cabecera compartida con el título de la vista y los datos de sesión. */
 .modern-topbar { position: fixed; inset: 0 0 auto var(--shell-width); z-index: 2020; display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 15px; padding: 12px 30px; border-bottom: 1px solid var(--shell-border); background: rgba(255,255,255,.96); box-shadow: 0 6px 18px rgba(16,42,37,.04); backdrop-filter: blur(12px); }
 .modern-topbar-start, .modern-topbar-user { display: flex; align-items: center; gap: 11px; }
 .modern-menu-button { display: none; width: 40px; height: 40px; border: 0; border-radius: 10px; background: #edf4f1; color: var(--shell-text); font-size: 1.25rem; }
@@ -72,6 +75,7 @@ body.cesfam-modern-shell {
 .modern-user-menu a { display: block; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--shell-border); color: var(--shell-primary); font-size: .74rem; font-weight: 650; text-decoration: none; }
 .modern-shell-backdrop { display: none; }
 
+/* Adaptación visual de formularios y GridView heredados del proyecto original. */
 body.cesfam-modern-shell .example_container { width: min(1120px, calc(100% - 36px)) !important; max-width: 1120px !important; margin: 30px auto 50px !important; padding: 28px !important; border: 1px solid var(--shell-border); border-radius: 18px; background: #fff; box-shadow: 0 14px 35px rgba(16,42,37,.07); }
 body.cesfam-modern-shell .example_container .title h2 { margin-bottom: 22px; color: var(--shell-text) !important; font-size: 1.45rem; font-weight: 720; }
 body.cesfam-modern-shell .example_container label, body.cesfam-modern-shell .example_container td { color: #40554f !important; font-size: .9rem !important; }
@@ -91,6 +95,7 @@ body.cesfam-modern-shell table.table-dark > tbody > tr:first-child > th { border
 body.cesfam-modern-shell table.table-dark a { color: var(--shell-primary-dark) !important; }
 body.cesfam-modern-shell table.table-dark input[type="submit"], body.cesfam-modern-shell table.table-dark a[href*="Edit"], body.cesfam-modern-shell table.table-dark a[href*="Delete"] { display: inline-block; margin: 2px; padding: 6px 9px; border: 1px solid #cfe1db; border-radius: 7px; background: #eef6f3; color: #17634d !important; font-size: .72rem; text-decoration: none; }
 
+/* En pantallas pequeñas el menú se convierte en un panel lateral desplegable. */
 @media (max-width: 900px) {
     body.cesfam-modern-shell { padding-left: 0 !important; }
     .modern-sidebar { transform: translateX(-105%); }
